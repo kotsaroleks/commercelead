@@ -1,0 +1,298 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import site from "../data/site.json";
+import ContactForm from "../components/ContactForm.astro";
+const navLinks = [{label:"Services",href:"#services"},{label:"How it works",href:"#process"},{label:"Pricing",href:"#pricing"},{label:"Credentials",href:"#credentials"}];
+---
+<Base
+  title="Outsourced CTO & Tech Lead for Shopify — Senior Shopify Plus Experts"
+  description="Senior Shopify and Shopify Plus developers, tech leads and fractional CTOs. Expert technical leadership for your store, without the full-time hire."
+  accent="#95BF47" accentDark="#6B8E23" accentSoft="#EDF6E0" accentShadow="rgba(149,191,71,.18)">
+  <Header links={navLinks} cta={{ label: "Book a tech audit", href: "#contact" }} />
+  <main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Shopify Plus &middot; Liquid &middot; Headless &middot; Hydrogen</p>
+      <h1>Your outsourced <em>CTO &amp; Tech Lead</em> for Shopify.</h1>
+      <p class="lede">Senior Shopify engineers who take ownership of your platform — architecture, app ecosystem, performance, and the team that ships it. Expert leadership on demand, without the full-time hire.</p>
+      <div class="hero-ctas">
+        <a class="btn btn--solid" href="#contact">Book a free tech audit</a>
+        <a class="btn btn--ghost" href="#services">See what we own</a>
+      </div>
+      <div class="hero-meta">
+        <span>Shopify Plus experts</span>
+        <span>Hydrogen & Oxygen</span>
+        <span>From audit to ownership in 2 weeks</span>
+      </div>
+    </div>
+
+    <!-- signature: the store diagnosis terminal -->
+    <div class="terminal" role="img" aria-label="Terminal showing a Shopify store health diagnosis ending with the recommendation to hire a CTO">
+      <div class="term-bar"><i></i><i></i><i></i><span class="term-title">prod-store — shopify:diagnose</span></div>
+      <div class="term-body" aria-hidden="true">
+        <span class="ln"><span class="prompt">merchant@prod:~$</span> <span class="cmd">shopify store:diagnose --full</span></span>
+        <span class="ln"><span class="dim">Scanning store health…</span></span>
+        <span class="ln"><span class="ok">[OK]</span>&nbsp;&nbsp; Shopify Plus&nbsp;&nbsp;&nbsp;&nbsp;active</span>
+        <span class="ln"><span class="warn">[WARN]</span> 23 apps installed, 7 unused or overlapping</span>
+        <span class="ln"><span class="warn">[WARN]</span> Theme has 14 custom sections, no version control</span>
+        <span class="ln"><span class="err">[FAIL]</span> Checkout scripts conflict — cart breaks on Safari</span>
+        <span class="ln"><span class="err">[FAIL]</span> No staging environment — edits go straight to live</span>
+        <span class="ln"><span class="err">[FAIL]</span> LCP 4.1s on collection pages under load</span>
+        <span class="ln"><span class="dim">──────────────────────────────────</span></span>
+        <span class="ln">Diagnosis: <span class="hl">no one owns the architecture.</span></span>
+        <span class="ln">Recommended fix: <span class="hl">a CTO who knows Shopify.</span> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAINS -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Sound familiar?</p>
+      <h2>The store grows. The platform doesn't keep up.</h2>
+      <p>Most Shopify merchants don't have a technology problem — they have an ownership problem. Nobody senior is accountable for the platform as a whole.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain">
+        <code>apps:chaos</code>
+        <h3>App bloat slows everything</h3>
+        <p>Every new feature means another app. Scripts conflict, page speed tanks, and nobody knows which apps are actually needed or what they cost in aggregate.</p>
+      </div>
+      <div class="pain">
+        <code>theme:fragile</code>
+        <h3>Theme changes break things</h3>
+        <p>Customizations are piled on top of each other with no version control. A small tweak in one section breaks the cart — and nobody knows why.</p>
+      </div>
+      <div class="pain">
+        <code>budget:overrun</code>
+        <h3>Agency invoices keep growing</h3>
+        <p>You pay for hours, not outcomes. Estimates double mid-task, and you have no independent expert to challenge them.</p>
+      </div>
+      <div class="pain">
+        <code>perf:degraded</code>
+        <h3>Slow site, lost revenue</h3>
+        <p>Pages crawl during campaigns, Core Web Vitals are red, and third-party scripts drag down every page load.</p>
+      </div>
+      <div class="pain">
+        <code>team:adrift</code>
+        <h3>Devs without direction</h3>
+        <p>Your in-house or freelance developers are capable, but no one reviews code, sets standards, or plans the roadmap.</p>
+      </div>
+      <div class="pain">
+        <code>risk:unknown</code>
+        <h3>You can't see the risks</h3>
+        <p>Technical decisions are a black box. You find out about problems when they hit production — and revenue.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What we own</p>
+      <h2>Senior Shopify leadership, packaged the way you need it.</h2>
+      <p>One partner, four engagement models. All delivered by senior Shopify engineers with deep Liquid, Hydrogen, and e-commerce experience.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <span class="tag">Fractional</span>
+        <h3>Outsourced CTO</h3>
+        <p>A part-time chief technology officer who answers for your platform to the business — strategy, budget, vendors, and risk.</p>
+        <ul>
+          <li>Technology roadmap tied to revenue goals</li>
+          <li>Agency &amp; vendor oversight, estimate validation</li>
+          <li>Architecture and build-vs-buy decisions</li>
+          <li>Board-level reporting in plain language</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <span class="tag">Embedded</span>
+        <h3>Tech Lead as a service</h3>
+        <p>A hands-on lead who runs your existing developers day to day and raises the bar on everything they ship.</p>
+        <ul>
+          <li>Code review and engineering standards</li>
+          <li>Sprint planning and release management</li>
+          <li>Theme development workflow and CI/CD</li>
+          <li>Mentoring for in-house and freelance devs</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <span class="tag">Delivery</span>
+        <h3>Senior Shopify developers</h3>
+        <p>Senior engineers for custom themes, apps, integrations, and migrations — managed by our own tech lead, not left on their own.</p>
+        <ul>
+          <li>Custom apps, Shopify Functions &amp; checkout extensions</li>
+          <li>Theme development, Online Store 2.0, Liquid</li>
+          <li>Hydrogen &amp; Oxygen headless storefronts</li>
+          <li>Migrations from Magento, WooCommerce, or custom platforms</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <span class="tag">Rescue</span>
+        <h3>Audit &amp; project rescue</h3>
+        <p>For stores in trouble: a deep technical audit, a prioritized fix plan, and the team to execute it.</p>
+        <ul>
+          <li>Full theme, app ecosystem &amp; performance audit</li>
+          <li>Stabilization of broken checkouts and themes</li>
+          <li>Takeover from a previous agency</li>
+          <li>Documented handover — you own everything</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How it works</p>
+      <h2>From first call to full ownership in four steps.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">step 01</span>
+        <h3>Intro call</h3>
+        <p>We learn your business, stack, and pain points. You learn exactly who you'd be working with.</p>
+        <span class="dur">45 min · free</span>
+      </div>
+      <div class="step">
+        <span class="num">step 02</span>
+        <h3>Technical audit</h3>
+        <p>We review your theme, apps, checkout flow, and integrations — and deliver a written report with risks ranked by revenue impact.</p>
+        <span class="dur">5–10 days</span>
+      </div>
+      <div class="step">
+        <span class="num">step 03</span>
+        <h3>Roadmap &amp; model</h3>
+        <p>Together we pick the engagement model and agree a 90-day plan with measurable outcomes, not billable hours.</p>
+        <span class="dur">1 workshop</span>
+      </div>
+      <div class="step">
+        <span class="num">step 04</span>
+        <h3>We take ownership</h3>
+        <p>Your CTO or tech lead starts. Weekly reporting, transparent priorities, and a platform someone finally answers for.</p>
+        <span class="dur">ongoing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Pricing</p>
+      <h2>Simple hourly rates. Capacity in 0.5 FTE steps.</h2>
+      <p>Pick the seniority you need and the capacity you want — from 0.5 FTE (half-time) upwards, scaling in 0.5 FTE increments. No project minimums, no hidden management fees.</p>
+    </div>
+
+    <div class="fte-bar">
+      <span class="lbl">Capacity</span>
+      <div class="fte-opts" role="group" aria-label="Choose capacity in FTE">
+        <button type="button" class="active" data-fte="0.5">0.5 FTE</button>
+        <button type="button" data-fte="1">1.0 FTE</button>
+        <button type="button" data-fte="1.5">1.5 FTE</button>
+        <button type="button" data-fte="2">2.0 FTE</button>
+      </div>
+      <span class="fte-hours" id="fteHours">≈ 80 h / month</span>
+    </div>
+
+    <table class="price-table">
+      <thead>
+        <tr>
+          <th scope="col">Role</th>
+          <th scope="col">Hourly rate</th>
+          <th scope="col">Est. monthly <span id="fteLabel">(0.5 FTE)</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        {site.pricing.map((p) => (
+          <tr>
+            <td class="role">{p.role}<small>{p.desc}</small></td>
+            <td class="rate"><b>€{p.rate}</b> <span>/ hour</span></td>
+            <td class="monthly" data-rate={p.rate}>{"€" + (p.rate * 80).toLocaleString("en-US")}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+
+    <p class="price-note">Monthly estimates assume <code>1 FTE = 160 h/month</code>. Capacity scales in 0.5 FTE steps — mix roles freely, e.g. <code>0.5 FTE CTO + 1.0 FTE Senior</code>. Billing is hourly against actual tracked time.</p>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="creds" id="credentials">
+  <div class="wrap cred-grid">
+    <div>
+      <p class="eyebrow">Why trust us</p>
+      <h2>Deep Shopify expertise. Fluent with the business.</h2>
+      <ul class="cred-list">
+        <li><span class="mark">[✓]</span><span><strong>Shopify Plus specialists</strong> — years of experience building and scaling Plus stores across industries.</span></li>
+        <li><span class="mark">[✓]</span><span><strong>8+ years average</strong> e-commerce experience per senior engineer — from classic themes to Hydrogen headless.</span></li>
+        <li><span class="mark">[✓]</span><span><strong>Merchant-side experience</strong> — we've sat on the client's side of agency calls and know where the hours hide.</span></li>
+        <li><span class="mark">[✓]</span><span><strong>You keep everything</strong> — code, documentation, theme access, and credentials stay in your name from day one.</span></li>
+      </ul>
+    </div>
+    <div>
+      <p class="eyebrow">Stack we work with daily</p>
+      <div class="stack">
+        <b>Platform</b> &nbsp;Shopify <span class="sep">/</span> Shopify Plus <span class="sep">/</span> Shopify Markets<br>
+        <b>Frontend</b> &nbsp;Liquid <span class="sep">/</span> Online Store 2.0 <span class="sep">/</span> Hydrogen <span class="sep">/</span> Remix<br>
+        <b>Backend</b> &nbsp;Node.js <span class="sep">/</span> Shopify Functions <span class="sep">/</span> GraphQL Admin &amp; Storefront APIs<br>
+        <b>Extensions</b> &nbsp;Checkout UI Extensions <span class="sep">/</span> Web Pixels <span class="sep">/</span> Flow <span class="sep">/</span> Shopify Apps<br>
+        <b>Process</b> &nbsp;Theme Kit &amp; CLI <span class="sep">/</span> Git <span class="sep">/</span> CI/CD <span class="sep">/</span> automated testing<br>
+        <b>Integrations</b> &nbsp;ERP <span class="sep">/</span> PIM <span class="sep">/</span> CRM <span class="sep">/</span> payment &amp; shipping providers
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-box">
+      <div>
+        <p class="eyebrow">Start here</p>
+        <h2>Get a free 45-minute tech audit call.</h2>
+        <p>Bring your store URL and your biggest frustration. You'll leave with at least three concrete findings about your platform — whether we work together or not.</p>
+      </div>
+      <ContactForm formName="shopify-contact" buttonLabel="Book my tech audit" note="No sales deck. A senior engineer joins the call." />
+    </div>
+  </div>
+</section>
+
+</main>
+  <Footer tagline="outsourced CTO &amp; tech leads for Shopify Plus." mono="shopify store:fix --owner=us" />
+  <script is:inline>
+(function(){
+  var buttons = document.querySelectorAll('.fte-opts button');
+  var cells = document.querySelectorAll('.price-table .monthly');
+  var hoursEl = document.getElementById('fteHours');
+  var labelEl = document.getElementById('fteLabel');
+  function fmt(n){ return '€' + n.toLocaleString('en-US'); }
+  function update(fte){
+    var hours = Math.round(160 * fte);
+    hoursEl.textContent = '≈ ' + hours + ' h / month';
+    labelEl.textContent = '(' + fte.toFixed(1) + ' FTE)';
+    cells.forEach(function(c){ c.textContent = fmt(Number(c.dataset.rate) * hours); });
+  }
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){
+      buttons.forEach(function(x){ x.classList.remove('active'); });
+      b.classList.add('active');
+      update(parseFloat(b.dataset.fte));
+    });
+  });
+})();
+</script>
+</Base>

@@ -1,0 +1,10 @@
+---
+import site from "../data/site.json";
+const { tagline, mono } = Astro.props;
+---
+<footer>
+  <div class="wrap foot">
+    <p><strong>{site.brand}_</strong> — {tagline}</p>
+    <p class="mono">{mono}</p>
+  </div>
+</footer>

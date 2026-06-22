@@ -1,0 +1,26 @@
+{
+  "brand": "CommerceLead",
+  "email": "hello@example.com",
+  "pricing": [
+    {
+      "role": "Middle+ Developer",
+      "desc": "Certified dev for features & integrations",
+      "rate": 45
+    },
+    {
+      "role": "Senior Developer",
+      "desc": "Complex modules, upgrades, performance work",
+      "rate": 60
+    },
+    {
+      "role": "Tech Lead",
+      "desc": "Runs your dev team: reviews, releases, standards",
+      "rate": 75
+    },
+    {
+      "role": "CTO",
+      "desc": "Strategy, architecture, vendors, board reporting",
+      "rate": 90
+    }
+  ]
+}

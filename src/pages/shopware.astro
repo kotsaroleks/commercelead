@@ -1,0 +1,298 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import site from "../data/site.json";
+import ContactForm from "../components/ContactForm.astro";
+const navLinks = [{label:"Services",href:"#services"},{label:"How it works",href:"#process"},{label:"Pricing",href:"#pricing"},{label:"Credentials",href:"#credentials"}];
+---
+<Base
+  title="Outsourced CTO & Tech Lead for Shopware — Certified Shopware 6 Experts"
+  description="Certified Shopware 6 developers, tech leads and fractional CTOs. Senior technical leadership for your store, without the full-time hire."
+  accent="#189EFF" accentDark="#0E6DC2" accentSoft="#E3F0FB" accentShadow="rgba(24,158,255,.18)">
+  <Header links={navLinks} cta={{ label: "Book a tech audit", href: "#contact" }} />
+  <main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Shopware 6 &middot; Symfony &middot; Headless</p>
+      <h1>Your outsourced <em>CTO &amp; Tech Lead</em> for Shopware.</h1>
+      <p class="lede">Certified Shopware 6 engineers who take ownership of your platform — architecture, releases, performance, and the team that ships it. Senior leadership on demand, without the full-time hire.</p>
+      <div class="hero-ctas">
+        <a class="btn btn--solid" href="#contact">Book a free tech audit</a>
+        <a class="btn btn--ghost" href="#services">See what we own</a>
+      </div>
+      <div class="hero-meta">
+        <span>Shopware certified</span>
+        <span>Shopware 6.6</span>
+        <span>From audit to ownership in 2 weeks</span>
+      </div>
+    </div>
+
+    <!-- signature: the store diagnosis terminal -->
+    <div class="terminal" role="img" aria-label="Terminal showing a Shopware store health diagnosis ending with the recommendation to hire a CTO">
+      <div class="term-bar"><i></i><i></i><i></i><span class="term-title">prod-store-01 — store:diagnose</span></div>
+      <div class="term-body" aria-hidden="true">
+        <span class="ln"><span class="prompt">merchant@prod:~$</span> <span class="cmd">bin/console store:diagnose --full</span></span>
+        <span class="ln"><span class="dim">Scanning platform health…</span></span>
+        <span class="ln"><span class="ok">[OK]</span>&nbsp;&nbsp; Core version&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.6.10.x</span>
+        <span class="ln"><span class="warn">[WARN]</span> 42k messages stuck in the queue</span>
+        <span class="ln"><span class="warn">[WARN]</span> 37 plugins installed, 9 unmaintained</span>
+        <span class="ln"><span class="err">[FAIL]</span> Core files patched directly (3 overrides)</span>
+        <span class="ln"><span class="err">[FAIL]</span> No release process — deploys via FTP</span>
+        <span class="ln"><span class="err">[FAIL]</span> TTFB 2.8s on PDP under load</span>
+        <span class="ln"><span class="dim">──────────────────────────────────</span></span>
+        <span class="ln">Diagnosis: <span class="hl">no one owns the architecture.</span></span>
+        <span class="ln">Recommended fix: <span class="hl">a CTO who knows Shopware.</span> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAINS -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Sound familiar?</p>
+      <h2>The store grows. The platform doesn't keep up.</h2>
+      <p>Most Shopware merchants don't have a technology problem — they have an ownership problem. Nobody senior is accountable for the platform as a whole.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain">
+        <code>release:blocked</code>
+        <h3>Releases take weeks</h3>
+        <p>Every change goes through one overloaded developer or an agency queue. Simple features ship a month late — or break checkout when they do.</p>
+      </div>
+      <div class="pain">
+        <code>upgrade:stalled</code>
+        <h3>Stuck on an old version</h3>
+        <p>The 6.6 upgrade — or the Shopware 5 migration — keeps getting postponed because nobody can predict what 40 plugins will do. Security patches pile up.</p>
+      </div>
+      <div class="pain">
+        <code>budget:overrun</code>
+        <h3>Agency invoices keep growing</h3>
+        <p>You pay for hours, not outcomes. Estimates double mid-task, and you have no independent expert to challenge them.</p>
+      </div>
+      <div class="pain">
+        <code>perf:degraded</code>
+        <h3>Slow site, lost revenue</h3>
+        <p>Pages crawl during campaigns, Core Web Vitals are red, and "add more servers" is the only answer you ever get.</p>
+      </div>
+      <div class="pain">
+        <code>team:adrift</code>
+        <h3>Devs without direction</h3>
+        <p>Your in-house or freelance developers are capable, but no one reviews code, sets standards, or plans the roadmap.</p>
+      </div>
+      <div class="pain">
+        <code>risk:unknown</code>
+        <h3>You can't see the risks</h3>
+        <p>Technical decisions are a black box. You find out about problems when they hit production — and revenue.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What we own</p>
+      <h2>Senior Shopware leadership, packaged the way you need it.</h2>
+      <p>One partner, four engagement models. All delivered by certified Shopware engineers with deep Symfony and e-commerce experience.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <span class="tag">Fractional</span>
+        <h3>Outsourced CTO</h3>
+        <p>A part-time chief technology officer who answers for your platform to the business — strategy, budget, vendors, and risk.</p>
+        <ul>
+          <li>Technology roadmap tied to revenue goals</li>
+          <li>Agency &amp; vendor oversight, estimate validation</li>
+          <li>Architecture and build-vs-buy decisions</li>
+          <li>Board-level reporting in plain language</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <span class="tag">Embedded</span>
+        <h3>Tech Lead as a service</h3>
+        <p>A hands-on lead who runs your existing developers day to day and raises the bar on everything they ship.</p>
+        <ul>
+          <li>Code review and engineering standards</li>
+          <li>Sprint planning and release management</li>
+          <li>CI/CD, environments, and deploy discipline</li>
+          <li>Mentoring for in-house and freelance devs</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <span class="tag">Delivery</span>
+        <h3>Certified Shopware developers</h3>
+        <p>Shopware-certified engineers for features, integrations, and upgrades — managed by our own tech lead, not left on their own.</p>
+        <ul>
+          <li>Custom plugins &amp; apps, ERP/PIM/CRM integrations</li>
+          <li>6.x upgrades, SW5 &rarr; SW6 migrations, patching</li>
+          <li>Storefront themes &amp; headless (Shopware Frontends)</li>
+          <li>Performance &amp; Core Web Vitals work</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <span class="tag">Rescue</span>
+        <h3>Audit &amp; project rescue</h3>
+        <p>For stores in trouble: a deep technical audit, a prioritized fix plan, and the team to execute it.</p>
+        <ul>
+          <li>Full code, infrastructure &amp; security audit</li>
+          <li>Stabilization of failing builds and stores</li>
+          <li>Takeover from a previous agency</li>
+          <li>Documented handover — you own everything</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How it works</p>
+      <h2>From first call to full ownership in four steps.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">step 01</span>
+        <h3>Intro call</h3>
+        <p>We learn your business, stack, and pain points. You learn exactly who you'd be working with.</p>
+        <span class="dur">45 min · free</span>
+      </div>
+      <div class="step">
+        <span class="num">step 02</span>
+        <h3>Technical audit</h3>
+        <p>We read the code, infrastructure, and processes — and deliver a written report with risks ranked by revenue impact.</p>
+        <span class="dur">5–10 days</span>
+      </div>
+      <div class="step">
+        <span class="num">step 03</span>
+        <h3>Roadmap &amp; model</h3>
+        <p>Together we pick the engagement model and agree a 90-day plan with measurable outcomes, not billable hours.</p>
+        <span class="dur">1 workshop</span>
+      </div>
+      <div class="step">
+        <span class="num">step 04</span>
+        <h3>We take ownership</h3>
+        <p>Your CTO or tech lead starts. Weekly reporting, transparent priorities, and a platform someone finally answers for.</p>
+        <span class="dur">ongoing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Pricing</p>
+      <h2>Simple hourly rates. Capacity in 0.5 FTE steps.</h2>
+      <p>Pick the seniority you need and the capacity you want — from 0.5 FTE (half-time) upwards, scaling in 0.5 FTE increments. No project minimums, no hidden management fees.</p>
+    </div>
+
+    <div class="fte-bar">
+      <span class="lbl">Capacity</span>
+      <div class="fte-opts" role="group" aria-label="Choose capacity in FTE">
+        <button type="button" class="active" data-fte="0.5">0.5 FTE</button>
+        <button type="button" data-fte="1">1.0 FTE</button>
+        <button type="button" data-fte="1.5">1.5 FTE</button>
+        <button type="button" data-fte="2">2.0 FTE</button>
+      </div>
+      <span class="fte-hours" id="fteHours">≈ 80 h / month</span>
+    </div>
+
+    <table class="price-table">
+      <thead>
+        <tr>
+          <th scope="col">Role</th>
+          <th scope="col">Hourly rate</th>
+          <th scope="col">Est. monthly <span id="fteLabel">(0.5 FTE)</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        {site.pricing.map((p) => (
+          <tr>
+            <td class="role">{p.role}<small>{p.desc}</small></td>
+            <td class="rate"><b>€{p.rate}</b> <span>/ hour</span></td>
+            <td class="monthly" data-rate={p.rate}>{"€" + (p.rate * 80).toLocaleString("en-US")}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+
+    <p class="price-note">Monthly estimates assume <code>1 FTE = 160 h/month</code>. Capacity scales in 0.5 FTE steps — mix roles freely, e.g. <code>0.5 FTE CTO + 1.0 FTE Senior</code>. Billing is hourly against actual tracked time.</p>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="creds" id="credentials">
+  <div class="wrap cred-grid">
+    <div>
+      <p class="eyebrow">Why trust us</p>
+      <h2>Certified on the platform. Fluent with the business.</h2>
+      <ul class="cred-list">
+        <li><span class="mark">[✓]</span><span><strong>Shopware Certified</strong> — Certified Developer &amp; Advanced Developer certifications across the team.</span></li>
+        <li><span class="mark">[✓]</span><span><strong>8+ years average</strong> e-commerce experience per senior engineer — from Shopware 5 migrations to 6.6 and headless.</span></li>
+        <li><span class="mark">[✓]</span><span><strong>Merchant-side experience</strong> — we've sat on the client's side of agency calls and know where the hours hide.</span></li>
+        <li><span class="mark">[✓]</span><span><strong>You keep everything</strong> — code, documentation, infrastructure access, and credentials stay in your name from day one.</span></li>
+      </ul>
+    </div>
+    <div>
+      <p class="eyebrow">Stack we work with daily</p>
+      <div class="stack">
+        <b>Platform</b> &nbsp;Shopware 6 <span class="sep">/</span> Rise <span class="sep">/</span> Evolve <span class="sep">/</span> Beyond<br>
+        <b>Frontend</b> &nbsp;Twig Storefront <span class="sep">/</span> Shopware Frontends <span class="sep">/</span> headless<br>
+        <b>Backend</b> &nbsp;PHP 8.x <span class="sep">/</span> Symfony <span class="sep">/</span> MySQL <span class="sep">/</span> Elasticsearch <span class="sep">/</span> OpenSearch <span class="sep">/</span> Redis <span class="sep">/</span> RabbitMQ<br>
+        <b>Infra</b> &nbsp;Shopware PaaS <span class="sep">/</span> AWS <span class="sep">/</span> Docker <span class="sep">/</span> Varnish <span class="sep">/</span> CDN &amp; WAF<br>
+        <b>Process</b> &nbsp;Git flow <span class="sep">/</span> CI/CD <span class="sep">/</span> automated testing <span class="sep">/</span> New Relic &amp; observability<br>
+        <b>Integrations</b> &nbsp;ERP <span class="sep">/</span> PIM <span class="sep">/</span> CRM <span class="sep">/</span> payment &amp; shipping providers
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-box">
+      <div>
+        <p class="eyebrow">Start here</p>
+        <h2>Get a free 45-minute tech audit call.</h2>
+        <p>Bring your store URL and your biggest frustration. You'll leave with at least three concrete findings about your platform — whether we work together or not.</p>
+      </div>
+      <ContactForm formName="shopware-contact" buttonLabel="Book my tech audit" note="No sales deck. A senior engineer joins the call." />
+    </div>
+  </div>
+</section>
+
+</main>
+  <Footer tagline="outsourced CTO &amp; tech leads for Shopware 6." mono="bin/console store:fix --owner=us" />
+  <script is:inline>
+(function(){
+  var buttons = document.querySelectorAll('.fte-opts button');
+  var cells = document.querySelectorAll('.price-table .monthly');
+  var hoursEl = document.getElementById('fteHours');
+  var labelEl = document.getElementById('fteLabel');
+  function fmt(n){ return '\u20ac' + n.toLocaleString('en-US'); }
+  function update(fte){
+    var hours = Math.round(160 * fte);
+    hoursEl.textContent = '\u2248 ' + hours + ' h / month';
+    labelEl.textContent = '(' + fte.toFixed(1) + ' FTE)';
+    cells.forEach(function(c){ c.textContent = fmt(Number(c.dataset.rate) * hours); });
+  }
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){
+      buttons.forEach(function(x){ x.classList.remove('active'); });
+      b.classList.add('active');
+      update(parseFloat(b.dataset.fte));
+    });
+  });
+})();
+</script>
+</Base>

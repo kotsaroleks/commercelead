@@ -1,0 +1,31 @@
+---
+const { formName = "contact", buttonLabel = "Send message", note } = Astro.props;
+---
+<form
+  name={formName}
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  action="/thanks"
+  class="contact-form">
+  <input type="hidden" name="form-name" value={formName} />
+  <p class="hp"><label>Leave this empty: <input name="bot-field" /></label></p>
+  <div class="field">
+    <label for={`${formName}-name`}>Name</label>
+    <input id={`${formName}-name`} name="name" type="text" required autocomplete="name" />
+  </div>
+  <div class="field">
+    <label for={`${formName}-email`}>Email</label>
+    <input id={`${formName}-email`} name="email" type="email" required autocomplete="email" />
+  </div>
+  <div class="field">
+    <label for={`${formName}-store`}>Store URL</label>
+    <input id={`${formName}-store`} name="store" type="url" placeholder="https://" />
+  </div>
+  <div class="field">
+    <label for={`${formName}-message`}>Your biggest technical headache</label>
+    <textarea id={`${formName}-message`} name="message" rows="3" required></textarea>
+  </div>
+  <button type="submit" class="btn btn--solid">{buttonLabel}</button>
+  {note && <p class="note">{note}</p>}
+</form>

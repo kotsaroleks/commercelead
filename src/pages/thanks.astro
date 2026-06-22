@@ -1,0 +1,22 @@
+---
+import Base from "../layouts/Base.astro";
+---
+<Base
+  title="Thanks — we'll be in touch"
+  description="Your message was received."
+  accent="#0F8C6C" accentDark="#0B6B53" accentSoft="#E3F1EC" accentShadow="rgba(15,140,108,.16)">
+  <main class="thanks">
+    <div class="wrap">
+      <p class="eyebrow">Message received</p>
+      <h1>Thanks — that's landed with us.</h1>
+      <p class="lede">A senior engineer will reply personally, usually within one working day. If it's urgent, just reply to the confirmation email.</p>
+      <a class="btn btn--ghost" href="/">← Back to homepage</a>
+    </div>
+  </main>
+  <style>
+    .thanks{padding:120px 0}
+    .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:18px}
+    h1{font-family:'Archivo',sans-serif;font-weight:850;font-stretch:90%;font-size:clamp(2.2rem,4vw,3.2rem);line-height:1.05;letter-spacing:-.025em;margin-bottom:18px}
+    .lede{font-size:1.15rem;color:var(--slate);max-width:34em;margin-bottom:34px}
+  </style>
+</Base>

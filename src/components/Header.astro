@@ -1,0 +1,13 @@
+---
+import site from "../data/site.json";
+const { links = [], cta } = Astro.props;
+---
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><span class="dot"></span>{site.brand}<span style="color:var(--accent)">_</span></a>
+    <ul class="nav-links">
+      {links.map((l) => (<li><a href={l.href}>{l.label}</a></li>))}
+    </ul>
+    <a class="btn btn--solid" href={cta.href}>{cta.label}</a>
+  </div>
+</header>

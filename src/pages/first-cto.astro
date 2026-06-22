@@ -1,0 +1,236 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import site from "../data/site.json";
+import ContactForm from "../components/ContactForm.astro";
+const navLinks = [{label:"What's a CTO?",href:"#what"},{label:"Do I need one?",href:"#signs"},{label:"What it costs",href:"#cost"},{label:"FAQ",href:"#faq"}];
+---
+<Base
+  title="Your First CTO — Technical Leadership for Stores Without an IT Department"
+  description="You run a successful online store but have no in-house IT. A fractional CTO gives you someone on your side of the table."
+  accent="#0F8C6C" accentDark="#0B6B53" accentSoft="#E3F1EC" accentShadow="rgba(15,140,108,.16)">
+  <Header links={navLinks} cta={{ label: "Book a friendly call", href: "#contact" }} />
+  <main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">For merchants without an IT department</p>
+      <h1>Your store deserves <em>its first CTO</em>.</h1>
+      <p class="lede">You built a successful online business. But every technical decision — hosting, agencies, upgrades, budgets — still lands on your desk, in a language you never signed up to learn. A fractional CTO is the technical brain on <strong>your</strong> side of the table, a few days a month.</p>
+      <div class="hero-ctas">
+        <a class="btn btn--solid" href="#contact">Book a friendly intro call</a>
+        <a class="btn btn--ghost" href="#what">First — what is a CTO?</a>
+      </div>
+      <div class="hero-meta">
+        <span>No jargon, ever</span>
+        <span>From 0.5 days/week</span>
+        <span>Magento &amp; Shopware experts</span>
+      </div>
+    </div>
+
+    <!-- signature: the agency-email translator -->
+    <div class="translator">
+      <div class="tr-head"><b>This week's agency email</b><span>translated</span></div>
+      <div class="tr-row">
+        <p class="tr-they">"We recommend refactoring the legacy checkout module before implementing the new feature. Estimate: 120 hours."</p>
+        <p class="tr-means">Maybe necessary, maybe padding. Your CTO reviews the code and either approves it — or cuts it to 40 hours with proof.</p>
+      </div>
+      <div class="tr-row">
+        <p class="tr-they">"The site went down due to unexpected load. We suggest upgrading the server plan."</p>
+        <p class="tr-means">Bigger servers hide problems, they don't fix them. Your CTO asks why the site can't handle a normal sale — and gets it fixed.</p>
+      </div>
+      <div class="tr-row">
+        <p class="tr-they">"The platform upgrade is high-risk and should be postponed to next quarter."</p>
+        <p class="tr-means">Every postponed upgrade gets more expensive. Your CTO tells you the real risk of waiting — in euros, not adjectives.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IS A CTO -->
+<section class="explain" id="what">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">A 60-second explainer</p>
+      <h2>Developer, agency, CTO — who does what?</h2>
+      <p>These three roles get mixed up constantly, and that confusion is exactly where money leaks. Here's the difference in plain terms.</p>
+    </div>
+    <div class="explain-grid">
+      <div class="who">
+        <span class="role-tag">Builds things</span>
+        <h3>A developer</h3>
+        <p>Writes the code. Great developers solve the task in front of them — but someone has to decide <em>which</em> tasks are worth doing, and check the work.</p>
+      </div>
+      <div class="who">
+        <span class="role-tag">Sells &amp; delivers things</span>
+        <h3>An agency</h3>
+        <p>A team of developers you rent. Useful — but the agency profits from billing more hours. Without your own expert, nobody independent checks their estimates or their code.</p>
+      </div>
+      <div class="who who--hl">
+        <span class="role-tag">Decides &amp; protects</span>
+        <h3>A CTO</h3>
+        <p>Your technical decision-maker. Sets the direction, controls the budget, supervises developers and agencies, and translates everything into business language. <strong>Works for you, sells you nothing.</strong></p>
+      </div>
+    </div>
+    <p class="explain-note"><b>Fractional simply means part-time.</b> Large companies have a full-time CTO. You probably need one for half a day to a couple of days per week — so you pay for exactly that, and nothing more.</p>
+  </div>
+</section>
+
+<!-- SIGNS -->
+<section id="signs">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">A quick self-check</p>
+      <h2>Six signs your store has outgrown "no IT department".</h2>
+    </div>
+    <div class="signs">
+      <div class="sign"><span class="tick">?</span><p>You approve agency invoices <strong>without being able to judge</strong> whether the hours are fair.</p></div>
+      <div class="sign"><span class="tick">?</span><p>Technical conversations make you nod along — and decide later, alone, <strong>hoping for the best</strong>.</p></div>
+      <div class="sign"><span class="tick">?</span><p>The website breaks during your <strong>biggest campaigns</strong>, and nobody can tell you why it keeps happening.</p></div>
+      <div class="sign"><span class="tick">?</span><p>Important upgrades and security patches keep being <strong>postponed</strong> — by you, because the risk feels unclear.</p></div>
+      <div class="sign"><span class="tick">?</span><p>If your developer or agency disappeared tomorrow, <strong>nobody in your company</strong> could even access everything.</p></div>
+      <div class="sign"><span class="tick">?</span><p>You have growth plans — new markets, new systems — but <strong>no one to tell you</strong> what the technology side will take.</p></div>
+    </div>
+    <p class="signs-foot">If you recognized <b>two or more</b>, the problem isn't your developers or your agency. It's that nobody is in charge.</p>
+  </div>
+</section>
+
+<!-- WHAT YOUR CTO DOES -->
+<section class="dark" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What you actually get</p>
+      <h2>What your first CTO does — month one and beyond.</h2>
+      <p>No abstract "strategy". Here's the concrete work, in the order it happens.</p>
+    </div>
+    <div class="phases">
+      <div class="phase">
+        <span class="when">Weeks 1–2 · Understand</span>
+        <h3>Learn your business &amp; stack</h3>
+        <ul>
+          <li>Sits with you to map goals, worries, and plans</li>
+          <li>Reviews your store, hosting, and contracts</li>
+          <li>Collects all accounts &amp; access into your name</li>
+          <li>Talks to your developers and agency</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <span class="when">Weeks 3–4 · Report</span>
+        <h3>Give you the full picture</h3>
+        <ul>
+          <li>A written report in plain language</li>
+          <li>Risks ranked by impact on revenue</li>
+          <li>What you're overpaying for — and underinvesting in</li>
+          <li>A 90-day plan you can actually understand</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <span class="when">Ongoing · Protect &amp; grow</span>
+        <h3>Run technology for you</h3>
+        <ul>
+          <li>Reviews every estimate before you pay it</li>
+          <li>Supervises agency &amp; developer work quality</li>
+          <li>Plans upgrades so they stop being scary</li>
+          <li>Joins your key meetings as "your technical person"</li>
+        </ul>
+      </div>
+    </div>
+    <p class="promise">From day one, there is finally one person whose job is to make technology boring for you: working, predictable, and on budget.</p>
+  </div>
+</section>
+
+<!-- COST -->
+<section class="cost" id="cost">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What it costs</p>
+      <h2>A fraction of a hire. Often cheaper than the problems.</h2>
+      <p>Compare your realistic options for getting senior technical leadership.</p>
+    </div>
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th scope="col">Option</th>
+          <th scope="col">Cost</th>
+          <th scope="col">The catch</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="opt">Full-time CTO<small>An employee on your payroll</small></td>
+          <td class="price"><b>€120–180k</b> / year + recruiting</td>
+          <td>Hard to find, hard to assess, and most stores don't have full-time CTO work to give them.</td>
+        </tr>
+        <tr>
+          <td class="opt">Trusting the agency<small>The default "option"</small></td>
+          <td class="price"><b>€0</b> visible / unknown hidden</td>
+          <td>The advisor and the seller are the same company. Padded estimates and postponed upgrades are invisible costs.</td>
+        </tr>
+        <tr class="hl">
+          <td class="opt">Fractional CTO<small>Starting at 0.5 days/week, scale as needed</small></td>
+          <td class="price">from <b>€1,800</b> / month</td>
+          <td>You share your CTO with a few other merchants. For most stores under €20M revenue, that's exactly right.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="cost-note">Example: <code>0.5 days/week ≈ 20 h/month × €90/h = €1,800</code>. Most first-CTO engagements settle between 0.5 and 1.5 days per week. No long-term lock-in — monthly notice.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Honest answers</p>
+      <h2>Questions merchants always ask first.</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq">
+        <summary>Do I have to fire my current agency or developer?</summary>
+        <p>Almost never. In most cases your current partners are fine — they just need supervision, clear priorities, and someone checking the work. Your CTO makes them better. If a partner truly needs replacing, you'll get the evidence and a managed transition, not a sudden gap.</p>
+      </details>
+      <details class="faq">
+        <summary>I'm not technical. Will I understand what's going on?</summary>
+        <p>That's the whole point. Your CTO's first job is translation: every report, every recommendation, every risk arrives in business language — euros, dates, and customer impact. If you ever hear a word you don't understand, that's our mistake, not yours.</p>
+      </details>
+      <details class="faq">
+        <summary>Does the CTO write code too?</summary>
+        <p>The CTO role is about decisions and oversight, not day-to-day coding. But behind your CTO stands our team of certified Magento and Shopware developers — so when something needs building or fixing, you can use them, your existing partners, or both. Your CTO has no incentive to push our developers on you; their loyalty is to your budget.</p>
+      </details>
+      <details class="faq">
+        <summary>Which platforms do you cover?</summary>
+        <p>We're deepest in Magento (Adobe Commerce) and Shopware, with certified engineers on both. For other platforms we can usually still help with vendor oversight, budgeting, and strategy — tell us what you run on the intro call.</p>
+      </details>
+      <details class="faq">
+        <summary>What if I only need help for a few months?</summary>
+        <p>That's fine. Some merchants bring in a CTO just to get through an upgrade, a replatforming decision, or an agency change — and then scale down to a few hours a month of "keeping an eye on things". The engagement is monthly; it shrinks and grows with your needs.</p>
+      </details>
+      <details class="faq">
+        <summary>How is this different from hiring a consultant?</summary>
+        <p>A consultant gives you a report and leaves. Your fractional CTO stays accountable for the outcome: they make the plan, supervise the execution, and answer to you when the next campaign day comes. Same person, every month, who knows your business.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-box">
+      <div>
+        <p class="eyebrow">No-pressure start</p>
+        <h2>Talk to your future CTO for 45 minutes. Free.</h2>
+        <p>Bring your store URL and the technical question that's been bugging you longest. You'll get straight answers in plain language — and a clear sense of whether a fractional CTO is right for you. If it isn't, we'll say so.</p>
+      </div>
+      <ContactForm formName="firstcto-contact" buttonLabel="Book my free call" note="You talk to a real CTO, not a salesperson." />
+    </div>
+  </div>
+</section>
+
+</main>
+  <Footer tagline="fractional CTOs &amp; certified developers for Magento and Shopware stores." mono="finally, someone in charge." />
+  
+</Base>
