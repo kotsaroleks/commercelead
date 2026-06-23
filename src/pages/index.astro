@@ -6,6 +6,7 @@ const navLinks = [
   { label: "Magento", href: "/magento" },
   { label: "Shopware", href: "/shopware" },
   { label: "First CTO", href: "/first-cto" },
+  { label: "Services", href: "#services" },
 ];
 const cards = [
   {
@@ -34,6 +35,44 @@ const cards = [
     for: "For founders & non-technical owners",
     color: "#0F8C6C",
     dark: "#0B6B53",
+  },
+];
+const serviceCards = [
+  {
+    href: "/tech-audit",
+    tag: "Fixed price · €490",
+    title: "E-commerce Tech Audit",
+    desc: "A senior engineer reviews your entire store — code, infra, performance, security — and delivers a 40+ page report with a prioritized fix plan.",
+    for: "For any platform · 10 business days",
+    color: "#6C3AED",
+    dark: "#5228BB",
+  },
+  {
+    href: "/estimate-review",
+    tag: "Fixed price · €290",
+    title: "Agency Estimate Review",
+    desc: "Send us your agency's quote. We tell you what's fair, what's inflated, and what's missing — with a push-back script you can use tomorrow.",
+    for: "For merchants working with agencies",
+    color: "#E6520F",
+    dark: "#B8410C",
+  },
+  {
+    href: "/speed-audit",
+    tag: "Fixed price · €390",
+    title: "Speed & Core Web Vitals Audit",
+    desc: "We measure every critical page, calculate the revenue you're losing to slow load times, and rank fixes by ROI.",
+    for: "For any platform · 7 business days",
+    color: "#0891B2",
+    dark: "#0E7490",
+  },
+  {
+    href: "/due-diligence",
+    tag: "M&A · PE · VC",
+    title: "Technical Due Diligence",
+    desc: "Independent assessment of an e-commerce asset's technology before acquisition — platform, team, debt, and hidden capex.",
+    for: "For investors & acquirers",
+    color: "#1E293B",
+    dark: "#0F172A",
   },
 ];
 ---
@@ -72,10 +111,31 @@ const cards = [
         </div>
       </div>
     </section>
+
+    <section class="services-section" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Productized services</p>
+          <h2>Fixed-price services — no proposal needed.</h2>
+          <p>Clear scope, fixed price, guaranteed delivery. Pick what you need and order today.</p>
+        </div>
+        <div class="cards">
+          {serviceCards.map((c) => (
+            <a class="card" href={c.href} style={`--c:${c.color};--cd:${c.dark};`}>
+              <span class="tag">{c.tag}</span>
+              <h2>{c.title}</h2>
+              <p>{c.desc}</p>
+              <span class="aud">{c.for}</span>
+              <span class="go">Learn more →</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
   </main>
 
   <Footer
-    tagline="fractional CTOs &amp; certified developers for Magento and Shopware stores."
+    tagline="fractional CTOs, certified developers &amp; fixed-price audits for e-commerce."
     mono="pick a path ↑" />
 
   <style>
@@ -99,6 +159,12 @@ const cards = [
     .card p{font-size:.96rem;color:var(--slate);flex:1}
     .card .aud{font-size:.84rem;color:var(--ink);font-weight:600;border-top:1px solid var(--line);padding-top:14px}
     .card .go{font-family:'IBM Plex Mono',monospace;font-size:.85rem;font-weight:600;color:var(--cd)}
-    @media(max-width:820px){.cards{grid-template-columns:1fr}.hub-hero{padding:64px 0 48px}.paths{padding:48px 0 64px}}
+    .services-section{padding:0 0 100px;border-top:1px solid var(--line)}
+    .services-section .section-head{text-align:center;max-width:38em;margin:70px auto 40px}
+    .services-section .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin-bottom:12px}
+    .services-section h2{font-family:'Archivo',sans-serif;font-weight:850;font-stretch:90%;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.1;letter-spacing:-.02em;margin-bottom:14px}
+    .services-section .section-head p{font-size:1.05rem;color:var(--slate)}
+    .services-section .cards{grid-template-columns:repeat(2,1fr)}
+    @media(max-width:820px){.cards{grid-template-columns:1fr}.hub-hero{padding:64px 0 48px}.paths{padding:48px 0 64px}.services-section{padding:0 0 64px}}
   </style>
 </Base>

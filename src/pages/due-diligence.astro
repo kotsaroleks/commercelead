@@ -1,0 +1,184 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ContactForm from "../components/ContactForm.astro";
+const navLinks = [{label:"What we cover",href:"#scope"},{label:"How it works",href:"#process"},{label:"Who hires us",href:"#who"},{label:"Contact",href:"#contact"}];
+---
+<Base
+  title="Technical Due Diligence for E-commerce — M&A & PE | CommerceLead"
+  description="Independent technical due diligence for e-commerce acquisitions. We assess the platform, team, tech debt, and scalability before you sign."
+  accent="#1E293B" accentDark="#0F172A" accentSoft="#F1F5F9" accentShadow="rgba(30,41,59,.18)">
+  <Header links={navLinks} cta={{ label: "Request a proposal", href: "#contact" }} />
+  <main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">M&amp;A &middot; Private Equity &middot; Venture Capital</p>
+      <h1>Technical due diligence for <em>e-commerce acquisitions.</em></h1>
+      <p class="lede">Before you invest in or acquire an e-commerce business, we assess the technology behind the revenue. Platform health, scalability, tech debt, team capability, and hidden risks — all in one independent report your deal team can act on.</p>
+      <div class="hero-ctas">
+        <a class="btn btn--solid" href="#contact">Request a proposal</a>
+        <a class="btn btn--ghost" href="#scope">See full scope</a>
+      </div>
+      <div class="hero-meta">
+        <span>NDA-first engagement</span>
+        <span>Report in 2–3 weeks</span>
+        <span>Deal-team-ready deliverables</span>
+      </div>
+    </div>
+
+    <div class="terminal" role="img" aria-label="Terminal showing a due diligence summary">
+      <div class="term-bar"><i></i><i></i><i></i><span class="term-title">due-diligence — exec summary</span></div>
+      <div class="term-body" aria-hidden="true">
+        <span class="ln"><span class="prompt">dd@cl:~$</span> <span class="cmd">diligence:report --target=acme-store</span></span>
+        <span class="ln"><span class="dim">Compiling executive summary…</span></span>
+        <span class="ln"><span class="ok">[STRONG]</span>&nbsp; Revenue engine — proven at €4M ARR</span>
+        <span class="ln"><span class="warn">[RISK]</span>&nbsp;&nbsp;&nbsp; Platform 2 major versions behind</span>
+        <span class="ln"><span class="warn">[RISK]</span>&nbsp;&nbsp;&nbsp; Single senior dev — key-person dependency</span>
+        <span class="ln"><span class="err">[CRITICAL]</span> €180k migration debt within 18 months</span>
+        <span class="ln"><span class="dim">──────────────────────────────────</span></span>
+        <span class="ln">Tech score: <span class="hl">6.2 / 10</span></span>
+        <span class="ln">Hidden capex: <span class="hl">€180k–€240k in 18 months</span></span>
+        <span class="ln">Verdict: <span class="hl">proceed — adjust valuation</span> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCOPE -->
+<section id="scope">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What we cover</p>
+      <h2>Everything a deal team needs to price the technology.</h2>
+      <p>We assess the full technology stack, team, and processes — and translate every finding into financial impact your analysts can model.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <span class="tag">Platform</span>
+        <h3>Platform &amp; architecture</h3>
+        <p>Version currency, upgrade path, customization quality, scalability ceiling. Can this platform support the growth plan?</p>
+      </div>
+      <div class="svc">
+        <span class="tag">Code</span>
+        <h3>Code quality &amp; tech debt</h3>
+        <p>Codebase health, test coverage, documentation, dependency risks. We quantify the debt in hours and euros.</p>
+      </div>
+      <div class="svc">
+        <span class="tag">Infra</span>
+        <h3>Infrastructure &amp; security</h3>
+        <p>Hosting, disaster recovery, compliance posture, PCI scope, and operational maturity.</p>
+      </div>
+      <div class="svc">
+        <span class="tag">Team</span>
+        <h3>Team &amp; knowledge risk</h3>
+        <p>Key-person dependencies, bus factor, documentation gaps, and what happens if senior people leave post-acquisition.</p>
+      </div>
+      <div class="svc">
+        <span class="tag">Capex</span>
+        <h3>Hidden capex forecast</h3>
+        <p>Mandatory future spend: version upgrades, license changes, EOL migrations, security remediations. Mapped to a 24-month timeline.</p>
+      </div>
+      <div class="svc">
+        <span class="tag">Score</span>
+        <h3>Executive summary &amp; tech score</h3>
+        <p>A 2-page executive summary with a 1–10 tech score, traffic-light risk matrix, and valuation adjustment recommendation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How it works</p>
+      <h2>Structured to fit your deal timeline.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">step 01</span>
+        <h3>NDA &amp; scoping</h3>
+        <p>We sign your NDA, review the CIM, and agree on scope, timeline, and access requirements.</p>
+        <span class="dur">1–2 days</span>
+      </div>
+      <div class="step">
+        <span class="num">step 02</span>
+        <h3>Data room &amp; access</h3>
+        <p>We request code access, infrastructure credentials, and a 60-minute call with the target's technical team.</p>
+        <span class="dur">days 2–4</span>
+      </div>
+      <div class="step">
+        <span class="num">step 03</span>
+        <h3>Deep assessment</h3>
+        <p>Two senior engineers review the full stack — code, infra, security, processes, and team structure.</p>
+        <span class="dur">1–2 weeks</span>
+      </div>
+      <div class="step">
+        <span class="num">step 04</span>
+        <h3>Report &amp; debrief</h3>
+        <p>Written report with executive summary, detailed findings, risk matrix, capex forecast, and a live debrief with your deal team.</p>
+        <span class="dur">week 2–3</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section id="who">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Who hires us</p>
+      <h2>Investors and acquirers who want to price the tech, not guess.</h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain">
+        <code>buyer:pe</code>
+        <h3>Private equity firms</h3>
+        <p>Acquiring e-commerce businesses and need to understand what's under the hood before closing — and what it'll cost post-close.</p>
+      </div>
+      <div class="pain">
+        <code>buyer:strategic</code>
+        <h3>Strategic acquirers</h3>
+        <p>E-commerce companies buying competitors or adjacent brands. You need to know if the tech integrates — or becomes a rewrite.</p>
+      </div>
+      <div class="pain">
+        <code>buyer:founder</code>
+        <h3>Founders buying businesses</h3>
+        <p>Acquiring a store on a marketplace or through a broker. The financials look good — but is the technology a ticking time bomb?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="creds">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Why us</p>
+      <h2>E-commerce specialists, not generalist consultants.</h2>
+      <p>We don't assess "software companies." We assess e-commerce platforms — Magento, Shopware, Shopify, and custom builds. That specialization means we know exactly where the risks hide and what they cost, because we've fixed them in production.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-box">
+      <div>
+        <p class="eyebrow">Start the conversation</p>
+        <h2>Request a proposal — NDA-first, scoped to your timeline.</h2>
+        <p>Tell us about the target (platform, approximate size, deal timeline) and we'll respond with a tailored proposal within 48 hours.</p>
+      </div>
+      <ContactForm formName="due-diligence-inquiry" buttonLabel="Request proposal" note="NDA-first. We respond within 48 hours." />
+    </div>
+  </div>
+</section>
+
+</main>
+  <Footer tagline="technical due diligence for e-commerce acquisitions." mono="diligence:run --nda --deal-ready" />
+</Base>

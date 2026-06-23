@@ -1,0 +1,183 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ContactForm from "../components/ContactForm.astro";
+const navLinks = [{label:"What you get",href:"#deliverables"},{label:"How it works",href:"#process"},{label:"Who it's for",href:"#who"},{label:"Order",href:"#contact"}];
+---
+<Base
+  title="E-commerce Tech Audit — €490 Fixed Price | CommerceLead"
+  description="A senior engineer reviews your Magento, Shopware or Shopify store top to bottom. Fixed €490 price, written report in 10 days, zero risk."
+  accent="#6C3AED" accentDark="#5228BB" accentSoft="#EDE9FE" accentShadow="rgba(108,58,237,.18)">
+  <Header links={navLinks} cta={{ label: "Order your audit", href: "#contact" }} />
+  <main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Magento &middot; Shopware &middot; Shopify</p>
+      <h1>A full tech audit of your store — <em>€490, fixed price.</em></h1>
+      <p class="lede">A senior e-commerce engineer reviews your codebase, infrastructure, performance, and security top to bottom. You get a written report with every risk ranked by revenue impact — and a clear roadmap to fix them.</p>
+      <div class="hero-ctas">
+        <a class="btn btn--solid" href="#contact">Order for €490</a>
+        <a class="btn btn--ghost" href="#deliverables">See what's included</a>
+      </div>
+      <div class="hero-meta">
+        <span>Fixed price — no surprises</span>
+        <span>Report in 10 business days</span>
+        <span>100% money-back guarantee</span>
+      </div>
+    </div>
+
+    <div class="terminal" role="img" aria-label="Terminal showing an audit report summary">
+      <div class="term-bar"><i></i><i></i><i></i><span class="term-title">audit-report — summary</span></div>
+      <div class="term-body" aria-hidden="true">
+        <span class="ln"><span class="prompt">auditor@cl:~$</span> <span class="cmd">audit:summarize --format=brief</span></span>
+        <span class="ln"><span class="dim">Compiling findings…</span></span>
+        <span class="ln"><span class="err">[CRITICAL]</span> 3 findings — est. revenue risk €12k/mo</span>
+        <span class="ln"><span class="warn">[HIGH]</span>&nbsp;&nbsp;&nbsp;&nbsp; 5 findings — performance &amp; security</span>
+        <span class="ln"><span class="ok">[MEDIUM]</span>&nbsp;&nbsp; 8 findings — maintenance debt</span>
+        <span class="ln"><span class="dim">──────────────────────────────────</span></span>
+        <span class="ln">Total: <span class="hl">16 findings, 42 pages</span></span>
+        <span class="ln">Roadmap: <span class="hl">prioritized by $ impact</span></span>
+        <span class="ln">Next step: <span class="hl">book the debrief call</span> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERABLES -->
+<section id="deliverables">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What you get</p>
+      <h2>A 40+ page report. Not a checklist — a diagnosis.</h2>
+      <p>Every finding is explained in plain language, ranked by business impact, and comes with a concrete fix recommendation.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <span class="tag">Code</span>
+        <h3>Codebase review</h3>
+        <p>Architecture quality, custom code, plugin/app conflicts, upgrade blockers, and technical debt that's costing you.</p>
+      </div>
+      <div class="svc">
+        <span class="tag">Performance</span>
+        <h3>Speed &amp; Core Web Vitals</h3>
+        <p>Page load times, TTFB, LCP, CLS under realistic traffic. We quantify the revenue you're losing to slow pages.</p>
+      </div>
+      <div class="svc">
+        <span class="tag">Security</span>
+        <h3>Security &amp; compliance</h3>
+        <p>Patch levels, exposed endpoints, admin access patterns, PCI-relevant gaps, and GDPR data handling.</p>
+      </div>
+      <div class="svc">
+        <span class="tag">Infra</span>
+        <h3>Infrastructure &amp; ops</h3>
+        <p>Hosting setup, caching layers, deploy process, monitoring, backups, and disaster recovery readiness.</p>
+      </div>
+      <div class="svc">
+        <span class="tag">Roadmap</span>
+        <h3>Prioritized fix plan</h3>
+        <p>Every finding ranked by revenue impact × effort. You know exactly what to fix first — and what it should cost.</p>
+      </div>
+      <div class="svc">
+        <span class="tag">Call</span>
+        <h3>60-min debrief</h3>
+        <p>Walk through the report with the engineer who wrote it. Ask anything. Bring your team or your agency.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How it works</p>
+      <h2>Order today, report in 10 business days.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">step 01</span>
+        <h3>Order &amp; access</h3>
+        <p>Fill out the form, we invoice €490. Once paid, we request read-only access to your code, hosting, and analytics.</p>
+        <span class="dur">day 1</span>
+      </div>
+      <div class="step">
+        <span class="num">step 02</span>
+        <h3>Deep review</h3>
+        <p>A senior engineer spends 2–3 focused days reviewing every layer of your store — code, infra, performance, security.</p>
+        <span class="dur">days 2–8</span>
+      </div>
+      <div class="step">
+        <span class="num">step 03</span>
+        <h3>Written report</h3>
+        <p>You receive a 40+ page PDF with findings, risk ratings, screenshots, and the prioritized fix roadmap.</p>
+        <span class="dur">day 10</span>
+      </div>
+      <div class="step">
+        <span class="num">step 04</span>
+        <h3>Debrief call</h3>
+        <p>60-minute video call to walk through everything. Bring your developers, your agency, or your board.</p>
+        <span class="dur">day 11–12</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section id="who">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Who it's for</p>
+      <h2>Three situations where this audit pays for itself in a week.</h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain">
+        <code>ownership:new</code>
+        <h3>You just took over a store</h3>
+        <p>Inherited a codebase from a previous agency or developer? The audit tells you exactly what you're sitting on — before it surprises you.</p>
+      </div>
+      <div class="pain">
+        <code>growth:stalled</code>
+        <h3>Revenue is growing, tech isn't keeping up</h3>
+        <p>Site is slower, releases take longer, bills keep climbing. The audit shows you what's actually wrong — not what your agency says.</p>
+      </div>
+      <div class="pain">
+        <code>trust:verify</code>
+        <h3>You want a second opinion</h3>
+        <p>Your agency says everything is fine. Your gut says otherwise. €490 buys you an independent, expert answer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="creds">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Zero risk</p>
+      <h2>100% money-back guarantee.</h2>
+      <p>If the audit doesn't surface at least three findings you didn't know about, we refund every cent. No questions, no forms. We've never had to.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-box">
+      <div>
+        <p class="eyebrow">Order your audit</p>
+        <h2>€490 — fixed price, 10-day delivery, money-back guarantee.</h2>
+        <p>Tell us your platform and store URL. We'll send an invoice and get started as soon as access is granted.</p>
+      </div>
+      <ContactForm formName="tech-audit-order" buttonLabel="Order for €490" note="We invoice via Stripe. Report delivered as PDF." />
+    </div>
+  </div>
+</section>
+
+</main>
+  <Footer tagline="fixed-price tech audits for e-commerce stores." mono="audit:run --price=490 --guarantee=100%" />
+</Base>

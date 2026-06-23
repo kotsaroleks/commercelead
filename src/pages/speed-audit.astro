@@ -1,0 +1,174 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ContactForm from "../components/ContactForm.astro";
+const navLinks = [{label:"What you get",href:"#deliverables"},{label:"How it works",href:"#process"},{label:"The math",href:"#math"},{label:"Order",href:"#contact"}];
+---
+<Base
+  title="Speed & Core Web Vitals Audit for E-commerce | CommerceLead"
+  description="We measure your store's real-world performance, quantify the revenue you're losing to slow pages, and give you a prioritized fix plan. €390 fixed price."
+  accent="#0891B2" accentDark="#0E7490" accentSoft="#E0F7FA" accentShadow="rgba(8,145,178,.18)">
+  <Header links={navLinks} cta={{ label: "Order speed audit", href: "#contact" }} />
+  <main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">LCP &middot; CLS &middot; INP &middot; TTFB</p>
+      <h1>How much revenue is your <em>slow store costing you?</em></h1>
+      <p class="lede">We measure your store's real-world performance across every critical page, calculate the conversion impact in euros, and give you a prioritized fix plan sorted by ROI. €390 — fixed price, 7 business days.</p>
+      <div class="hero-ctas">
+        <a class="btn btn--solid" href="#contact">Order for €390</a>
+        <a class="btn btn--ghost" href="#math">See the math</a>
+      </div>
+      <div class="hero-meta">
+        <span>€390 fixed price</span>
+        <span>Report in 7 business days</span>
+        <span>Revenue impact quantified</span>
+      </div>
+    </div>
+
+    <div class="terminal" role="img" aria-label="Terminal showing a speed audit summary">
+      <div class="term-bar"><i></i><i></i><i></i><span class="term-title">speed-audit — results</span></div>
+      <div class="term-body" aria-hidden="true">
+        <span class="ln"><span class="prompt">perf@cl:~$</span> <span class="cmd">cwv:measure --pages=all --traffic=real</span></span>
+        <span class="ln"><span class="dim">Measuring 12 critical pages…</span></span>
+        <span class="ln"><span class="err">[FAIL]</span> LCP 4.2s on PDP (target: &lt;2.5s)</span>
+        <span class="ln"><span class="err">[FAIL]</span> CLS 0.31 on collection (target: &lt;0.1)</span>
+        <span class="ln"><span class="warn">[WARN]</span> INP 340ms on cart (target: &lt;200ms)</span>
+        <span class="ln"><span class="ok">[OK]</span>&nbsp;&nbsp; TTFB 480ms homepage</span>
+        <span class="ln"><span class="dim">──────────────────────────────────</span></span>
+        <span class="ln">Est. conversion loss: <span class="hl">-11% (-€8.4k/mo)</span></span>
+        <span class="ln">Fix priority #1: <span class="hl">unoptimized images → +4% CR</span></span>
+        <span class="ln">Payback period: <span class="hl">under 2 weeks</span> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERABLES -->
+<section id="deliverables">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What you get</p>
+      <h2>Numbers, not opinions. Revenue impact, not vague advice.</h2>
+      <p>Every metric tied to money. Every fix tied to ROI.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <span class="tag">Metrics</span>
+        <h3>Full CWV measurement</h3>
+        <p>LCP, CLS, INP, and TTFB measured on every critical page — homepage, collection, PDP, cart, checkout — under realistic conditions.</p>
+      </div>
+      <div class="svc">
+        <span class="tag">Revenue</span>
+        <h3>Dollar impact calculation</h3>
+        <p>We combine your traffic data with conversion-rate research to estimate the exact revenue you're losing to slow pages. Per page, per metric.</p>
+      </div>
+      <div class="svc">
+        <span class="tag">Root cause</span>
+        <h3>What's actually slow</h3>
+        <p>Not "your site is slow." Instead: which specific resource, script, or render pattern is causing each metric to fail — with evidence.</p>
+      </div>
+      <div class="svc">
+        <span class="tag">Fix plan</span>
+        <h3>ROI-ranked fix list</h3>
+        <p>Every fix ranked by expected revenue gain ÷ implementation effort. You know what to fix first and what the payback looks like.</p>
+      </div>
+      <div class="svc">
+        <span class="tag">Benchmark</span>
+        <h3>Competitor comparison</h3>
+        <p>How your store compares to 3 competitors you choose. Where you're behind, where you're ahead, and where wins are easiest.</p>
+      </div>
+      <div class="svc">
+        <span class="tag">Call</span>
+        <h3>45-min debrief</h3>
+        <p>Walk through the report with the engineer. Discuss trade-offs, timelines, and whether to fix in-house or bring us in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How it works</p>
+      <h2>Order today, report in 7 business days.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">step 01</span>
+        <h3>Order &amp; details</h3>
+        <p>Share your store URL, platform, and monthly traffic. We invoice €390 and start as soon as it's paid.</p>
+        <span class="dur">day 1</span>
+      </div>
+      <div class="step">
+        <span class="num">step 02</span>
+        <h3>Measurement</h3>
+        <p>We run lab and field measurements on every critical page type, under multiple conditions and device profiles.</p>
+        <span class="dur">days 2–4</span>
+      </div>
+      <div class="step">
+        <span class="num">step 03</span>
+        <h3>Analysis &amp; report</h3>
+        <p>Root-cause analysis, revenue impact math, competitor benchmarks, and the prioritized fix plan — all in one PDF.</p>
+        <span class="dur">days 5–7</span>
+      </div>
+      <div class="step">
+        <span class="num">step 04</span>
+        <h3>Debrief call</h3>
+        <p>45-minute walkthrough of every finding. Bring your developers or agency — we'll explain it to them too.</p>
+        <span class="dur">day 8–9</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE MATH -->
+<section id="math">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The math</p>
+      <h2>Every 100ms of load time costs you real money.</h2>
+      <p>Google's own data and peer-reviewed research consistently show the same pattern:</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain">
+        <code>speed:conversion</code>
+        <h3>1s slower = 7% fewer conversions</h3>
+        <p>A well-cited figure from multiple e-commerce studies. For a store doing €100k/month, that's €7k/month — €84k/year.</p>
+      </div>
+      <div class="pain">
+        <code>speed:bounce</code>
+        <h3>53% leave after 3 seconds</h3>
+        <p>Google's mobile benchmark. If your PDP takes 4+ seconds, more than half your paid traffic never sees the product.</p>
+      </div>
+      <div class="pain">
+        <code>speed:seo</code>
+        <h3>CWV is a ranking factor</h3>
+        <p>Core Web Vitals directly affect your search rankings. Red metrics mean lower positions and less organic traffic over time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-box">
+      <div>
+        <p class="eyebrow">Order your speed audit</p>
+        <h2>€390 — know exactly how much speed is costing you.</h2>
+        <p>Share your store URL and platform. We'll measure everything, calculate the revenue impact, and tell you exactly what to fix first.</p>
+      </div>
+      <ContactForm formName="speed-audit-order" buttonLabel="Order for €390" note="Report in 7 business days. Includes competitor benchmark." />
+    </div>
+  </div>
+</section>
+
+</main>
+  <Footer tagline="speed &amp; Core Web Vitals audits for e-commerce." mono="cwv:measure --quantify-revenue" />
+</Base>

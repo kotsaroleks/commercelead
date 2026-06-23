@@ -1,0 +1,178 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ContactForm from "../components/ContactForm.astro";
+const navLinks = [{label:"What you get",href:"#deliverables"},{label:"How it works",href:"#process"},{label:"Common findings",href:"#findings"},{label:"Submit",href:"#contact"}];
+---
+<Base
+  title="Agency Estimate Review — Is Your Quote Fair? | CommerceLead"
+  description="Send us your agency's estimate or invoice. A senior e-commerce engineer tells you if it's fair, what's missing, and where to push back. €290 fixed price."
+  accent="#E6520F" accentDark="#B8410C" accentSoft="#FEF0E8" accentShadow="rgba(230,82,15,.18)">
+  <Header links={navLinks} cta={{ label: "Submit your estimate", href: "#contact" }} />
+  <main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Independent &middot; Confidential &middot; Fixed price</p>
+      <h1>Is your agency's estimate <em>actually fair?</em></h1>
+      <p class="lede">Send us any agency quote, proposal, or invoice. A senior e-commerce engineer reviews it line by line and tells you what's reasonable, what's inflated, and what's missing entirely. €290 — one price, one honest answer.</p>
+      <div class="hero-ctas">
+        <a class="btn btn--solid" href="#contact">Submit for €290</a>
+        <a class="btn btn--ghost" href="#deliverables">See what you get</a>
+      </div>
+      <div class="hero-meta">
+        <span>€290 fixed price</span>
+        <span>Response in 3 business days</span>
+        <span>100% confidential</span>
+      </div>
+    </div>
+
+    <div class="terminal" role="img" aria-label="Terminal showing an estimate review summary">
+      <div class="term-bar"><i></i><i></i><i></i><span class="term-title">estimate-review — findings</span></div>
+      <div class="term-body" aria-hidden="true">
+        <span class="ln"><span class="prompt">reviewer@cl:~$</span> <span class="cmd">estimate:review agency-quote-2024.pdf</span></span>
+        <span class="ln"><span class="dim">Analyzing 47 line items…</span></span>
+        <span class="ln"><span class="ok">[FAIR]</span>&nbsp;&nbsp; 28 items — reasonable rates &amp; scope</span>
+        <span class="ln"><span class="warn">[HIGH]</span>&nbsp;&nbsp; 12 items — overestimated by 40–60%</span>
+        <span class="ln"><span class="err">[FLAG]</span>&nbsp;&nbsp; 4 items — unnecessary or duplicate work</span>
+        <span class="ln"><span class="err">[MISS]</span>&nbsp;&nbsp; 3 critical items not quoted at all</span>
+        <span class="ln"><span class="dim">──────────────────────────────────</span></span>
+        <span class="ln">Quoted total: €48,000</span>
+        <span class="ln">Fair range: <span class="hl">€29,000 – €35,000</span></span>
+        <span class="ln">Potential savings: <span class="hl">€13k+</span> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERABLES -->
+<section id="deliverables">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What you get</p>
+      <h2>A line-by-line review with clear verdicts.</h2>
+      <p>Not a vague "looks okay." Every line item gets a verdict: fair, high, unnecessary, or missing.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <span class="tag">Line items</span>
+        <h3>Item-by-item verdict</h3>
+        <p>Every line in the estimate rated as fair, overestimated, unnecessary, or unclear — with the reasoning behind each call.</p>
+      </div>
+      <div class="svc">
+        <span class="tag">Rates</span>
+        <h3>Rate benchmarking</h3>
+        <p>Are the hourly rates in line with the market for this platform and region? We compare against real-world data.</p>
+      </div>
+      <div class="svc">
+        <span class="tag">Gaps</span>
+        <h3>Missing items</h3>
+        <p>Work that should be in the estimate but isn't — things that will become expensive "change requests" later.</p>
+      </div>
+      <div class="svc">
+        <span class="tag">Negotiation</span>
+        <h3>Push-back script</h3>
+        <p>Specific questions to ask your agency and points to negotiate. Written so a non-technical person can use them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How it works</p>
+      <h2>Submit today, get your answer in 3 days.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">step 01</span>
+        <h3>Submit the estimate</h3>
+        <p>Upload the PDF or forward the email. Tell us what the project is about and what platform you're on.</p>
+        <span class="dur">5 minutes</span>
+      </div>
+      <div class="step">
+        <span class="num">step 02</span>
+        <h3>We review it</h3>
+        <p>A senior engineer reads every line item against what the work actually requires and what the market charges.</p>
+        <span class="dur">1–3 days</span>
+      </div>
+      <div class="step">
+        <span class="num">step 03</span>
+        <h3>Written report</h3>
+        <p>You receive a PDF with verdicts on every line, a fair-price range, missing items, and your push-back script.</p>
+        <span class="dur">day 3</span>
+      </div>
+      <div class="step">
+        <span class="num">step 04</span>
+        <h3>Optional debrief</h3>
+        <p>30-minute call to discuss findings and plan your negotiation. Included free if savings exceed €5k.</p>
+        <span class="dur">day 4</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMON FINDINGS -->
+<section id="findings">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What we typically find</p>
+      <h2>These show up in 80% of estimates we review.</h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain">
+        <code>hours:inflated</code>
+        <h3>Padded hours</h3>
+        <p>Tasks estimated at 2–3× what they take. "Custom integration" at 80 hours that's really a well-documented API call.</p>
+      </div>
+      <div class="pain">
+        <code>scope:vague</code>
+        <h3>Deliberately vague scope</h3>
+        <p>"Setup & configuration: 40h" with no detail. Impossible to verify, easy to overbill, guaranteed to spawn change requests.</p>
+      </div>
+      <div class="pain">
+        <code>items:missing</code>
+        <h3>Critical items not quoted</h3>
+        <p>Testing, deployment, data migration, or SEO redirects left out — so they become expensive "extras" mid-project.</p>
+      </div>
+      <div class="pain">
+        <code>rate:premium</code>
+        <h3>Senior rates, junior work</h3>
+        <p>€120/h "senior architect" rates for work that a mid-level developer handles in every agency.</p>
+      </div>
+      <div class="pain">
+        <code>lock:hidden</code>
+        <h3>Hidden lock-in</h3>
+        <p>Proprietary modules, hosting tied to the agency, or code you don't own — buried in terms you never read.</p>
+      </div>
+      <div class="pain">
+        <code>work:unnecessary</code>
+        <h3>Work you don't need</h3>
+        <p>A full custom build when a €50/month app does the job. Rebuilding what already works because it's easier to quote.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-box">
+      <div>
+        <p class="eyebrow">Submit your estimate</p>
+        <h2>€290 — honest answer in 3 days.</h2>
+        <p>Upload any agency quote, proposal, or invoice. Tell us the platform and what the project is about. Everything is 100% confidential.</p>
+      </div>
+      <ContactForm formName="estimate-review" buttonLabel="Submit for €290" note="100% confidential. We never contact your agency." />
+    </div>
+  </div>
+</section>
+
+</main>
+  <Footer tagline="independent estimate reviews for e-commerce merchants." mono="estimate:review --honest --confidential" />
+</Base>
