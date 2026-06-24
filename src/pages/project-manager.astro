@@ -1,0 +1,283 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ContactForm from "../components/ContactForm.astro";
+const navLinks = [{label:"What they own",href:"#services"},{label:"How it works",href:"#process"},{label:"Pricing",href:"#pricing"},{label:"Why us",href:"#credentials"}];
+const pricing = [
+  { role: "Project Coordinator", desc: "Keeps timelines, standups & tickets moving", rate: 40 },
+  { role: "Project Manager", desc: "Owns delivery, scope, risk & stakeholders", rate: 55 },
+  { role: "Senior / Program Manager", desc: "Multiple workstreams, vendors & roadmaps", rate: 70 },
+];
+---
+<Base
+  title="Fractional Project Manager for E-commerce — from 0.25 FTE | CommerceLead"
+  description="A senior e-commerce project manager who keeps your delivery on track — scope, timelines, agencies and risk. Retainers from 0.25 FTE, no full-time hire."
+  accent="#D6336C" accentDark="#A61E4D" accentSoft="#FCE7F0" accentShadow="rgba(214,51,108,.18)">
+  <Header links={navLinks} cta={{ label: "Book an intro call", href: "#contact" }} />
+  <main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Delivery &middot; Scope &middot; Risk &middot; Stakeholders</p>
+      <h1>A <em>project manager</em> who actually keeps delivery on track.</h1>
+      <p class="lede">A senior e-commerce project manager who owns your roadmap delivery — timelines, scope, agencies, and risk. They turn a chaotic backlog into predictable releases. Retainers from 0.25 FTE, scaling as you grow.</p>
+      <div class="hero-ctas">
+        <a class="btn btn--solid" href="#contact">Book a free intro call</a>
+        <a class="btn btn--ghost" href="#services">See what they own</a>
+      </div>
+      <div class="hero-meta">
+        <span>From 0.25 FTE</span>
+        <span>E-commerce delivery experts</span>
+        <span>Live in 1 week</span>
+      </div>
+    </div>
+
+    <div class="terminal" role="img" aria-label="Terminal showing a project delivery status">
+      <div class="term-bar"><i></i><i></i><i></i><span class="term-title">delivery — sprint status</span></div>
+      <div class="term-body" aria-hidden="true">
+        <span class="ln"><span class="prompt">pm@cl:~$</span> <span class="cmd">delivery:status --sprint=current</span></span>
+        <span class="ln"><span class="dim">Reading board &amp; risk log…</span></span>
+        <span class="ln"><span class="err">[BEFORE]</span> 3 sprints slipped, no clear owner</span>
+        <span class="ln"><span class="err">[BEFORE]</span> Agency &amp; in-house blaming each other</span>
+        <span class="ln"><span class="err">[BEFORE]</span> Launch date is a guess</span>
+        <span class="ln"><span class="dim">──────────────────────────────────</span></span>
+        <span class="ln"><span class="ok">[AFTER]</span>&nbsp; Burndown on track, blockers visible</span>
+        <span class="ln"><span class="ok">[AFTER]</span>&nbsp; One status everyone trusts</span>
+        <span class="ln">Launch: <span class="hl">committed, with confidence</span> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAINS -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Sound familiar?</p>
+      <h2>Lots of activity. Not enough shipped.</h2>
+      <p>You don't have a people problem — you have a coordination problem. Nobody senior owns delivery end to end.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain">
+        <code>deadline:slipping</code>
+        <h3>Deadlines keep moving</h3>
+        <p>Every launch date is optimistic, then quietly pushed. You find out it slipped after it already has.</p>
+      </div>
+      <div class="pain">
+        <code>scope:creep</code>
+        <h3>Scope creeps unchecked</h3>
+        <p>"Small" additions pile up with no one tracking the impact on budget or timeline until it's too late.</p>
+      </div>
+      <div class="pain">
+        <code>status:unclear</code>
+        <h3>Nobody knows the real status</h3>
+        <p>You ask three people and get three answers. There's no single source of truth for what's actually done.</p>
+      </div>
+      <div class="pain">
+        <code>vendor:silos</code>
+        <h3>Agency & team don't align</h3>
+        <p>Your in-house developers and external agency work in silos, duplicate effort, and point fingers when things break.</p>
+      </div>
+      <div class="pain">
+        <code>risk:hidden</code>
+        <h3>Risks surface too late</h3>
+        <p>Problems hit at the worst moment — launch week — because nobody is actively managing risk ahead of time.</p>
+      </div>
+      <div class="pain">
+        <code>founder:overloaded</code>
+        <h3>You're the de facto PM</h3>
+        <p>You're chasing tickets and herding contractors instead of running the business. It doesn't scale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What they own</p>
+      <h2>End-to-end delivery, run by someone who's done it before.</h2>
+      <p>An embedded e-commerce PM who plugs into your tools and team and takes delivery off your plate.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <span class="tag">Planning</span>
+        <h3>Roadmap &amp; sprint planning</h3>
+        <p>Turns business goals into a realistic, sequenced delivery plan — and keeps it current as priorities shift.</p>
+        <ul>
+          <li>Backlog grooming &amp; prioritization</li>
+          <li>Sprint &amp; release planning</li>
+          <li>Realistic, defensible timelines</li>
+          <li>Dependency &amp; capacity mapping</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <span class="tag">Execution</span>
+        <h3>Day-to-day delivery</h3>
+        <p>Runs standups, unblocks the team, and keeps every workstream moving toward the committed dates.</p>
+        <ul>
+          <li>Standups &amp; ceremonies that stay useful</li>
+          <li>Active blocker removal</li>
+          <li>Ticket hygiene in Jira / Linear / ClickUp</li>
+          <li>Cross-team coordination</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <span class="tag">Vendors</span>
+        <h3>Agency & vendor management</h3>
+        <p>Holds your agencies and freelancers accountable to scope, quality, and deadlines — on your side of the table.</p>
+        <ul>
+          <li>Scope &amp; SOW oversight</li>
+          <li>Deliverable &amp; quality tracking</li>
+          <li>Invoice vs. delivery reconciliation</li>
+          <li>Escalation management</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <span class="tag">Visibility</span>
+        <h3>Reporting & risk</h3>
+        <p>One status everyone trusts, with risks surfaced early enough to actually do something about them.</p>
+        <ul>
+          <li>Weekly status in plain language</li>
+          <li>Risk register, actively managed</li>
+          <li>Budget vs. burn tracking</li>
+          <li>Stakeholder communication</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How it works</p>
+      <h2>From chaos to predictable delivery in four steps.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">step 01</span>
+        <h3>Intro call</h3>
+        <p>We learn your business, current projects, and where delivery is hurting. You meet the PM you'd work with.</p>
+        <span class="dur">45 min · free</span>
+      </div>
+      <div class="step">
+        <span class="num">step 02</span>
+        <h3>Delivery review</h3>
+        <p>We assess your backlog, tools, team, and vendors — and map the gaps that are slowing you down.</p>
+        <span class="dur">3–5 days</span>
+      </div>
+      <div class="step">
+        <span class="num">step 03</span>
+        <h3>Plan &amp; cadence</h3>
+        <p>We agree the FTE level, set up the cadence, and establish a single source of truth for status.</p>
+        <span class="dur">1 workshop</span>
+      </div>
+      <div class="step">
+        <span class="num">step 04</span>
+        <h3>They take ownership</h3>
+        <p>Your PM runs delivery. Weekly reporting, managed risk, and launch dates you can actually trust.</p>
+        <span class="dur">ongoing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Pricing</p>
+      <h2>Simple hourly rates. Retainers from 0.25 FTE.</h2>
+      <p>Start with as little as a quarter of a full-time PM and scale in 0.25 FTE steps. No project minimums, no hidden management fees.</p>
+    </div>
+
+    <div class="fte-bar">
+      <span class="lbl">Capacity</span>
+      <div class="fte-opts" role="group" aria-label="Choose capacity in FTE">
+        <button type="button" class="active" data-fte="0.25">0.25 FTE</button>
+        <button type="button" data-fte="0.5">0.5 FTE</button>
+        <button type="button" data-fte="0.75">0.75 FTE</button>
+        <button type="button" data-fte="1">1.0 FTE</button>
+      </div>
+      <span class="fte-hours" id="fteHours">≈ 40 h / month</span>
+    </div>
+
+    <table class="price-table">
+      <thead>
+        <tr>
+          <th scope="col">Role</th>
+          <th scope="col">Hourly rate</th>
+          <th scope="col">Est. monthly <span id="fteLabel">(0.25 FTE)</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        {pricing.map((p) => (
+          <tr>
+            <td class="role">{p.role}<small>{p.desc}</small></td>
+            <td class="rate"><b>€{p.rate}</b> <span>/ hour</span></td>
+            <td class="monthly" data-rate={p.rate}>{"€" + (p.rate * 40).toLocaleString("en-US")}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+
+    <p class="price-note">Monthly estimates assume <code>1 FTE = 160 h/month</code>. Capacity scales in 0.25 FTE steps. Billing is hourly against actual tracked time.</p>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="creds" id="credentials">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Why trust us</p>
+      <h2>E-commerce delivery, not generic project admin.</h2>
+      <p>Our PMs have shipped real e-commerce projects — replatformings, integrations, peak-season launches. They speak both the business and the technical language, so nothing gets lost between you, your team, and your agency.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-box">
+      <div>
+        <p class="eyebrow">Start here</p>
+        <h2>Get a free 45-minute intro call.</h2>
+        <p>Tell us what you're trying to ship and where it keeps stalling. You'll leave with a clear view of what a fractional PM would change.</p>
+      </div>
+      <ContactForm formName="project-manager-contact" buttonLabel="Book my intro call" note="No sales deck. A senior PM joins the call." />
+    </div>
+  </div>
+</section>
+
+</main>
+  <Footer tagline="fractional project managers for e-commerce teams." mono="delivery:run --from=0.25fte" />
+  <script is:inline>
+(function(){
+  var buttons = document.querySelectorAll('.fte-opts button');
+  var cells = document.querySelectorAll('.price-table .monthly');
+  var hoursEl = document.getElementById('fteHours');
+  var labelEl = document.getElementById('fteLabel');
+  function fmt(n){ return '€' + n.toLocaleString('en-US'); }
+  function update(fte){
+    var hours = Math.round(160 * fte);
+    hoursEl.textContent = '≈ ' + hours + ' h / month';
+    labelEl.textContent = '(' + fte.toFixed(2).replace(/0$/,'') + ' FTE)';
+    cells.forEach(function(c){ c.textContent = fmt(Number(c.dataset.rate) * hours); });
+  }
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){
+      buttons.forEach(function(x){ x.classList.remove('active'); });
+      b.classList.add('active');
+      update(parseFloat(b.dataset.fte));
+    });
+  });
+})();
+</script>
+</Base>

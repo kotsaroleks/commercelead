@@ -1,0 +1,283 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ContactForm from "../components/ContactForm.astro";
+const navLinks = [{label:"What they own",href:"#services"},{label:"How it works",href:"#process"},{label:"Pricing",href:"#pricing"},{label:"Why us",href:"#credentials"}];
+const pricing = [
+  { role: "Business Analyst", desc: "Requirements, specs & process mapping", rate: 45 },
+  { role: "Senior Business Analyst", desc: "Complex flows, integrations & data", rate: 60 },
+  { role: "Lead BA / Solution Analyst", desc: "Cross-system design & stakeholder alignment", rate: 75 },
+];
+---
+<Base
+  title="Fractional Business Analyst for E-commerce — from 0.25 FTE | CommerceLead"
+  description="A senior e-commerce business analyst who turns vague ideas into clear, buildable requirements. Specs, process maps and acceptance criteria. Retainers from 0.25 FTE."
+  accent="#7048E8" accentDark="#5125C7" accentSoft="#EDE7FD" accentShadow="rgba(112,72,232,.18)">
+  <Header links={navLinks} cta={{ label: "Book an intro call", href: "#contact" }} />
+  <main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Requirements &middot; Specs &middot; Process &middot; Acceptance criteria</p>
+      <h1>A <em>business analyst</em> who turns vague ideas into buildable specs.</h1>
+      <p class="lede">A senior e-commerce business analyst who sits between you and the developers — capturing what the business actually needs and translating it into clear requirements, process maps, and acceptance criteria. Retainers from 0.25 FTE.</p>
+      <div class="hero-ctas">
+        <a class="btn btn--solid" href="#contact">Book a free intro call</a>
+        <a class="btn btn--ghost" href="#services">See what they own</a>
+      </div>
+      <div class="hero-meta">
+        <span>From 0.25 FTE</span>
+        <span>E-commerce domain experts</span>
+        <span>Live in 1 week</span>
+      </div>
+    </div>
+
+    <div class="terminal" role="img" aria-label="Terminal showing requirements being clarified">
+      <div class="term-bar"><i></i><i></i><i></i><span class="term-title">requirements — clarify</span></div>
+      <div class="term-body" aria-hidden="true">
+        <span class="ln"><span class="prompt">ba@cl:~$</span> <span class="cmd">spec:clarify "new checkout flow"</span></span>
+        <span class="ln"><span class="dim">Parsing the brief…</span></span>
+        <span class="ln"><span class="err">[VAGUE]</span> "make checkout better" — undefined</span>
+        <span class="ln"><span class="warn">[GAP]</span>&nbsp;&nbsp; 6 edge cases not considered</span>
+        <span class="ln"><span class="warn">[GAP]</span>&nbsp;&nbsp; tax &amp; shipping rules unspecified</span>
+        <span class="ln"><span class="dim">──────────────────────────────────</span></span>
+        <span class="ln"><span class="ok">[OUT]</span>&nbsp; 12 user stories, acceptance criteria</span>
+        <span class="ln"><span class="ok">[OUT]</span>&nbsp; flow diagram + edge cases mapped</span>
+        <span class="ln">Result: <span class="hl">devs can build it once</span> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAINS -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Sound familiar?</p>
+      <h2>You explain it twice. They build it wrong anyway.</h2>
+      <p>The problem usually isn't the developers — it's that nobody turned the idea into a clear, complete, agreed specification before work started.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain">
+        <code>spec:missing</code>
+        <h3>Features built from a Slack message</h3>
+        <p>Requirements live in chat threads and your head. Developers fill the gaps with guesses — and guess wrong.</p>
+      </div>
+      <div class="pain">
+        <code>rework:constant</code>
+        <h3>Endless rework</h3>
+        <p>"That's not what I meant" after it's already built. You pay twice — once to build it, once to fix it.</p>
+      </div>
+      <div class="pain">
+        <code>edge:unhandled</code>
+        <h3>Edge cases hit production</h3>
+        <p>Refunds, partial shipments, tax corner cases — nobody thought them through, so customers find them first.</p>
+      </div>
+      <div class="pain">
+        <code>process:unmapped</code>
+        <h3>Nobody knows how it actually works</h3>
+        <p>Your order, fulfilment, and returns processes live in tribal knowledge. New tools and people can't plug in cleanly.</p>
+      </div>
+      <div class="pain">
+        <code>integration:unclear</code>
+        <h3>Integrations underspecified</h3>
+        <p>ERP, PIM, CRM connections start before the data mapping is agreed — and stall halfway through.</p>
+      </div>
+      <div class="pain">
+        <code>estimate:unreliable</code>
+        <h3>Estimates you can't trust</h3>
+        <p>Without clear scope, every estimate is a finger in the air — and every project runs over.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What they own</p>
+      <h2>The bridge between business intent and working software.</h2>
+      <p>An embedded e-commerce BA who makes sure what gets built is what the business actually needs.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <span class="tag">Requirements</span>
+        <h3>Requirements & user stories</h3>
+        <p>Turns goals and ideas into clear, prioritized requirements with acceptance criteria developers can build against.</p>
+        <ul>
+          <li>Stakeholder interviews &amp; workshops</li>
+          <li>User stories with acceptance criteria</li>
+          <li>Prioritized, testable backlog</li>
+          <li>Definition of done</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <span class="tag">Process</span>
+        <h3>Process & flow mapping</h3>
+        <p>Documents how your store actually operates — order, fulfilment, returns — so you can improve and automate it.</p>
+        <ul>
+          <li>As-is / to-be process maps</li>
+          <li>Order, fulfilment &amp; returns flows</li>
+          <li>Bottleneck &amp; automation analysis</li>
+          <li>Edge-case &amp; exception handling</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <span class="tag">Integrations</span>
+        <h3>Data & integration specs</h3>
+        <p>Defines exactly what flows between systems before development starts, so integrations don't stall mid-build.</p>
+        <ul>
+          <li>ERP / PIM / CRM data mapping</li>
+          <li>Field-level specifications</li>
+          <li>API &amp; sync requirements</li>
+          <li>Migration data rules</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <span class="tag">Validation</span>
+        <h3>UAT & acceptance</h3>
+        <p>Defines and runs the tests that confirm what was built matches what was agreed — before it reaches customers.</p>
+        <ul>
+          <li>Test scenarios &amp; UAT scripts</li>
+          <li>Acceptance sign-off</li>
+          <li>Defect triage &amp; clarification</li>
+          <li>Release readiness checks</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How it works</p>
+      <h2>From fuzzy idea to buildable spec in four steps.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">step 01</span>
+        <h3>Intro call</h3>
+        <p>We learn your business, systems, and the projects where requirements keep slipping. You meet your BA.</p>
+        <span class="dur">45 min · free</span>
+      </div>
+      <div class="step">
+        <span class="num">step 02</span>
+        <h3>Discovery</h3>
+        <p>The BA interviews stakeholders, maps current processes, and identifies the biggest clarity gaps.</p>
+        <span class="dur">3–5 days</span>
+      </div>
+      <div class="step">
+        <span class="num">step 03</span>
+        <h3>Spec &amp; cadence</h3>
+        <p>We agree the FTE level and a working cadence, and the BA delivers the first specs developers can build from.</p>
+        <span class="dur">1 workshop</span>
+      </div>
+      <div class="step">
+        <span class="num">step 04</span>
+        <h3>They take ownership</h3>
+        <p>Your BA owns requirements end to end — fewer surprises, less rework, estimates you can trust.</p>
+        <span class="dur">ongoing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Pricing</p>
+      <h2>Simple hourly rates. Retainers from 0.25 FTE.</h2>
+      <p>Start with as little as a quarter of a full-time BA and scale in 0.25 FTE steps. No project minimums, no hidden management fees.</p>
+    </div>
+
+    <div class="fte-bar">
+      <span class="lbl">Capacity</span>
+      <div class="fte-opts" role="group" aria-label="Choose capacity in FTE">
+        <button type="button" class="active" data-fte="0.25">0.25 FTE</button>
+        <button type="button" data-fte="0.5">0.5 FTE</button>
+        <button type="button" data-fte="0.75">0.75 FTE</button>
+        <button type="button" data-fte="1">1.0 FTE</button>
+      </div>
+      <span class="fte-hours" id="fteHours">≈ 40 h / month</span>
+    </div>
+
+    <table class="price-table">
+      <thead>
+        <tr>
+          <th scope="col">Role</th>
+          <th scope="col">Hourly rate</th>
+          <th scope="col">Est. monthly <span id="fteLabel">(0.25 FTE)</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        {pricing.map((p) => (
+          <tr>
+            <td class="role">{p.role}<small>{p.desc}</small></td>
+            <td class="rate"><b>€{p.rate}</b> <span>/ hour</span></td>
+            <td class="monthly" data-rate={p.rate}>{"€" + (p.rate * 40).toLocaleString("en-US")}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+
+    <p class="price-note">Monthly estimates assume <code>1 FTE = 160 h/month</code>. Capacity scales in 0.25 FTE steps. Billing is hourly against actual tracked time.</p>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="creds" id="credentials">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Why trust us</p>
+      <h2>Analysts who know e-commerce, not just BPMN.</h2>
+      <p>Our analysts have specified real e-commerce systems — checkout, fulfilment, ERP and marketplace integrations. They know the edge cases that trip up generic analysts, because they've shipped through them before.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-box">
+      <div>
+        <p class="eyebrow">Start here</p>
+        <h2>Get a free 45-minute intro call.</h2>
+        <p>Tell us about the project that keeps getting built wrong. You'll leave with a clear view of what tighter requirements would change.</p>
+      </div>
+      <ContactForm formName="business-analyst-contact" buttonLabel="Book my intro call" note="No sales deck. A senior BA joins the call." />
+    </div>
+  </div>
+</section>
+
+</main>
+  <Footer tagline="fractional business analysts for e-commerce teams." mono="spec:clarify --from=0.25fte" />
+  <script is:inline>
+(function(){
+  var buttons = document.querySelectorAll('.fte-opts button');
+  var cells = document.querySelectorAll('.price-table .monthly');
+  var hoursEl = document.getElementById('fteHours');
+  var labelEl = document.getElementById('fteLabel');
+  function fmt(n){ return '€' + n.toLocaleString('en-US'); }
+  function update(fte){
+    var hours = Math.round(160 * fte);
+    hoursEl.textContent = '≈ ' + hours + ' h / month';
+    labelEl.textContent = '(' + fte.toFixed(2).replace(/0$/,'') + ' FTE)';
+    cells.forEach(function(c){ c.textContent = fmt(Number(c.dataset.rate) * hours); });
+  }
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){
+      buttons.forEach(function(x){ x.classList.remove('active'); });
+      b.classList.add('active');
+      update(parseFloat(b.dataset.fte));
+    });
+  });
+})();
+</script>
+</Base>

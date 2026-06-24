@@ -6,6 +6,7 @@ const navLinks = [
   { label: "Magento", href: "/magento" },
   { label: "Shopware", href: "/shopware" },
   { label: "First CTO", href: "/first-cto" },
+  { label: "Roles", href: "#roles" },
   { label: "Services", href: "#services" },
 ];
 const cards = [
@@ -75,6 +76,35 @@ const serviceCards = [
     dark: "#0F172A",
   },
 ];
+const roleCards = [
+  {
+    href: "/project-manager",
+    tag: "Retainer · from 0.25 FTE",
+    title: "Fractional Project Manager",
+    desc: "Keeps your delivery on track — scope, timelines, agencies and risk. Turns a chaotic backlog into predictable releases.",
+    for: "For teams that keep missing deadlines",
+    color: "#D6336C",
+    dark: "#A61E4D",
+  },
+  {
+    href: "/business-analyst",
+    tag: "Retainer · from 0.25 FTE",
+    title: "Fractional Business Analyst",
+    desc: "Turns vague ideas into buildable specs — requirements, process maps and acceptance criteria developers can build once.",
+    for: "For teams plagued by rework",
+    color: "#7048E8",
+    dark: "#5125C7",
+  },
+  {
+    href: "/product-manager",
+    tag: "Retainer · from 0.25 FTE",
+    title: "Fractional Product Manager",
+    desc: "Owns the roadmap — discovery, prioritization and growth experiments tied to conversion, AOV and retention.",
+    for: "For stores where growth has plateaued",
+    color: "#0CA678",
+    dark: "#087F5B",
+  },
+];
 ---
 <Base
   title="CommerceLead — Outsourced CTO & Tech Leads for E-commerce"
@@ -106,6 +136,27 @@ const serviceCards = [
               <p>{c.desc}</p>
               <span class="aud">{c.for}</span>
               <span class="go">Open →</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section" id="roles">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Fractional roles</p>
+          <h2>The people who run delivery — from 0.25 FTE.</h2>
+          <p>Not just engineers. The project, analysis, and product roles that turn effort into shipped, revenue-moving work.</p>
+        </div>
+        <div class="cards cards-3">
+          {roleCards.map((c) => (
+            <a class="card" href={c.href} style={`--c:${c.color};--cd:${c.dark};`}>
+              <span class="tag">{c.tag}</span>
+              <h2>{c.title}</h2>
+              <p>{c.desc}</p>
+              <span class="aud">{c.for}</span>
+              <span class="go">Learn more →</span>
             </a>
           ))}
         </div>
@@ -165,6 +216,7 @@ const serviceCards = [
     .services-section h2{font-family:'Archivo',sans-serif;font-weight:850;font-stretch:90%;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.1;letter-spacing:-.02em;margin-bottom:14px}
     .services-section .section-head p{font-size:1.05rem;color:var(--slate)}
     .services-section .cards{grid-template-columns:repeat(2,1fr)}
+    .services-section .cards.cards-3{grid-template-columns:repeat(3,1fr)}
     @media(max-width:820px){.cards{grid-template-columns:1fr}.hub-hero{padding:64px 0 48px}.paths{padding:48px 0 64px}.services-section{padding:0 0 64px}}
   </style>
 </Base>

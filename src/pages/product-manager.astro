@@ -1,0 +1,283 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ContactForm from "../components/ContactForm.astro";
+const navLinks = [{label:"What they own",href:"#services"},{label:"How it works",href:"#process"},{label:"Pricing",href:"#pricing"},{label:"Why us",href:"#credentials"}];
+const pricing = [
+  { role: "Product Manager", desc: "Roadmap, discovery & prioritization", rate: 55 },
+  { role: "Senior Product Manager", desc: "Growth, experimentation & data-led decisions", rate: 75 },
+  { role: "Head of Product", desc: "Strategy, vision & multi-team roadmaps", rate: 95 },
+];
+---
+<Base
+  title="Fractional Product Manager for E-commerce — from 0.25 FTE | CommerceLead"
+  description="A senior e-commerce product manager who owns the roadmap — discovery, prioritization and growth experiments tied to revenue. Retainers from 0.25 FTE."
+  accent="#0CA678" accentDark="#087F5B" accentSoft="#E0F7EF" accentShadow="rgba(12,166,120,.18)">
+  <Header links={navLinks} cta={{ label: "Book an intro call", href: "#contact" }} />
+  <main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Roadmap &middot; Discovery &middot; Prioritization &middot; Growth</p>
+      <h1>A <em>product manager</em> who builds what moves revenue.</h1>
+      <p class="lede">A senior e-commerce product manager who owns the "what" and "why" — turning a wishlist of features into a prioritized roadmap tied to conversion, AOV, and retention. They make sure you build the right things, not just more things. Retainers from 0.25 FTE.</p>
+      <div class="hero-ctas">
+        <a class="btn btn--solid" href="#contact">Book a free intro call</a>
+        <a class="btn btn--ghost" href="#services">See what they own</a>
+      </div>
+      <div class="hero-meta">
+        <span>From 0.25 FTE</span>
+        <span>E-commerce growth experts</span>
+        <span>Live in 1 week</span>
+      </div>
+    </div>
+
+    <div class="terminal" role="img" aria-label="Terminal showing roadmap prioritization">
+      <div class="term-bar"><i></i><i></i><i></i><span class="term-title">roadmap — prioritize</span></div>
+      <div class="term-body" aria-hidden="true">
+        <span class="ln"><span class="prompt">pm@cl:~$</span> <span class="cmd">roadmap:prioritize --by=revenue</span></span>
+        <span class="ln"><span class="dim">Scoring 24 backlog ideas…</span></span>
+        <span class="ln"><span class="err">[DROP]</span>&nbsp; 9 features — low impact, high effort</span>
+        <span class="ln"><span class="warn">[LATER]</span> 8 features — nice, not now</span>
+        <span class="ln"><span class="ok">[NOW]</span>&nbsp;&nbsp; 3 bets — est. +14% conversion</span>
+        <span class="ln"><span class="dim">──────────────────────────────────</span></span>
+        <span class="ln">Top bet: <span class="hl">guest checkout + express pay</span></span>
+        <span class="ln">Expected: <span class="hl">+€11k/mo, 3-week build</span></span>
+        <span class="ln">Decision: <span class="hl">ship, measure, iterate</span> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAINS -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Sound familiar?</p>
+      <h2>You're shipping features. Revenue isn't moving.</h2>
+      <p>Most stores don't lack ideas — they lack someone who decides which ideas are worth building, and proves whether they worked.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain">
+        <code>roadmap:wishlist</code>
+        <h3>The roadmap is a wishlist</h3>
+        <p>Everyone's pet feature is "high priority." There's no framework for deciding what actually gets built next.</p>
+      </div>
+      <div class="pain">
+        <code>build:nooutcome</code>
+        <h3>Features ship, nothing changes</h3>
+        <p>You build, launch, move on — and never measure whether it moved conversion, AOV, or retention at all.</p>
+      </div>
+      <div class="pain">
+        <code>hippo:decides</code>
+        <h3>Loudest voice wins</h3>
+        <p>Decisions get made by whoever pushes hardest, not by data. Good ideas die and weak ones get built.</p>
+      </div>
+      <div class="pain">
+        <code>discovery:skipped</code>
+        <h3>No customer discovery</h3>
+        <p>You build what you think customers want. Nobody talks to them, watches sessions, or reads the funnel data.</p>
+      </div>
+      <div class="pain">
+        <code>devs:directionless</code>
+        <h3>Devs build, no one steers</h3>
+        <p>Your developers and agency are capable, but nobody owns the "why" — so effort goes into low-impact work.</p>
+      </div>
+      <div class="pain">
+        <code>growth:flat</code>
+        <h3>Growth has plateaued</h3>
+        <p>Traffic is steady but conversion and AOV are stuck. You need someone running experiments, not just adding pages.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What they own</p>
+      <h2>The roadmap — owned by someone accountable to revenue.</h2>
+      <p>An embedded e-commerce PM who decides what to build, why, and proves whether it worked.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <span class="tag">Strategy</span>
+        <h3>Roadmap & prioritization</h3>
+        <p>Turns a chaotic backlog into a sequenced roadmap where every item is tied to a measurable business outcome.</p>
+        <ul>
+          <li>Outcome-based roadmap</li>
+          <li>Impact / effort prioritization</li>
+          <li>Quarterly planning &amp; OKRs</li>
+          <li>Build-vs-buy decisions</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <span class="tag">Discovery</span>
+        <h3>Customer & data discovery</h3>
+        <p>Grounds decisions in evidence — funnel data, session recordings, and real customer conversations.</p>
+        <ul>
+          <li>Funnel &amp; analytics analysis</li>
+          <li>Customer interviews &amp; surveys</li>
+          <li>Session &amp; heatmap review</li>
+          <li>Opportunity sizing</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <span class="tag">Growth</span>
+        <h3>Experimentation</h3>
+        <p>Runs a steady cadence of conversion and AOV experiments, so growth comes from learning, not guessing.</p>
+        <ul>
+          <li>A/B test design &amp; analysis</li>
+          <li>Conversion &amp; checkout optimization</li>
+          <li>Merchandising &amp; pricing tests</li>
+          <li>Retention &amp; LTV initiatives</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <span class="tag">Delivery</span>
+        <h3>Spec & delivery</h3>
+        <p>Translates priorities into clear briefs the team can build, and keeps everyone aligned on the why.</p>
+        <ul>
+          <li>Feature briefs &amp; success metrics</li>
+          <li>Stakeholder alignment</li>
+          <li>Launch &amp; measurement plans</li>
+          <li>Post-launch impact review</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How it works</p>
+      <h2>From feature factory to focused growth in four steps.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">step 01</span>
+        <h3>Intro call</h3>
+        <p>We learn your business, your growth goals, and where the roadmap is drifting. You meet your PM.</p>
+        <span class="dur">45 min · free</span>
+      </div>
+      <div class="step">
+        <span class="num">step 02</span>
+        <h3>Audit &amp; data dive</h3>
+        <p>The PM reviews your funnel, backlog, and analytics to find the highest-impact opportunities.</p>
+        <span class="dur">3–5 days</span>
+      </div>
+      <div class="step">
+        <span class="num">step 03</span>
+        <h3>Roadmap &amp; cadence</h3>
+        <p>We agree the FTE level and set up the roadmap, prioritization framework, and experiment cadence.</p>
+        <span class="dur">1 workshop</span>
+      </div>
+      <div class="step">
+        <span class="num">step 04</span>
+        <h3>They take ownership</h3>
+        <p>Your PM owns the roadmap — building the right things, measuring impact, and compounding growth.</p>
+        <span class="dur">ongoing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Pricing</p>
+      <h2>Simple hourly rates. Retainers from 0.25 FTE.</h2>
+      <p>Start with as little as a quarter of a full-time PM and scale in 0.25 FTE steps. No project minimums, no hidden management fees.</p>
+    </div>
+
+    <div class="fte-bar">
+      <span class="lbl">Capacity</span>
+      <div class="fte-opts" role="group" aria-label="Choose capacity in FTE">
+        <button type="button" class="active" data-fte="0.25">0.25 FTE</button>
+        <button type="button" data-fte="0.5">0.5 FTE</button>
+        <button type="button" data-fte="0.75">0.75 FTE</button>
+        <button type="button" data-fte="1">1.0 FTE</button>
+      </div>
+      <span class="fte-hours" id="fteHours">≈ 40 h / month</span>
+    </div>
+
+    <table class="price-table">
+      <thead>
+        <tr>
+          <th scope="col">Role</th>
+          <th scope="col">Hourly rate</th>
+          <th scope="col">Est. monthly <span id="fteLabel">(0.25 FTE)</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        {pricing.map((p) => (
+          <tr>
+            <td class="role">{p.role}<small>{p.desc}</small></td>
+            <td class="rate"><b>€{p.rate}</b> <span>/ hour</span></td>
+            <td class="monthly" data-rate={p.rate}>{"€" + (p.rate * 40).toLocaleString("en-US")}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+
+    <p class="price-note">Monthly estimates assume <code>1 FTE = 160 h/month</code>. Capacity scales in 0.25 FTE steps. Billing is hourly against actual tracked time.</p>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="creds" id="credentials">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Why trust us</p>
+      <h2>Product people who move e-commerce metrics.</h2>
+      <p>Our PMs have owned roadmaps for real stores — improving conversion, AOV, and retention through disciplined discovery and experimentation. They care about revenue outcomes, not output for its own sake.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-box">
+      <div>
+        <p class="eyebrow">Start here</p>
+        <h2>Get a free 45-minute intro call.</h2>
+        <p>Tell us your growth goal and what's on your roadmap. You'll leave with a sharper view of what's actually worth building next.</p>
+      </div>
+      <ContactForm formName="product-manager-contact" buttonLabel="Book my intro call" note="No sales deck. A senior PM joins the call." />
+    </div>
+  </div>
+</section>
+
+</main>
+  <Footer tagline="fractional product managers for e-commerce growth." mono="roadmap:prioritize --from=0.25fte" />
+  <script is:inline>
+(function(){
+  var buttons = document.querySelectorAll('.fte-opts button');
+  var cells = document.querySelectorAll('.price-table .monthly');
+  var hoursEl = document.getElementById('fteHours');
+  var labelEl = document.getElementById('fteLabel');
+  function fmt(n){ return '€' + n.toLocaleString('en-US'); }
+  function update(fte){
+    var hours = Math.round(160 * fte);
+    hoursEl.textContent = '≈ ' + hours + ' h / month';
+    labelEl.textContent = '(' + fte.toFixed(2).replace(/0$/,'') + ' FTE)';
+    cells.forEach(function(c){ c.textContent = fmt(Number(c.dataset.rate) * hours); });
+  }
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){
+      buttons.forEach(function(x){ x.classList.remove('active'); });
+      b.classList.add('active');
+      update(parseFloat(b.dataset.fte));
+    });
+  });
+})();
+</script>
+</Base>
