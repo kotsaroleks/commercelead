@@ -441,6 +441,13 @@ h2{
 .tool-band__note{font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:#7E8B96}
 @media(max-width:820px){.tool-band__inner{grid-template-columns:1fr;gap:24px}}
 
+/* indigo variant — migration TCO tool */
+.tool-band--tco .tool-band__eyebrow{color:#A5B4FC}
+.tool-band--tco h2 em{color:#A5B4FC}
+.tool-band--tco .tool-band__meta span::before{color:#A5B4FC}
+.tool-band--tco .tool-band__btn{background:#6366F1;border-color:#6366F1;color:#fff}
+.tool-band--tco .tool-band__btn:hover{background:#fff;border-color:#fff;color:#14181D}
+
 /* ===== contact form ===== */
 .contact-form{display:flex;flex-direction:column;gap:14px}
 .contact-form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
