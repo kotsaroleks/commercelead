@@ -1,0 +1,192 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ContactForm from "../components/ContactForm.astro";
+const navLinks = [{label:"What you get",href:"#deliverables"},{label:"How it works",href:"#process"},{label:"Who it's for",href:"#who"},{label:"Request",href:"#contact"}];
+---
+<Base
+  title="Migration Review — Independent Open-Source vs SaaS Assessment | CommerceLead"
+  description="An independent 3-year financial-technical verdict on replatforming your store. Real numbers, migration risk audit, and a neutral recommendation — we don't sell platforms."
+  accent="#4F46E5" accentDark="#3730A3" accentSoft="#E8E7FB" accentShadow="rgba(79,70,229,.18)">
+  <Header links={navLinks} cta={{ label: "Request an assessment", href: "#contact" }} />
+  <main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Open-Source vs SaaS &middot; 3-year TCO &middot; Independent</p>
+      <h1>Should you migrate? <em>Get the real numbers first.</em></h1>
+      <p class="lede">Everyone tells you to replatform — and everyone selling a platform has a stake in your answer. We don't. We model your true 3-year cost of ownership with your real hosting, plugins and payment fees, audit what won't port, and give you a neutral, defensible verdict.</p>
+      <div class="hero-ctas">
+        <a class="btn btn--solid" href="#contact">Request an assessment</a>
+        <a class="btn btn--ghost" href="/tools/migration-tco">Try the free calculator</a>
+      </div>
+      <div class="hero-meta">
+        <span>Neutral — we sell no platform</span>
+        <span>Report in 2 weeks</span>
+        <span>Board-ready document</span>
+      </div>
+    </div>
+
+    <div class="terminal" role="img" aria-label="Terminal showing a migration TCO verdict">
+      <div class="term-bar"><i></i><i></i><i></i><span class="term-title">migration-review — verdict</span></div>
+      <div class="term-body" aria-hidden="true">
+        <span class="ln"><span class="prompt">advisor@cl:~$</span> <span class="cmd">tco:assess --store=acme --horizon=3y</span></span>
+        <span class="ln"><span class="dim">Modelling real costs…</span></span>
+        <span class="ln"><span class="ok">[OK]</span>&nbsp;&nbsp; Current (Magento) 3-yr TCO &nbsp;€512k</span>
+        <span class="ln"><span class="warn">[WARN]</span> Shopify Plus 3-yr TCO &nbsp;&nbsp;&nbsp;&nbsp;€547k</span>
+        <span class="ln"><span class="err">[FLAG]</span>&nbsp; 4 custom features won't port</span>
+        <span class="ln"><span class="err">[FLAG]</span>&nbsp; txn fees add €38k/yr at scale</span>
+        <span class="ln"><span class="dim">──────────────────────────────────</span></span>
+        <span class="ln">Crossover: <span class="hl">€61k/mo GMV</span></span>
+        <span class="ln">Verdict: <span class="hl">stay — invest in performance instead</span> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERABLES -->
+<section id="deliverables">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What you get</p>
+      <h2>A financial-technical verdict you can take to the board.</h2>
+      <p>Not a sales pitch for a platform — a numbers-first assessment built from your store's real data.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <span class="tag">Numbers</span>
+        <h3>True 3-year TCO</h3>
+        <p>Your real hosting, retainer, extensions and payment fees modelled against each target platform — including the transaction fees that scale with GMV.</p>
+      </div>
+      <div class="svc">
+        <span class="tag">Crossover</span>
+        <h3>Crossover analysis</h3>
+        <p>The exact revenue level where the cheaper platform flips — so the decision is tied to your growth plan, not a gut feeling.</p>
+      </div>
+      <div class="svc">
+        <span class="tag">Portability</span>
+        <h3>What won't port</h3>
+        <p>An audit of your custom functionality: what migrates cleanly, what gets rebuilt, and what becomes an expensive ongoing app subscription.</p>
+      </div>
+      <div class="svc">
+        <span class="tag">Risk</span>
+        <h3>Migration risk map</h3>
+        <p>SEO, data, downtime and integration risks — ranked, with the mitigation each one needs before you commit.</p>
+      </div>
+      <div class="svc">
+        <span class="tag">Plan</span>
+        <h3>Recommendation &amp; 3-year plan</h3>
+        <p>A clear stay-or-migrate verdict with the reasoning, plus a phased plan if migration is the right call.</p>
+      </div>
+      <div class="svc">
+        <span class="tag">Neutral</span>
+        <h3>Independent position</h3>
+        <p>We're not a Shopify agency or a Magento shop chasing the build. The recommendation is whatever the numbers and risks actually say.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How it works</p>
+      <h2>From question to verdict in two weeks.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">step 01</span>
+        <h3>Intro &amp; data</h3>
+        <p>We agree scope and gather your real cost data — hosting, retainer, extensions, app and payment-fee statements.</p>
+        <span class="dur">days 1–2</span>
+      </div>
+      <div class="step">
+        <span class="num">step 02</span>
+        <h3>Model &amp; audit</h3>
+        <p>We build your true TCO model and audit custom functionality for what will and won't port to each target.</p>
+        <span class="dur">days 3–9</span>
+      </div>
+      <div class="step">
+        <span class="num">step 03</span>
+        <h3>Report</h3>
+        <p>A board-ready document: TCO tables, crossover, risk map, and a neutral recommendation with reasoning.</p>
+        <span class="dur">day 12</span>
+      </div>
+      <div class="step">
+        <span class="num">step 04</span>
+        <h3>Debrief</h3>
+        <p>A live walkthrough with your team or board. We defend the numbers and answer the hard questions.</p>
+        <span class="dur">day 13–14</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section id="who">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Who it's for</p>
+      <h2>When "should we replatform?" is a six-figure question.</h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain">
+        <code>pressure:replatform</code>
+        <h3>Under pressure to migrate</h3>
+        <p>An agency or a board member keeps pushing Shopify (or away from it). You want an independent answer before you commit budget.</p>
+      </div>
+      <div class="pain">
+        <code>fees:scaling</code>
+        <h3>SaaS fees are biting</h3>
+        <p>You're on SaaS and transaction fees plus app subscriptions are eating margin as you grow. Is self-hosted now cheaper?</p>
+      </div>
+      <div class="pain">
+        <code>deal:diligence</code>
+        <h3>Buying or selling a store</h3>
+        <p>You need a credible, independent TCO and migration-risk view of the platform as part of a deal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE TOOL -->
+<section class="tool-band">
+  <div class="wrap tool-band__inner">
+    <div>
+      <p class="tool-band__eyebrow">Free interactive tool</p>
+      <h2>Want a <em>ballpark first?</em></h2>
+      <p class="tool-band__lede">Our free calculator estimates your 3-year TCO across Magento, Shopware, Shopify Plus and BigCommerce — and shows the crossover GMV where the cheaper platform flips. No signup.</p>
+      <div class="tool-band__meta">
+        <span>Instant estimate</span>
+        <span>Crossover analysis</span>
+        <span>Shareable comparison</span>
+      </div>
+    </div>
+    <div class="tool-band__side">
+      <a class="tool-band__btn" href="/tools/migration-tco">Open the TCO calculator →</a>
+      <span class="tool-band__note">The review turns the estimate into exact figures.</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-box">
+      <div>
+        <p class="eyebrow">Request your assessment</p>
+        <h2>Get an independent migration verdict — before you spend.</h2>
+        <p>Tell us your current platform, the targets you're weighing, and your rough GMV. We'll come back with scope, price and timeline.</p>
+      </div>
+      <ContactForm formName="migration-review" buttonLabel="Request an assessment" note="Independent &amp; confidential. We sell no platform." />
+    </div>
+  </div>
+</section>
+
+</main>
+  <Footer tagline="independent migration &amp; TCO assessments for e-commerce." mono="tco:assess --neutral --board-ready" />
+</Base>

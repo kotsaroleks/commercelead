@@ -1,0 +1,40 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import MigrationTcoCalculator from "../../components/tco/MigrationTcoCalculator.tsx";
+import "../../styles/calculator.css";
+const navLinks = [
+  { label: "Magento", href: "/magento" },
+  { label: "Shopware", href: "/shopware" },
+  { label: "Migration Review", href: "/migration-review" },
+];
+---
+<Base
+  title="Migration TCO Calculator — Open-Source vs SaaS over 3 years | CommerceLead"
+  description="Compare the real 3-year total cost of ownership of Magento, Shopware, Shopify Plus and BigCommerce — including the transaction fees that scale with your revenue. Free, instant."
+  accent="#F59E0B" accentDark="#B45309" accentSoft="#FEF3DC" accentShadow="rgba(245,158,11,.18)">
+  <Header links={navLinks} cta={{ label: "Get an exact assessment", href: "/migration-review" }} />
+  <main class="calc-wrap-tool">
+    <section class="calc-hero">
+      <div class="wrap">
+        <p class="eyebrow">Free tool · 3-year TCO model</p>
+        <h1>Open-source vs SaaS: <em>what does migration really cost?</em></h1>
+        <p class="lede">
+          SaaS looks cheaper on day one — until transaction fees and app subscriptions scale with your
+          revenue. Compare the true 3-year total cost of ownership across platforms, and find the GMV
+          where the cheaper option flips.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <MigrationTcoCalculator client:load />
+      </div>
+    </section>
+  </main>
+  <Footer
+    tagline="independent migration &amp; TCO assessments for e-commerce."
+    mono="tco:compare --horizon=3y --neutral" />
+</Base>
