@@ -1,0 +1,40 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import HostageCheck from "../../components/hostage/HostageCheck.tsx";
+import "../../styles/calculator.css";
+const navLinks = [
+  { label: "Evacuation Plan", href: "/evacuation-plan" },
+  { label: "First CTO", href: "/first-cto" },
+  { label: "Magento", href: "/magento" },
+];
+---
+<Base
+  title="Are You a Hostage to Your Agency? — Free Risk Check | CommerceLead"
+  description="A 12-question diagnostic that scores how dependent your store is on your agency — code, backups, domain, access and more. Free, instant, no signup."
+  accent="#DC2626" accentDark="#991B1B" accentSoft="#FBE4E4" accentShadow="rgba(220,38,38,.18)">
+  <Header links={navLinks} cta={{ label: "Get the Evacuation Plan", href: "/evacuation-plan" }} />
+  <main class="calc-wrap-tool">
+    <section class="calc-hero">
+      <div class="wrap">
+        <p class="eyebrow">Free diagnostic · 2 minutes</p>
+        <h1>Are you a <em>hostage</em> to your agency?</h1>
+        <p class="lede">
+          If your relationship with your agency went sour tomorrow, would your store survive? Answer 12
+          questions about who really controls your code, backups, domain and accounts — and get a
+          personal risk score with the gaps you need to close.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <HostageCheck client:load />
+      </div>
+    </section>
+  </main>
+  <Footer
+    tagline="take back control of what's yours — independent backups &amp; access audits."
+    mono="access:audit --recover-what-is-yours" />
+</Base>

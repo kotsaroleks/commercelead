@@ -1,0 +1,248 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ContactForm from "../components/ContactForm.astro";
+const navLinks = [{label:"What's included",href:"#included"},{label:"How it works",href:"#process"},{label:"The legal bit",href:"#legal"},{label:"Order",href:"#contact"}];
+---
+<Base
+  title="The Evacuation Plan — Independent Backup & Access Audit | €350 | CommerceLead"
+  description="Take back control of your store. Independent code backup, restore-tested backups, full access audit and an emergency go-bag — so you can leave your agency without fear. Fixed €350."
+  accent="#DC2626" accentDark="#991B1B" accentSoft="#FBE4E4" accentShadow="rgba(220,38,38,.18)">
+  <Header links={navLinks} cta={{ label: "Order for €350", href: "#contact" }} />
+  <main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Agency offboarding &middot; Fixed €350 &middot; 3–5 days</p>
+      <h1>Stop being a <em>hostage</em> to your agency.</h1>
+      <p class="lede">If your agency relationship soured tomorrow, would you still have your code, a working backup, and control of your domain? The Evacuation Plan puts all of it back in your hands — independently, in days, for a fixed price. We only ever recover what's <strong>yours</strong>.</p>
+      <div class="hero-ctas">
+        <a class="btn btn--solid" href="#contact">Order for €350</a>
+        <a class="btn btn--ghost" href="/tools/hostage-check">Check your risk first</a>
+      </div>
+      <div class="hero-meta">
+        <span>Fixed €350 — no surprises</span>
+        <span>Done in 3–5 working days</span>
+        <span>You own everything at the end</span>
+      </div>
+    </div>
+
+    <div class="terminal" role="img" aria-label="Terminal showing an emergency backup being secured">
+      <div class="term-bar"><i></i><i></i><i></i><span class="term-title">evacuation-plan — go-bag</span></div>
+      <div class="term-body" aria-hidden="true">
+        <span class="ln"><span class="prompt">you@own-account:~$</span> <span class="cmd">evac:secure --owner=you</span></span>
+        <span class="ln"><span class="dim">Recovering what's yours…</span></span>
+        <span class="ln"><span class="ok">[DONE]</span> Full repo cloned → your GitHub org</span>
+        <span class="ln"><span class="ok">[DONE]</span> Backup restored &amp; verified in sandbox</span>
+        <span class="ln"><span class="ok">[DONE]</span> 14 critical accounts inventoried</span>
+        <span class="ln"><span class="warn">[FLAG]</span> Domain on agency account — action plan attached</span>
+        <span class="ln"><span class="dim">──────────────────────────────────</span></span>
+        <span class="ln">Go-bag: <span class="hl">code · backup · access map · runbook</span></span>
+        <span class="ln">Status: <span class="hl">you can leave without fear</span> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDED -->
+<section class="services" id="included">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What's included</p>
+      <h2>Everything you need to walk away safely.</h2>
+      <p>A fixed scope, delivered in 3–5 working days, leaving you with a complete emergency “go-bag”.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <span class="tag">01 · Code</span>
+        <h3>Independent repository backup</h3>
+        <p>A full Git clone — every branch, tag and the complete history — into your own GitHub/GitLab organisation.</p>
+        <ul>
+          <li>You own the account, not us</li>
+          <li>If code lives only on FTP, we snapshot it and flag the risk</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <span class="tag">02 · Backups</span>
+        <h3>Restore-tested backups</h3>
+        <p>We inventory your database &amp; media backups, then actually restore one into a test environment to prove it works.</p>
+        <ul>
+          <li>A backup that won't restore isn't a backup</li>
+          <li>Independent backup set up in storage you own</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <span class="tag">03 · Access</span>
+        <h3>Access &amp; ownership audit</h3>
+        <p>A full inventory of every critical account — hosting, domain, DNS, payments, Git, CI/CD, email, ERP — with who owns and controls each.</p>
+        <ul>
+          <li>Single points of failure flagged</li>
+          <li>Clear map of what to move into your name</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <span class="tag">04 · Go-bag</span>
+        <h3>The emergency go-bag</h3>
+        <p>The final package you keep: repo, verified backup, access inventory, an infrastructure map, and a takeover runbook.</p>
+        <ul>
+          <li>Step-by-step “if access disappears tomorrow” plan</li>
+          <li>Secrets handed over via your password manager — never stored by us</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section class="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Price</p>
+      <h2>One fixed price. No hourly billing.</h2>
+    </div>
+    <div class="cta-box" style="box-shadow:14px 14px 0 0 var(--accent-soft)">
+      <div>
+        <p class="eyebrow">The Evacuation Plan</p>
+        <h2 style="margin-top:0">€350 — fixed, all-in.</h2>
+        <p>Independent backup, restore test, access audit and your go-bag. Same price whatever platform you're on. Most engagements naturally lead to ongoing oversight — but there's zero obligation.</p>
+      </div>
+      <div class="cta-side">
+        <a class="btn btn--solid" href="#contact">Order for €350</a>
+        <span class="note">Call-first: a short authorisation call, then we start.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How it works</p>
+      <h2>From order to go-bag in under a week.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">step 01</span>
+        <h3>Authorisation call</h3>
+        <p>A short call to confirm you own the assets and to authorise us, in writing, to act on your behalf.</p>
+        <span class="dur">day 1</span>
+      </div>
+      <div class="step">
+        <span class="num">step 02</span>
+        <h3>Recover &amp; audit</h3>
+        <p>We clone the repo, inventory accounts, and locate your backups — all into accounts you control.</p>
+        <span class="dur">days 2–3</span>
+      </div>
+      <div class="step">
+        <span class="num">step 03</span>
+        <h3>Restore test</h3>
+        <p>We restore a backup into a sandbox to prove it's real and complete, and set up an independent backup you own.</p>
+        <span class="dur">day 4</span>
+      </div>
+      <div class="step">
+        <span class="num">step 04</span>
+        <h3>Hand over the go-bag</h3>
+        <p>You receive the full package and a red/amber/green report with the exact actions to close any remaining gaps.</p>
+        <span class="dur">day 5</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEGAL -->
+<section class="creds" id="legal">
+  <div class="wrap cred-grid">
+    <div>
+      <p class="eyebrow">The legal bit — read this</p>
+      <h2>Take back what's yours. We don't break in.</h2>
+      <p style="color:var(--slate);margin-bottom:8px">This service is about recovering control of assets you legally own or have a right to access. It is not, ever, about hacking your agency.</p>
+      <ul class="cred-list">
+        <li><span class="mark">[✓]</span><span><strong>Only your assets</strong> — code you've paid for, your data, your domain, your accounts. Nothing else.</span></li>
+        <li><span class="mark">[✓]</span><span><strong>Written authorisation first</strong> — you confirm ownership and authorise us to act on your behalf before we touch anything.</span></li>
+        <li><span class="mark">[✓]</span><span><strong>No breaking in</strong> — we never bypass security, gain access by deception, or extract an agency's proprietary tools.</span></li>
+        <li><span class="mark">[✓]</span><span><strong>We check your contract</strong> — if it says the agency owns the code, we flag it as a risk and point you to the contractual route. We don't work around it.</span></li>
+        <li><span class="mark">[✓]</span><span><strong>Secrets stay yours</strong> — passwords are handed over through your own password manager; we never store them in the clear.</span></li>
+      </ul>
+    </div>
+    <div>
+      <p class="eyebrow">When access is blocked</p>
+      <div class="stack">
+        If a legitimate access has been locked, we advise on the <b>contractual and legal steps</b> to recover it — calmly and on the record. We do not “break in”, because a clean recovery is the one that actually protects you. The goal is leverage and safety, not a fight you can't win.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">FAQ</p>
+      <h2>The questions everyone asks.</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq">
+        <summary>Isn't this just stealing from my agency?</summary>
+        <p>No. We only recover assets you own or have a legal right to access — your paid-for code, your data, your domain, your accounts. We require written authorisation and never bypass security or take an agency's proprietary tools.</p>
+      </details>
+      <details class="faq">
+        <summary>What if my contract says the agency owns the code?</summary>
+        <p>Then we flag it as a risk and explain the contractual route — we don't work around it. Many contracts are ambiguous; knowing exactly where you stand is itself valuable, and often the starting point for a clean negotiation.</p>
+      </details>
+      <details class="faq">
+        <summary>Do you need to tell my agency?</summary>
+        <p>No. The work is done through your own accounts and access. It's confidential — many clients run an Evacuation Plan quietly, well before any conversation about leaving.</p>
+      </details>
+      <details class="faq">
+        <summary>What if I don't have access to anything yet?</summary>
+        <p>That's exactly when this matters most. We start from whatever you do have, document the gaps, and give you a prioritised plan — including the contractual steps to recover legitimate access that's been withheld.</p>
+      </details>
+      <details class="faq">
+        <summary>What happens after?</summary>
+        <p>You own everything and owe us nothing further. Some clients, having just realised how exposed they were, ask us to keep watch with a light ongoing retainer — but that's entirely optional.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FREE TOOL -->
+<section class="tool-band">
+  <div class="wrap tool-band__inner">
+    <div>
+      <p class="tool-band__eyebrow">Free 2-minute diagnostic</p>
+      <h2>Not sure how exposed you are? <em>Find out first.</em></h2>
+      <p class="tool-band__lede">Answer 12 questions about who controls your code, backups, domain and accounts, and get a Hostage Risk Score with your top gaps — before you spend a cent.</p>
+      <div class="tool-band__meta">
+        <span>Instant risk score</span>
+        <span>Personal top-3 gaps</span>
+        <span>No signup</span>
+      </div>
+    </div>
+    <div class="tool-band__side">
+      <a class="tool-band__btn" href="/tools/hostage-check">Take the hostage check →</a>
+      <span class="tool-band__note">Then close the gaps with the Evacuation Plan.</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-box">
+      <div>
+        <p class="eyebrow">Order your Evacuation Plan</p>
+        <h2>€350. Done in days. You own everything.</h2>
+        <p>Tell us your store and your biggest worry about access or ownership. We'll book a short authorisation call and get started — no platform sales pitch, ever.</p>
+      </div>
+      <ContactForm formName="evacuation-order" buttonLabel="Order for €350" note="A short authorisation call comes first. We recover only what's yours." />
+    </div>
+  </div>
+</section>
+
+</main>
+  <Footer tagline="take back control of what's yours — independent backups &amp; access audits." mono="evac:secure --owner=you --fixed=350" />
+</Base>
