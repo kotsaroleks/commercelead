@@ -183,13 +183,13 @@ export default function SpeedLossCalculator() {
 
         <div className="calc-field">
           <span className="calc-label calc-label--row">
-            Revenue
+            The revenue I enter is
             <span className="calc-period">
               <button type="button" className={period === "month" ? "is-on" : ""} onClick={() => setPeriod("month")}>
-                /mo
+                monthly
               </button>
               <button type="button" className={period === "year" ? "is-on" : ""} onClick={() => setPeriod("year")}>
-                /yr
+                yearly
               </button>
             </span>
           </span>
@@ -215,6 +215,11 @@ export default function SpeedLossCalculator() {
               placeholder="50000"
             />
           </div>
+          <p className="calc-hint">
+            {period === "year"
+              ? `≈ ${f(monthlySales)}/mo — the model works per month`
+              : `≈ ${f(monthlySales * 12)}/yr`}
+          </p>
         </div>
 
         <div className="calc-field">
