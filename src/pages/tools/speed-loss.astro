@@ -1,0 +1,39 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import SpeedLossCalculator from "../../components/calculator/SpeedLossCalculator.tsx";
+import "../../styles/calculator.css";
+const navLinks = [
+  { label: "Magento", href: "/magento" },
+  { label: "Shopware", href: "/shopware" },
+  { label: "Speed Audit", href: "/speed-audit" },
+];
+---
+<Base
+  title="Site Speed Revenue-Loss Calculator — How much is slow costing you? | CommerceLead"
+  description="Estimate the revenue your e-commerce store loses to slow load times. Based on empirical Portent conversion data. Free, instant, no signup."
+  accent="#F59E0B" accentDark="#B45309" accentSoft="#FEF3DC" accentShadow="rgba(245,158,11,.18)">
+  <Header links={navLinks} cta={{ label: "Book a speed audit", href: "/speed-audit" }} />
+  <main class="calc-wrap-tool">
+    <section class="calc-hero">
+      <div class="wrap">
+        <p class="eyebrow">Free tool · Portent conversion model</p>
+        <h1>How much is a <em>slow site</em> costing you?</h1>
+        <p class="lede">
+          Slow pages quietly bleed conversions. Plug in your numbers — or your store's real load time —
+          and see the revenue you're losing every month, with the math behind it.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <SpeedLossCalculator client:load />
+      </div>
+    </section>
+  </main>
+  <Footer
+    tagline="speed &amp; Core Web Vitals audits for e-commerce."
+    mono="cwv:measure --quantify-revenue" />
+</Base>
