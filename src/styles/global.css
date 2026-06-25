@@ -448,6 +448,13 @@ h2{
 .tool-band--tco .tool-band__btn{background:#6366F1;border-color:#6366F1;color:#fff}
 .tool-band--tco .tool-band__btn:hover{background:#fff;border-color:#fff;color:#14181D}
 
+/* red variant — hostage check / evacuation plan */
+.tool-band--evac .tool-band__eyebrow{color:#FCA5A5}
+.tool-band--evac h2 em{color:#FCA5A5}
+.tool-band--evac .tool-band__meta span::before{color:#FCA5A5}
+.tool-band--evac .tool-band__btn{background:#DC2626;border-color:#DC2626;color:#fff}
+.tool-band--evac .tool-band__btn:hover{background:#fff;border-color:#fff;color:#14181D}
+
 /* ===== contact form ===== */
 .contact-form{display:flex;flex-direction:column;gap:14px}
 .contact-form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
