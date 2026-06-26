@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <title>Netlify form registration</title>
+  </head>
+  <body>
+    <!--
+      Static form registration for Netlify Forms.
+      Netlify's build-time scanner reads this file (copied verbatim from /public)
+      and registers every form + its fields, so the real submissions on the live
+      pages get processed instead of 404-ing. Keep field names in sync with
+      ContactForm.astro. Not linked anywhere; humans never see it.
+    -->
+
+    <form name="magento-contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
+    </form>
+    <form name="shopware-contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
+    </form>
+    <form name="shopify-contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
+    </form>
+    <form name="firstcto-contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
+    </form>
+    <form name="project-manager-contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
+    </form>
+    <form name="business-analyst-contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
+    </form>
+    <form name="product-manager-contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
+    </form>
+    <form name="tech-audit-order" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
+    </form>
+    <form name="estimate-review" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
+    </form>
+    <form name="speed-audit-order" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
+    </form>
+    <form name="due-diligence-inquiry" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
+    </form>
+    <form name="migration-review" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
+    </form>
+
+    <!-- Forms that also submit the on-page quiz result -->
+    <form name="ai-readiness" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
+      <input type="text" name="quiz-score" /><input type="text" name="quiz-tier" /><input type="text" name="quiz-gaps" />
+    </form>
+    <form name="evacuation-order" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
+      <input type="text" name="quiz-score" /><input type="text" name="quiz-tier" /><input type="text" name="quiz-gaps" />
+    </form>
+  </body>
+</html>
