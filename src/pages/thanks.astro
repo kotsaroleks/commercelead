@@ -8,26 +8,41 @@ import Base from "../layouts/Base.astro";
   <noscript><meta http-equiv="refresh" content="7; url=/" /></noscript>
   <main class="thanks">
     <div class="wrap">
-      <p class="eyebrow">Message received</p>
-      <h1>Thanks — that's landed with us.</h1>
-      <p class="lede">A senior engineer will reply personally, usually within one working day. If it's urgent, just reply to the confirmation email.</p>
-      <div class="thanks-actions">
-        <a class="btn btn--ghost" href="/">← Back to homepage</a>
-        <p class="redirect-note">Taking you home in <span id="countdown">7</span>s…</p>
+      <div class="thanks-card">
+        <span class="thanks-check" aria-hidden="true">✓</span>
+        <p class="eyebrow">Message received</p>
+        <h1>Thanks — <em>that's landed</em> with us.</h1>
+        <p class="lede">A senior engineer will reply personally, usually within one working day. If it's urgent, just reply to the confirmation email.</p>
+        <div class="thanks-actions">
+          <a class="btn btn--solid" href="/">← Back to homepage</a>
+          <p class="redirect-note">Taking you home in <span id="countdown">7</span>s…</p>
+        </div>
+        <div class="redirect-bar"><span id="redirect-fill"></span></div>
       </div>
-      <div class="redirect-bar"><span id="redirect-fill"></span></div>
     </div>
   </main>
   <style>
-    .thanks{padding:120px 0}
-    .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:18px}
-    h1{font-family:'Archivo',sans-serif;font-weight:850;font-stretch:90%;font-size:clamp(2.2rem,4vw,3.2rem);line-height:1.05;letter-spacing:-.025em;margin-bottom:18px}
-    .lede{font-size:1.15rem;color:var(--slate);max-width:34em;margin-bottom:34px}
+    .thanks{padding:96px 0}
+    .thanks-card{
+      max-width:40em;background:var(--white);border:1px solid var(--ink);
+      border-top:4px solid var(--accent);padding:52px 48px;
+      box-shadow:16px 16px 0 0 var(--accent-shadow);
+    }
+    .thanks-check{
+      display:flex;align-items:center;justify-content:center;width:54px;height:54px;
+      background:var(--accent);color:#fff;font-size:1.5rem;font-weight:700;
+      margin-bottom:26px;box-shadow:6px 6px 0 0 var(--accent-soft);
+    }
+    .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:14px}
+    h1{font-family:'Archivo',sans-serif;font-weight:850;font-stretch:90%;font-size:clamp(2.2rem,4vw,3.1rem);line-height:1.05;letter-spacing:-.025em;margin-bottom:16px}
+    h1 em{font-style:normal;color:var(--accent)}
+    .lede{font-size:1.12rem;color:var(--slate);margin-bottom:32px}
     .thanks-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
     .redirect-note{font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--slate)}
     .redirect-note span{color:var(--accent-dark);font-weight:500}
-    .redirect-bar{margin-top:28px;max-width:34em;height:3px;background:var(--line)}
+    .redirect-bar{margin-top:28px;height:3px;background:var(--line)}
     .redirect-bar span{display:block;height:100%;width:0;background:var(--accent);transition:width .9s linear}
+    @media(max-width:640px){.thanks{padding:56px 0}.thanks-card{padding:36px 26px;box-shadow:10px 10px 0 0 var(--accent-shadow)}}
   </style>
   <script is:inline>
     (function () {
