@@ -12,51 +12,55 @@
       and registers every form + its fields, so the real submissions on the live
       pages get processed instead of 404-ing. Keep field names in sync with
       ContactForm.astro. Not linked anywhere; humans never see it.
+
+      Uses data-netlify="true" (matching the real ContactForm) for the most
+      reliable detection. Trigger a "Clear cache and deploy" after enabling
+      form detection so the scanner runs over this file. (deploy: 2026-06-26)
     -->
 
-    <form name="magento-contact" netlify netlify-honeypot="bot-field" hidden>
+    <form name="magento-contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
     </form>
-    <form name="shopware-contact" netlify netlify-honeypot="bot-field" hidden>
+    <form name="shopware-contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
     </form>
-    <form name="shopify-contact" netlify netlify-honeypot="bot-field" hidden>
+    <form name="shopify-contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
     </form>
-    <form name="firstcto-contact" netlify netlify-honeypot="bot-field" hidden>
+    <form name="firstcto-contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
     </form>
-    <form name="project-manager-contact" netlify netlify-honeypot="bot-field" hidden>
+    <form name="project-manager-contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
     </form>
-    <form name="business-analyst-contact" netlify netlify-honeypot="bot-field" hidden>
+    <form name="business-analyst-contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
     </form>
-    <form name="product-manager-contact" netlify netlify-honeypot="bot-field" hidden>
+    <form name="product-manager-contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
     </form>
-    <form name="tech-audit-order" netlify netlify-honeypot="bot-field" hidden>
+    <form name="tech-audit-order" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
     </form>
-    <form name="estimate-review" netlify netlify-honeypot="bot-field" hidden>
+    <form name="estimate-review" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
     </form>
-    <form name="speed-audit-order" netlify netlify-honeypot="bot-field" hidden>
+    <form name="speed-audit-order" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
     </form>
-    <form name="due-diligence-inquiry" netlify netlify-honeypot="bot-field" hidden>
+    <form name="due-diligence-inquiry" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
     </form>
-    <form name="migration-review" netlify netlify-honeypot="bot-field" hidden>
+    <form name="migration-review" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
     </form>
 
     <!-- Forms that also submit the on-page quiz result -->
-    <form name="ai-readiness" netlify netlify-honeypot="bot-field" hidden>
+    <form name="ai-readiness" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
       <input type="text" name="quiz-score" /><input type="text" name="quiz-tier" /><input type="text" name="quiz-gaps" />
     </form>
-    <form name="evacuation-order" netlify netlify-honeypot="bot-field" hidden>
+    <form name="evacuation-order" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" /><input type="email" name="email" /><input type="url" name="store" /><textarea name="message"></textarea>
       <input type="text" name="quiz-score" /><input type="text" name="quiz-tier" /><input type="text" name="quiz-gaps" />
     </form>
