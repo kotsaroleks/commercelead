@@ -344,3 +344,20 @@
 .hc-cta__alt:hover { color: var(--ink); }
 .hc-cta .calc-cta__btn { background: var(--loss); border-color: var(--loss); }
 .hc-cta .calc-cta__btn:hover { background: #991B1B; border-color: #991B1B; }
+
+/* ===== AI Readiness — fuchsia theme + "native" top tier (reuses .hc markup) ===== */
+.air .hc-quiz { box-shadow: 12px 12px 0 0 var(--accent-soft); }
+.air .hc-progress__bar span { background: var(--accent); }
+.air .hc-cat { color: var(--accent-dark); }
+.air .hc-opt.is-sel { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.air .hc-opt.is-sel .hc-opt__mark { background: var(--accent); border-color: var(--accent); }
+/* readiness top tier = "AI-native", themed to the page accent */
+.air .hc-score.is-native { box-shadow: 12px 12px 0 0 var(--accent-soft); }
+.air .hc-score.is-native .hc-score__num { color: var(--accent); }
+.air .hc-badge.is-native { color: var(--accent-dark); background: var(--accent-soft); }
+.air .hc-catrow__bar .is-native { background: var(--accent); }
+.air .hc-risk.is-native { border-left-color: var(--accent); }
+.air .hc-cta { box-shadow: 12px 12px 0 0 var(--accent-soft); }
+.air .hc-cta .calc-cta__btn { background: var(--accent); border-color: var(--accent); }
+.air .hc-cta .calc-cta__btn:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+.air-prio-pct { font-family: 'IBM Plex Mono', monospace; font-size: .8rem; color: var(--slate); font-weight: 400; }

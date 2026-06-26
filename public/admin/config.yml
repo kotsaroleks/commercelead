@@ -28,6 +28,8 @@ collections:
         fields:
           - { name: brand, label: "Brand name", widget: string }
           - { name: email, label: "Contact email", widget: string }
+          - { name: aiAudit, label: "AI Readiness Audit price (€)", widget: number, value_type: int, min: 0 }
+          - { name: aiRoadmap, label: "AI Roadmap price (€)", widget: number, value_type: int, min: 0 }
           - name: pricing
             label: "Role pricing"
             widget: list

@@ -1,0 +1,288 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ContactForm from "../components/ContactForm.astro";
+import AiReadiness from "../components/ai-readiness/AiReadiness.tsx";
+import site from "../data/site.json";
+import "../styles/calculator.css";
+const navLinks = [
+  { label: "Readiness Score", href: "#score" },
+  { label: "What we do", href: "#cycle" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "FAQ", href: "#faq" },
+];
+const faqs = [
+  { q: "We don't even have data ready for AI — is this for us?", a: "Especially for you. Most stores aren't held back by a lack of AI tools but by a shaky foundation — messy catalog, no structured data, no analytics. That's exactly where we start, and where the fastest wins are." },
+  { q: "Isn't AI just expensive hype?", a: "It is when you buy tools before fixing the basics. We work fixed-scope, vendor-neutral, and aim for measurable quick wins in the first 30 days — no silver bullets, no lock-in." },
+  { q: "What does 'visibility to AI agents' actually mean?", a: "AI is becoming a demand channel: ChatGPT Shopping, Perplexity, Google AI Overviews and agentic checkout. If an AI agent can't find, understand and buy from your store, you're invisible in that channel. We audit and fix that — structured data, feeds, GEO/AEO." },
+  { q: "Do you lock us into a specific vendor or platform?", a: "No. We're an independent technical partner. We recommend what fits your store — including the native AI in Adobe Commerce or Shopware 6 — and you own everything we set up." },
+  { q: "How does the audit relate to the roadmap and implementation?", a: "The €650 audit is credited in full toward the AI Roadmap if you continue. The roadmap becomes the plan; implementation and the ongoing analyse→improve loop run as a retainer." },
+];
+---
+<Base
+  title="How AI-Ready Is Your E-commerce Store? — Free AI Readiness Score | CommerceLead"
+  description="An independent, vendor-neutral check of how ready your Magento or Shopware store is for the AI era — and whether AI agents can even find you. Free 2-minute score, then a fixed-scope audit and roadmap."
+  accent="#C026D3" accentDark="#86198F" accentSoft="#FAE8FF" accentShadow="rgba(192,38,211,.18)">
+  <Header links={navLinks} cta={{ label: "Get your AI score", href: "#score" }} />
+  <main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">AI Readiness · Adobe Commerce &amp; Shopware 6 · Vendor-neutral</p>
+      <h1>When a shopper asks an AI agent, <em>will it find your store?</em></h1>
+      <p class="lede">AI is becoming a demand channel — ChatGPT Shopping, Perplexity, Google AI Overviews, agentic checkout. Most merchants aren't behind because they lack tools, but because they lack the foundation. We give you an honest score, then build AI on <strong>your</strong> foundation — no hype, no lock-in, measurable revenue.</p>
+      <div class="hero-ctas">
+        <a class="btn btn--solid" href="#score">Take the AI Readiness Score</a>
+        <a class="btn btn--ghost" href="#contact">Order the audit</a>
+      </div>
+      <div class="hero-meta">
+        <span>Free 2-minute score</span>
+        <span>6 dimensions assessed</span>
+        <span>Audit → roadmap → measurable gain</span>
+      </div>
+    </div>
+
+    <div class="terminal" role="img" aria-label="Terminal showing an AI agent querying a store">
+      <div class="term-bar"><i></i><i></i><i></i><span class="term-title">ai-agent — can it buy from you?</span></div>
+      <div class="term-body" aria-hidden="true">
+        <span class="ln"><span class="prompt">agent@chatgpt:~$</span> <span class="cmd">find "best waterproof hiking boots under €150"</span></span>
+        <span class="ln"><span class="dim">Reading structured data &amp; feeds…</span></span>
+        <span class="ln"><span class="err">[MISS]</span> your-store.com — no Product schema</span>
+        <span class="ln"><span class="err">[MISS]</span> no clean feed — can't read catalog</span>
+        <span class="ln"><span class="warn">[WARN]</span> competitor.com cited instead</span>
+        <span class="ln"><span class="dim">──────────────────────────────────</span></span>
+        <span class="ln">Result: <span class="hl">you're invisible to the AI channel</span></span>
+        <span class="ln">Fixable? <span class="hl">yes — start with the foundation</span> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE INTERACTIVE -->
+<section id="score" class="calc-wrap-tool">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center;max-width:38em;margin:0 auto 40px">
+      <p class="eyebrow" style="color:var(--accent-dark)">The signature check</p>
+      <h2>What's your AI Readiness Score?</h2>
+      <p>Answer 11 questions across 6 dimensions and get an instant score, a tier, and the gaps to fix first. No signup.</p>
+    </div>
+    <AiReadiness client:load />
+  </div>
+</section>
+
+<!-- AI ≠ CHATBOT -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Let's be clear</p>
+      <h2>AI for e-commerce isn't a chatbot.</h2>
+      <p>The hype sells widgets. Real impact comes from a handful of grounded, measurable directions — built on clean data.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain"><code>visibility</code><h3>Found by AI agents</h3><p>Structured data, feeds and GEO/AEO so ChatGPT, Perplexity and Google AI can find, understand and recommend you.</p></div>
+      <div class="pain"><code>discovery</code><h3>Semantic search &amp; recs</h3><p>On-site AI that understands intent, not just keywords — and personalises the path to purchase.</p></div>
+      <div class="pain"><code>content</code><h3>Catalog at scale</h3><p>AI-assisted descriptions, translations and enrichment with human review, so content stops being a bottleneck.</p></div>
+      <div class="pain"><code>support</code><h3>Grounded support</h3><p>RAG-based assistance over your real catalog and policies — deflection that's actually accurate.</p></div>
+      <div class="pain"><code>intelligence</code><h3>Demand &amp; fraud</h3><p>Forecasting, returns prediction and fraud detection on data you can finally trust.</p></div>
+      <div class="pain"><code>foundation</code><h3>Clean data first</h3><p>None of the above works on a messy catalog. We fix the foundation before we add intelligence.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SIX-STAGE CYCLE -->
+<section id="cycle" class="ai-cycle">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">One closed loop, not a checklist</p>
+      <h2>Six stages that feed back into each other.</h2>
+      <p>We don't drop a tool and leave. Each stage informs the next, and the loop keeps compounding gains.</p>
+    </div>
+    <div class="ai-loop">
+      <div class="ai-stage"><span class="tag">01 · Audit</span><h3>Audit</h3><p>An honest score across all six dimensions and where you really stand.</p></div>
+      <div class="ai-stage"><span class="tag">02 · Roadmap</span><h3>Roadmap</h3><p>A 90-day plan: quick wins, vendor/stack choices, and estimates.</p></div>
+      <div class="ai-stage"><span class="tag">03 · Adaptation</span><h3>Adaptation</h3><p>Cleaning the catalog and data so AI has something solid to work with.</p></div>
+      <div class="ai-stage"><span class="tag">04 · Implementation</span><h3>Implementation</h3><p>Shipping the highest-ROI capabilities on your platform.</p></div>
+      <div class="ai-stage"><span class="tag">05 · Analysis</span><h3>Analysis</h3><p>Measuring impact against revenue — what worked, what didn't.</p></div>
+      <div class="ai-stage"><span class="tag">06 · Improvement</span><h3>Improvement</h3><p>Iterating and feeding learnings back into the next audit cycle.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM SCENARIOS -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Concrete, on your platform</p>
+      <h2>What this looks like for Adobe Commerce &amp; Shopware 6.</h2>
+    </div>
+    <div class="ai-scenarios">
+      <div class="ai-scen">
+        <span class="tag">Adobe Commerce / Magento</span>
+        <ul>
+          <li>Live Search &amp; Product Recommendations on Adobe Sensei</li>
+          <li>Semantic search &amp; on-site personalisation</li>
+          <li>AI-generated descriptions &amp; catalog translations</li>
+          <li>Demand forecasting on your sales data</li>
+        </ul>
+      </div>
+      <div class="ai-scen">
+        <span class="tag">Shopware 6</span>
+        <ul>
+          <li>Shopware AI Copilot &amp; AI search / merchandising</li>
+          <li>Automated content generation</li>
+          <li>Recommendations &amp; personalisation</li>
+          <li>Integrations via the app system</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ai-cross">
+      <span class="tag">Cross-cutting</span>
+      <p>RAG support over catalog + policies · GEO/AEO &amp; structured data for AI agents · segmentation &amp; marketing automation · fraud detection &amp; returns prediction.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Productized &amp; transparent</p>
+      <h2>Start with an audit. Scale into a roadmap.</h2>
+      <p>Fixed prices for the diagnosis and the plan; implementation runs on the same FTE model as the rest of our work. The audit is credited in full toward the roadmap.</p>
+    </div>
+
+    <div class="ai-offer">
+      <div class="ai-pack">
+        <span class="tag">Step 1</span>
+        <h3>AI Readiness Audit</h3>
+        <p class="ai-price">€{site.aiAudit}</p>
+        <p>Assessment across 6 dimensions, prioritised findings (impact/effort), a scored report and a 60-min debrief.</p>
+        <a class="btn btn--solid" href="#contact">Order the audit</a>
+      </div>
+      <div class="ai-pack ai-pack--mid">
+        <span class="tag">Step 2</span>
+        <h3>AI Roadmap</h3>
+        <p class="ai-price">€{site.aiRoadmap.toLocaleString("en-US")}</p>
+        <p>A 90-day plan: quick wins, vendor/stack selection and estimates. Your €{site.aiAudit} audit is deducted from this.</p>
+        <a class="btn btn--ghost" href="#contact">Talk roadmap</a>
+      </div>
+      <div class="ai-pack">
+        <span class="tag">Step 3</span>
+        <h3>Implementation &amp; retainer</h3>
+        <p class="ai-price">from 0.5 FTE</p>
+        <p>We build and run the analyse→improve loop. Same transparent hourly rates as the rest of our work, below.</p>
+        <a class="btn btn--ghost" href="#contact">Plan delivery</a>
+      </div>
+    </div>
+
+    <table class="price-table" style="margin-top:34px">
+      <thead>
+        <tr><th scope="col">Implementation role</th><th scope="col">Hourly rate</th><th scope="col">Est. monthly <span id="fteLabel">(0.5 FTE)</span></th></tr>
+      </thead>
+      <tbody>
+        {site.pricing.map((p) => (
+          <tr>
+            <td class="role">{p.role}<small>{p.desc}</small></td>
+            <td class="rate"><b>€{p.rate}</b> <span>/ hour</span></td>
+            <td class="monthly" data-rate={p.rate}>{"€" + (p.rate * 80).toLocaleString("en-US")}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p class="price-note">Monthly estimates assume <code>1 FTE = 160 h/month</code>; table shows 0.5 FTE. Billing is hourly against tracked time. The audit is a fixed fee and is credited toward the roadmap.</p>
+  </div>
+</section>
+
+<!-- OBJECTIONS -->
+<section class="creds">
+  <div class="wrap cred-grid">
+    <div>
+      <p class="eyebrow">The honest answers</p>
+      <h2>The two things every founder says.</h2>
+      <ul class="cred-list">
+        <li><span class="mark">[?]</span><span><strong>“We don't have data ready for AI.”</strong> — Exactly why we start with the foundation. The audit finds the gaps; the first 30 days fix the highest-impact ones.</span></li>
+        <li><span class="mark">[?]</span><span><strong>“It's too expensive and slow.”</strong> — Fixed scope, vendor-neutral, quick wins first. You see measurable movement before any big build.</span></li>
+      </ul>
+    </div>
+    <div>
+      <p class="eyebrow">Our position</p>
+      <div class="stack">
+        We're on <b>your</b> side of the table. We don't sell a platform or an AI product, so the recommendation is whatever actually moves your revenue — including doing less than a vendor would tell you to. You own everything we set up.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">FAQ</p>
+      <h2>Questions founders ask first.</h2>
+    </div>
+    <div class="faq-list">
+      {faqs.map((f) => (
+        <details class="faq">
+          <summary>{f.q}</summary>
+          <p>{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-box">
+      <div>
+        <p class="eyebrow">Start with the truth</p>
+        <h2>Order your AI Readiness Audit — €{site.aiAudit}.</h2>
+        <p>Tell us your platform and where you feel behind on AI. You'll get an honest, vendor-neutral picture and a prioritised plan — whether we work together or not.</p>
+      </div>
+      <ContactForm formName="ai-readiness" buttonLabel={`Order the audit — €${site.aiAudit}`} note="Vendor-neutral. A senior engineer joins the call." />
+    </div>
+  </div>
+</section>
+
+</main>
+  <Footer tagline="independent AI readiness audits &amp; roadmaps for e-commerce." mono="ai:assess --on-your-foundation" />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((f) => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a },
+    })),
+  })} />
+
+  <style>
+    .ai-loop{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+    .ai-stage{background:var(--white);padding:26px 24px}
+    .ai-stage .tag{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-dark);display:block;margin-bottom:10px}
+    .ai-stage h3{font-family:'Archivo',sans-serif;font-weight:750;font-size:1.15rem;letter-spacing:-.01em;margin-bottom:6px}
+    .ai-stage p{font-size:.9rem;color:var(--slate)}
+    .ai-scenarios{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .ai-scen{border:1px solid var(--line);border-top:4px solid var(--accent);background:var(--white);padding:28px 26px}
+    .ai-scen .tag,.ai-cross .tag{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dark);display:block;margin-bottom:16px}
+    .ai-scen ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .ai-scen li{font-size:.95rem;padding-left:20px;position:relative;color:var(--ink)}
+    .ai-scen li::before{content:"›";position:absolute;left:2px;color:var(--accent);font-weight:600}
+    .ai-cross{margin-top:22px;border:1px solid var(--line);background:var(--paper);padding:22px 26px}
+    .ai-cross p{font-size:.95rem;color:var(--slate);line-height:1.6}
+    .ai-offer{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .ai-pack{border:1px solid var(--line);border-top:4px solid var(--accent);background:var(--white);padding:30px 28px;display:flex;flex-direction:column;gap:12px}
+    .ai-pack--mid{box-shadow:12px 12px 0 0 var(--accent-soft)}
+    .ai-pack .tag{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dark)}
+    .ai-pack h3{font-family:'Archivo',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-.02em}
+    .ai-pack p{font-size:.94rem;color:var(--slate)}
+    .ai-pack .ai-price{font-family:'Archivo',sans-serif;font-weight:850;font-size:2rem;color:var(--ink);letter-spacing:-.02em}
+    .ai-pack .btn{margin-top:auto;text-align:center}
+    @media(max-width:820px){.ai-loop,.ai-offer{grid-template-columns:1fr}.ai-scenarios{grid-template-columns:1fr}}
+  </style>
+</Base>

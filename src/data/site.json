@@ -1,6 +1,8 @@
 {
   "brand": "CommerceLead",
   "email": "hello@example.com",
+  "aiAudit": 650,
+  "aiRoadmap": 2500,
   "pricing": [
     {
       "role": "Middle+ Developer",
