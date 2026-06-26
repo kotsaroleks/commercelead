@@ -32,6 +32,23 @@ export default function HostageCheck() {
 
   const result = useMemo(() => evaluate(answers), [answers]);
 
+  // Publish the result so the on-page contact form can submit it to Netlify.
+  useEffect(() => {
+    if (!finished) return;
+    const detail = {
+      score: result.score,
+      tier: result.bandLabel,
+      gaps: result.topRisks.map((r) => r.asset).join(", "),
+    };
+    (window as any).__quizResult = detail;
+    try {
+      localStorage.setItem("cl_quiz_result", JSON.stringify({ ...detail, source: "hostage-check", ts: Date.now() }));
+    } catch {
+      /* storage unavailable */
+    }
+    window.dispatchEvent(new CustomEvent("quizresult", { detail }));
+  }, [finished, result]);
+
   const answer = (optionIndex: number) => {
     setAnswers((prev) => {
       const next = [...prev];

@@ -1,5 +1,5 @@
 ---
-const { formName = "contact", buttonLabel = "Send message", note } = Astro.props;
+const { formName = "contact", buttonLabel = "Send message", note, captureQuiz = false } = Astro.props;
 ---
 <form
   name={formName}
@@ -26,6 +26,41 @@ const { formName = "contact", buttonLabel = "Send message", note } = Astro.props
     <label for={`${formName}-message`}>Your biggest technical headache</label>
     <textarea id={`${formName}-message`} name="message" rows="3" required></textarea>
   </div>
+  {captureQuiz && (
+    <div class="quiz-capture" hidden>
+      {/* Populated by the on-page quiz so the lead lands in Netlify with their result. */}
+      <input type="hidden" name="quiz-score" id="qf-score" />
+      <input type="hidden" name="quiz-tier" id="qf-tier" />
+      <input type="hidden" name="quiz-gaps" id="qf-gaps" />
+    </div>
+  )}
   <button type="submit" class="btn btn--solid">{buttonLabel}</button>
   {note && <p class="note">{note}</p>}
 </form>
+{captureQuiz && (
+  <script is:inline>
+    (function () {
+      function apply(r) {
+        if (!r) return;
+        var s = document.getElementById("qf-score");
+        var t = document.getElementById("qf-tier");
+        var g = document.getElementById("qf-gaps");
+        if (s) s.value = r.score != null ? r.score + "/100" : "";
+        if (t) t.value = r.tier || "";
+        if (g) g.value = r.gaps || "";
+      }
+      // Live updates when the quiz is on the same page (e.g. /ai-readiness).
+      window.addEventListener("quizresult", function (e) { apply(e.detail); });
+      if (window.__quizResult) apply(window.__quizResult);
+      // Carries a result across a page change (e.g. hostage-check → /evacuation-plan),
+      // but only if it's recent so unrelated visits don't get a stale prefill.
+      try {
+        var raw = localStorage.getItem("cl_quiz_result");
+        if (raw) {
+          var r = JSON.parse(raw);
+          if (r && r.ts && Date.now() - r.ts < 6 * 3600 * 1000) apply(r);
+        }
+      } catch (e) {}
+    })();
+  </script>
+)}
