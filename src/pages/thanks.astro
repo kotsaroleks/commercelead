@@ -5,12 +5,17 @@ import Base from "../layouts/Base.astro";
   title="Thanks — we'll be in touch"
   description="Your message was received."
   accent="#0F8C6C" accentDark="#0B6B53" accentSoft="#E3F1EC" accentShadow="rgba(15,140,108,.16)">
+  <noscript><meta http-equiv="refresh" content="7; url=/" /></noscript>
   <main class="thanks">
     <div class="wrap">
       <p class="eyebrow">Message received</p>
       <h1>Thanks — that's landed with us.</h1>
       <p class="lede">A senior engineer will reply personally, usually within one working day. If it's urgent, just reply to the confirmation email.</p>
-      <a class="btn btn--ghost" href="/">← Back to homepage</a>
+      <div class="thanks-actions">
+        <a class="btn btn--ghost" href="/">← Back to homepage</a>
+        <p class="redirect-note">Taking you home in <span id="countdown">7</span>s…</p>
+      </div>
+      <div class="redirect-bar"><span id="redirect-fill"></span></div>
     </div>
   </main>
   <style>
@@ -18,5 +23,31 @@ import Base from "../layouts/Base.astro";
     .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:18px}
     h1{font-family:'Archivo',sans-serif;font-weight:850;font-stretch:90%;font-size:clamp(2.2rem,4vw,3.2rem);line-height:1.05;letter-spacing:-.025em;margin-bottom:18px}
     .lede{font-size:1.15rem;color:var(--slate);max-width:34em;margin-bottom:34px}
+    .thanks-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+    .redirect-note{font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--slate)}
+    .redirect-note span{color:var(--accent-dark);font-weight:500}
+    .redirect-bar{margin-top:28px;max-width:34em;height:3px;background:var(--line)}
+    .redirect-bar span{display:block;height:100%;width:0;background:var(--accent);transition:width .9s linear}
   </style>
+  <script is:inline>
+    (function () {
+      var total = 7;
+      var seconds = total;
+      var el = document.getElementById("countdown");
+      var fill = document.getElementById("redirect-fill");
+      function paint() {
+        if (el) el.textContent = String(Math.max(0, seconds));
+        if (fill) fill.style.width = (((total - seconds) / total) * 100) + "%";
+      }
+      paint();
+      var timer = setInterval(function () {
+        seconds -= 1;
+        paint();
+        if (seconds <= 0) {
+          clearInterval(timer);
+          window.location.href = "/";
+        }
+      }, 1000);
+    })();
+  </script>
 </Base>
