@@ -1,0 +1,85 @@
+{
+  "platforms": [
+    {
+      "id": "magento",
+      "name": "Magento Open Source",
+      "short": "Magento",
+      "kind": "oss",
+      "color": "#EE672F",
+      "platformTierMonthly": 0,
+      "txnFeePct": 0,
+      "hostingMonthly": 600,
+      "retainerMonthly": 2500,
+      "extensionsYearly": 3000,
+      "majorUpgradeCost": 15000,
+      "upgradeEveryYears": 3,
+      "migrationBase": 18000,
+      "migrationPerPlugin": 2500
+    },
+    {
+      "id": "shopware",
+      "name": "Shopware (self-hosted)",
+      "short": "Shopware",
+      "kind": "oss",
+      "color": "#189EFF",
+      "platformTierMonthly": 0,
+      "txnFeePct": 0,
+      "hostingMonthly": 450,
+      "retainerMonthly": 2000,
+      "extensionsYearly": 2500,
+      "majorUpgradeCost": 12000,
+      "upgradeEveryYears": 3,
+      "migrationBase": 15000,
+      "migrationPerPlugin": 2200
+    },
+    {
+      "id": "shopify-plus",
+      "name": "Shopify Plus",
+      "short": "Shopify Plus",
+      "kind": "saas",
+      "color": "#95BF47",
+      "platformTierMonthly": 2000,
+      "txnFeePct": 0.006,
+      "hostingMonthly": 0,
+      "retainerMonthly": 600,
+      "extensionsYearly": 0,
+      "majorUpgradeCost": 0,
+      "upgradeEveryYears": 3,
+      "migrationBase": 16000,
+      "migrationPerPlugin": 2400
+    },
+    {
+      "id": "bigcommerce",
+      "name": "BigCommerce Enterprise",
+      "short": "BigCommerce",
+      "kind": "saas",
+      "color": "#121118",
+      "platformTierMonthly": 700,
+      "txnFeePct": 0.003,
+      "hostingMonthly": 0,
+      "retainerMonthly": 500,
+      "extensionsYearly": 0,
+      "majorUpgradeCost": 0,
+      "upgradeEveryYears": 3,
+      "migrationBase": 14000,
+      "migrationPerPlugin": 2200
+    }
+  ],
+  "apps": [
+    { "id": "search", "name": "Search & merchandising (Algolia / Searchanise)", "monthly": 250, "defaultOn": true },
+    { "id": "email", "name": "Email & automation (Klaviyo)", "monthly": 300, "defaultOn": true },
+    { "id": "reviews", "name": "Reviews & UGC (Yotpo / Judge.me)", "monthly": 120, "defaultOn": true },
+    { "id": "loyalty", "name": "Loyalty & rewards", "monthly": 200, "defaultOn": false },
+    { "id": "subscriptions", "name": "Subscriptions & recurring billing", "monthly": 150, "defaultOn": false },
+    { "id": "pagebuilder", "name": "Page builder / CMS", "monthly": 60, "defaultOn": true },
+    { "id": "seo", "name": "Advanced SEO & redirects", "monthly": 80, "defaultOn": false },
+    { "id": "returns", "name": "Returns / RMA management", "monthly": 90, "defaultOn": false }
+  ],
+  "defaults": {
+    "growthPct": 15,
+    "horizonYears": 3,
+    "customPlugins": 8,
+    "currentHostingMonthly": 550,
+    "currentRetainerMonthly": 3500
+  }
+}

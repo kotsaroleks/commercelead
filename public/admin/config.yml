@@ -1,0 +1,84 @@
+# Decap CMS configuration for CommerceLead.
+# Edits commit straight to the Git repo, which triggers a rebuild/redeploy.
+#
+# Auth (production): Netlify Identity + Git Gateway.
+#   In the Netlify dashboard: enable Identity, set registration to "Invite only",
+#   then Identity → Services → enable Git Gateway. Invite yourself, accept the
+#   email, and log in at /admin/.
+# Auth (local testing): run `npx decap-server` in another terminal, then open
+#   /admin/ on the dev server — local_backend routes writes to local files.
+
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: settings
+    label: "Settings & pricing"
+    description: "Global site values and the role hourly rates."
+    files:
+      - name: site
+        label: "Brand & role pricing"
+        file: "src/data/site.json"
+        fields:
+          - { name: brand, label: "Brand name", widget: string }
+          - { name: email, label: "Contact email", widget: string }
+          - name: pricing
+            label: "Role pricing"
+            widget: list
+            label_singular: "Role"
+            summary: "{{fields.role}} — €{{fields.rate}}/h"
+            fields:
+              - { name: role, label: "Role", widget: string }
+              - { name: desc, label: "Description", widget: string }
+              - { name: rate, label: "Hourly rate (€)", widget: number, value_type: int, min: 0 }
+
+      - name: tco
+        label: "Migration TCO assumptions"
+        file: "src/data/tco-assumptions.json"
+        description: "Default market rates behind the /tools/migration-tco calculator."
+        fields:
+          - name: platforms
+            label: "Platforms"
+            widget: list
+            label_singular: "Platform"
+            summary: "{{fields.short}}"
+            fields:
+              - { name: id, label: "ID (do not change)", widget: string }
+              - { name: name, label: "Full name", widget: string }
+              - { name: short, label: "Short name", widget: string }
+              - { name: kind, label: "Type", widget: select, options: ["oss", "saas"] }
+              - { name: color, label: "Colour (hex)", widget: string }
+              - { name: platformTierMonthly, label: "Platform subscription (€/mo)", widget: number, value_type: int, min: 0 }
+              - { name: txnFeePct, label: "Transaction fee (decimal, e.g. 0.006 = 0.6%)", widget: number, value_type: float, min: 0, step: 0.001 }
+              - { name: hostingMonthly, label: "Hosting (€/mo)", widget: number, value_type: int, min: 0 }
+              - { name: retainerMonthly, label: "Retainer (€/mo)", widget: number, value_type: int, min: 0 }
+              - { name: extensionsYearly, label: "Extension licenses (€/yr)", widget: number, value_type: int, min: 0 }
+              - { name: majorUpgradeCost, label: "Major upgrade (€)", widget: number, value_type: int, min: 0 }
+              - { name: upgradeEveryYears, label: "Upgrade every (years)", widget: number, value_type: int, min: 1 }
+              - { name: migrationBase, label: "Migration base cost (€)", widget: number, value_type: int, min: 0 }
+              - { name: migrationPerPlugin, label: "Migration cost per plugin (€)", widget: number, value_type: int, min: 0 }
+          - name: apps
+            label: "App catalog"
+            widget: list
+            label_singular: "App"
+            summary: "{{fields.name}} — €{{fields.monthly}}/mo"
+            fields:
+              - { name: id, label: "ID (do not change)", widget: string }
+              - { name: name, label: "App name", widget: string }
+              - { name: monthly, label: "Cost (€/mo)", widget: number, value_type: int, min: 0 }
+              - { name: defaultOn, label: "Selected by default", widget: boolean, default: false }
+          - name: defaults
+            label: "Calculator defaults"
+            widget: object
+            fields:
+              - { name: growthPct, label: "GMV growth / year (%)", widget: number, value_type: int, min: 0 }
+              - { name: horizonYears, label: "Default horizon (years)", widget: number, value_type: int, min: 1 }
+              - { name: customPlugins, label: "Default custom plugins", widget: number, value_type: int, min: 0 }
+              - { name: currentHostingMonthly, label: "Default hosting (€/mo)", widget: number, value_type: int, min: 0 }
+              - { name: currentRetainerMonthly, label: "Default retainer (€/mo)", widget: number, value_type: int, min: 0 }
