@@ -50,6 +50,16 @@
 }
 .calc-input:focus { outline: none; border-color: var(--perf); box-shadow: 0 0 0 3px var(--perf-soft); }
 .calc-urlrow { display: flex; flex-direction: column; gap: 10px; }
+.calc-urlinput { display: flex; gap: 8px; }
+.calc-urlinput .calc-input { flex: 1; }
+.calc-fetch {
+  font-family: 'IBM Plex Mono', monospace; font-size: .82rem; font-weight: 500; white-space: nowrap;
+  background: var(--ink); color: #fff; border: 1px solid var(--ink); padding: 0 16px; cursor: pointer; transition: all .15s;
+}
+.calc-fetch:hover:not(:disabled) { background: var(--perf-dark); border-color: var(--perf-dark); }
+.calc-fetch:disabled { opacity: .5; cursor: not-allowed; }
+.calc-hint--err { color: var(--loss); }
+.calc-hint--ok { color: var(--gain); }
 
 .calc-toggle, .calc-period { display: flex; border: 1px solid var(--ink); }
 .calc-toggle button, .calc-period button {

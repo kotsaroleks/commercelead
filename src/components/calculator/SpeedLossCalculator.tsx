@@ -27,6 +27,9 @@ export default function SpeedLossCalculator() {
   const [selected, setSelected] = useState<string[]>([]);
   const [urlField, setUrlField] = useState("");
   const [copied, setCopied] = useState(false);
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [analysisError, setAnalysisError] = useState<string | null>(null);
+  const [analysisSuccess, setAnalysisSuccess] = useState<string | null>(null);
 
   // Hydrate state from URL once on mount.
   useEffect(() => {
@@ -138,10 +141,36 @@ export default function SpeedLossCalculator() {
     }
   };
 
-  // Apply a manually entered LCP from the URL field (PSI proxy lands in Phase 2).
-  const applyManualUrl = (e: React.FormEvent) => {
+  // Fetch the store's real LCP from Google PageSpeed Insights (via our Netlify
+  // Function proxy so the API key stays server-side). Falls back to manual entry.
+  const handleAnalyzeUrl = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Phase 1: no network call — the field just seeds the share link / report context.
+    const u = urlField.trim();
+    if (!u || isAnalyzing) return;
+    setIsAnalyzing(true);
+    setAnalysisError(null);
+    setAnalysisSuccess(null);
+    try {
+      const res = await fetch(
+        `/.netlify/functions/pagespeed?url=${encodeURIComponent(u)}&strategy=${device}`
+      );
+      const data = await res.json();
+      if (!res.ok) throw new Error(data?.error || "Analysis failed.");
+      const lcp = clamp(Number(data.lcp), 0.5, 12);
+      setCurrentLoadTime(lcp);
+      if (lcp < targetLoadTime) setTargetLoadTime(clamp(lcp, 0.5, 5));
+      setAnalysisSuccess(
+        `Measured LCP ${data.lcp}s (${data.source === "field" ? "real-user data" : "lab"})` +
+          (data.fcp ? `, FCP ${data.fcp}s` : "") +
+          ". Applied to current load time."
+      );
+    } catch {
+      setAnalysisError(
+        "Couldn't measure this URL. Make sure it's public and reachable, or set the speed manually below."
+      );
+    } finally {
+      setIsAnalyzing(false);
+    }
   };
 
   return (
@@ -155,18 +184,26 @@ export default function SpeedLossCalculator() {
           </button>
         </div>
 
-        <form className="calc-urlrow" onSubmit={applyManualUrl}>
+        <form className="calc-urlrow" onSubmit={handleAnalyzeUrl}>
           <label className="calc-label" htmlFor="calc-url">
-            Your store URL <span className="calc-soon">PageSpeed auto-fill — soon</span>
+            Your store URL <span className="calc-soon">auto-fills real LCP</span>
           </label>
-          <input
-            id="calc-url"
-            type="text"
-            className="calc-input"
-            placeholder="example.com"
-            value={urlField}
-            onChange={(e) => setUrlField(e.target.value)}
-          />
+          <div className="calc-urlinput">
+            <input
+              id="calc-url"
+              type="text"
+              className="calc-input"
+              placeholder="example.com"
+              value={urlField}
+              onChange={(e) => setUrlField(e.target.value)}
+              disabled={isAnalyzing}
+            />
+            <button type="submit" className="calc-fetch" disabled={isAnalyzing || !urlField.trim()}>
+              {isAnalyzing ? "Analyzing…" : "Fetch speed"}
+            </button>
+          </div>
+          {analysisError && <p className="calc-hint calc-hint--err">{analysisError}</p>}
+          {analysisSuccess && <p className="calc-hint calc-hint--ok">{analysisSuccess}</p>}
         </form>
 
         <div className="calc-field">
