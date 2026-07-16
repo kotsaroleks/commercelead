@@ -6,6 +6,33 @@ import ContactForm from "../components/ContactForm.astro";
 import CTA from "../components/CTA.astro";
 const navLinks = [{label:"What's included",href:"#included"},{label:"How it works",href:"#process"},{label:"The legal bit",href:"#legal"},{label:"Order",href:"#contact"}];
 const PRIMARY_CTA = "Order for €350";
+const faqs = [
+  { q: "Isn't this just stealing from my agency?", a: "No. We only recover assets you own or have a legal right to access — your paid-for code, your data, your domain, your accounts. We require written authorisation and never bypass security or take an agency's proprietary tools." },
+  { q: "What if my contract says the agency owns the code?", a: "Then we flag it as a risk and explain the contractual route — we don't work around it. Many contracts are ambiguous; knowing exactly where you stand is itself valuable, and often the starting point for a clean negotiation." },
+  { q: "Do you need to tell my agency?", a: "No. The work is done through your own accounts and access. It's confidential — many clients run an Evacuation Plan quietly, well before any conversation about leaving." },
+  { q: "What if I don't have access to anything yet?", a: "That's exactly when this matters most. We start from whatever you do have, document the gaps, and give you a prioritised plan — including the contractual steps to recover legitimate access that's been withheld." },
+  { q: "What happens after?", a: "You own everything and owe us nothing further. Some clients, having just realised how exposed they were, ask us to keep watch with a light ongoing retainer — but that's entirely optional." },
+];
+const pageURL = new URL(Astro.url.pathname, Astro.site).toString();
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "The Evacuation Plan",
+  "serviceType": "E-commerce agency offboarding & access audit",
+  "provider": { "@type": "ProfessionalService", "name": "CommerceLead", "url": Astro.site.toString() },
+  "description": "Independent code backup, restore-tested backups, full access audit and an emergency go-bag so you can leave your agency without fear.",
+  "url": pageURL,
+  "offers": { "@type": "Offer", "price": "350", "priceCurrency": "EUR", "url": pageURL },
+};
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
 ---
 <Base
   title="The Evacuation Plan — Independent Backup & Access Audit | €350 | CommerceLead"
@@ -187,26 +214,12 @@ const PRIMARY_CTA = "Order for €350";
       <h2>The questions everyone asks.</h2>
     </div>
     <div class="faq-list">
-      <details class="faq">
-        <summary>Isn't this just stealing from my agency?</summary>
-        <p>No. We only recover assets you own or have a legal right to access — your paid-for code, your data, your domain, your accounts. We require written authorisation and never bypass security or take an agency's proprietary tools.</p>
-      </details>
-      <details class="faq">
-        <summary>What if my contract says the agency owns the code?</summary>
-        <p>Then we flag it as a risk and explain the contractual route — we don't work around it. Many contracts are ambiguous; knowing exactly where you stand is itself valuable, and often the starting point for a clean negotiation.</p>
-      </details>
-      <details class="faq">
-        <summary>Do you need to tell my agency?</summary>
-        <p>No. The work is done through your own accounts and access. It's confidential — many clients run an Evacuation Plan quietly, well before any conversation about leaving.</p>
-      </details>
-      <details class="faq">
-        <summary>What if I don't have access to anything yet?</summary>
-        <p>That's exactly when this matters most. We start from whatever you do have, document the gaps, and give you a prioritised plan — including the contractual steps to recover legitimate access that's been withheld.</p>
-      </details>
-      <details class="faq">
-        <summary>What happens after?</summary>
-        <p>You own everything and owe us nothing further. Some clients, having just realised how exposed they were, ask us to keep watch with a light ongoing retainer — but that's entirely optional.</p>
-      </details>
+      {faqs.map((f) => (
+        <details class="faq">
+          <summary>{f.q}</summary>
+          <p>{f.a}</p>
+        </details>
+      ))}
     </div>
   </div>
 </section>
@@ -247,4 +260,7 @@ const PRIMARY_CTA = "Order for €350";
 
 </main>
   <Footer tagline="take back control of what's yours — independent backups &amp; access audits." mono="evac:secure --owner=you --fixed=350" />
+
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </Base>

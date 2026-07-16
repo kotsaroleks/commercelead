@@ -7,6 +7,23 @@ import ContactForm from "../components/ContactForm.astro";
 import CTA from "../components/CTA.astro";
 const navLinks = [{label:"What's a CTO?",href:"#what"},{label:"Do I need one?",href:"#signs"},{label:"What it costs",href:"#cost"},{label:"FAQ",href:"#faq"}];
 const PRIMARY_CTA = "Book my free call";
+const faqs = [
+  { q: "Do I have to fire my current agency or developer?", a: "Almost never. In most cases your current partners are fine — they just need supervision, clear priorities, and someone checking the work. Your CTO makes them better. If a partner truly needs replacing, you'll get the evidence and a managed transition, not a sudden gap." },
+  { q: "I'm not technical. Will I understand what's going on?", a: "That's the whole point. Your CTO's first job is translation: every report, every recommendation, every risk arrives in business language — euros, dates, and customer impact. If you ever hear a word you don't understand, that's our mistake, not yours." },
+  { q: "Does the CTO write code too?", a: "The CTO role is about decisions and oversight, not day-to-day coding. But behind your CTO stands our team of certified Magento and Shopware developers — so when something needs building or fixing, you can use them, your existing partners, or both. Your CTO has no incentive to push our developers on you; their loyalty is to your budget." },
+  { q: "Which platforms do you cover?", a: "We're deepest in Magento (Adobe Commerce) and Shopware, with certified engineers on both. For other platforms we can usually still help with vendor oversight, budgeting, and strategy — tell us what you run on the intro call." },
+  { q: "What if I only need help for a few months?", a: "That's fine. Some merchants bring in a CTO just to get through an upgrade, a replatforming decision, or an agency change — and then scale down to a few hours a month of \"keeping an eye on things\". The engagement is monthly; it shrinks and grows with your needs." },
+  { q: "How is this different from hiring a consultant?", a: "A consultant gives you a report and leaves. Your fractional CTO stays accountable for the outcome: they make the plan, supervise the execution, and answer to you when the next campaign day comes. Same person, every month, who knows your business." },
+];
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
 ---
 <Base
   title="Your First CTO — Technical Leadership for Stores Without an IT Department"
@@ -210,30 +227,12 @@ const PRIMARY_CTA = "Book my free call";
       <h2>Questions merchants always ask first.</h2>
     </div>
     <div class="faq-list">
-      <details class="faq">
-        <summary>Do I have to fire my current agency or developer?</summary>
-        <p>Almost never. In most cases your current partners are fine — they just need supervision, clear priorities, and someone checking the work. Your CTO makes them better. If a partner truly needs replacing, you'll get the evidence and a managed transition, not a sudden gap.</p>
-      </details>
-      <details class="faq">
-        <summary>I'm not technical. Will I understand what's going on?</summary>
-        <p>That's the whole point. Your CTO's first job is translation: every report, every recommendation, every risk arrives in business language — euros, dates, and customer impact. If you ever hear a word you don't understand, that's our mistake, not yours.</p>
-      </details>
-      <details class="faq">
-        <summary>Does the CTO write code too?</summary>
-        <p>The CTO role is about decisions and oversight, not day-to-day coding. But behind your CTO stands our team of certified Magento and Shopware developers — so when something needs building or fixing, you can use them, your existing partners, or both. Your CTO has no incentive to push our developers on you; their loyalty is to your budget.</p>
-      </details>
-      <details class="faq">
-        <summary>Which platforms do you cover?</summary>
-        <p>We're deepest in Magento (Adobe Commerce) and Shopware, with certified engineers on both. For other platforms we can usually still help with vendor oversight, budgeting, and strategy — tell us what you run on the intro call.</p>
-      </details>
-      <details class="faq">
-        <summary>What if I only need help for a few months?</summary>
-        <p>That's fine. Some merchants bring in a CTO just to get through an upgrade, a replatforming decision, or an agency change — and then scale down to a few hours a month of "keeping an eye on things". The engagement is monthly; it shrinks and grows with your needs.</p>
-      </details>
-      <details class="faq">
-        <summary>How is this different from hiring a consultant?</summary>
-        <p>A consultant gives you a report and leaves. Your fractional CTO stays accountable for the outcome: they make the plan, supervise the execution, and answer to you when the next campaign day comes. Same person, every month, who knows your business.</p>
-      </details>
+      {faqs.map((f) => (
+        <details class="faq">
+          <summary>{f.q}</summary>
+          <p>{f.a}</p>
+        </details>
+      ))}
     </div>
   </div>
 </section>
@@ -274,5 +273,6 @@ const PRIMARY_CTA = "Book my free call";
 
 </main>
   <Footer tagline="fractional CTOs &amp; certified developers for Magento and Shopware stores." mono="finally, someone in charge." />
-  
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </Base>

@@ -6,6 +6,17 @@ import ContactForm from "../components/ContactForm.astro";
 import CTA from "../components/CTA.astro";
 const navLinks = [{label:"What you get",href:"#deliverables"},{label:"How it works",href:"#process"},{label:"Who it's for",href:"#who"},{label:"Order",href:"#contact"}];
 const PRIMARY_CTA = "Order for €490";
+const pageURL = new URL(Astro.url.pathname, Astro.site).toString();
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "E-commerce Tech Audit",
+  "serviceType": "E-commerce technical audit",
+  "provider": { "@type": "ProfessionalService", "name": "CommerceLead", "url": Astro.site.toString() },
+  "description": "A senior engineer reviews your Magento, Shopware or Shopify store top to bottom. Fixed €490 price, written report in 10 days.",
+  "url": pageURL,
+  "offers": { "@type": "Offer", "price": "490", "priceCurrency": "EUR", "url": pageURL },
+};
 ---
 <Base
   title="E-commerce Tech Audit — €490 Fixed Price | CommerceLead"
@@ -202,4 +213,6 @@ const PRIMARY_CTA = "Order for €490";
 
 </main>
   <Footer tagline="fixed-price tech audits for e-commerce stores." mono="audit:run --price=490 --guarantee=100%" />
+
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
 </Base>

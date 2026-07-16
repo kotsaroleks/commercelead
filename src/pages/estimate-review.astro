@@ -6,6 +6,17 @@ import ContactForm from "../components/ContactForm.astro";
 import CTA from "../components/CTA.astro";
 const navLinks = [{label:"What you get",href:"#deliverables"},{label:"How it works",href:"#process"},{label:"Common findings",href:"#findings"},{label:"Submit",href:"#contact"}];
 const PRIMARY_CTA = "Submit for €290";
+const pageURL = new URL(Astro.url.pathname, Astro.site).toString();
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Agency Estimate Review",
+  "serviceType": "E-commerce agency estimate review",
+  "provider": { "@type": "ProfessionalService", "name": "CommerceLead", "url": Astro.site.toString() },
+  "description": "Send us your agency's estimate or invoice. A senior e-commerce engineer tells you if it's fair, what's missing, and where to push back. €290 fixed price.",
+  "url": pageURL,
+  "offers": { "@type": "Offer", "price": "290", "priceCurrency": "EUR", "url": pageURL },
+};
 ---
 <Base
   title="Agency Estimate Review — Is Your Quote Fair? | CommerceLead"
@@ -198,4 +209,6 @@ const PRIMARY_CTA = "Submit for €290";
 
 </main>
   <Footer tagline="independent estimate reviews for e-commerce merchants." mono="estimate:review --honest --confidential" />
+
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
 </Base>

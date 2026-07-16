@@ -6,6 +6,16 @@ import ContactForm from "../components/ContactForm.astro";
 import CTA from "../components/CTA.astro";
 const navLinks = [{label:"What we cover",href:"#scope"},{label:"How it works",href:"#process"},{label:"Who hires us",href:"#who"},{label:"Contact",href:"#contact"}];
 const PRIMARY_CTA = "Request a proposal";
+const pageURL = new URL(Astro.url.pathname, Astro.site).toString();
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Technical Due Diligence",
+  "serviceType": "E-commerce M&A technical due diligence",
+  "provider": { "@type": "ProfessionalService", "name": "CommerceLead", "url": Astro.site.toString() },
+  "description": "Independent technical due diligence for e-commerce acquisitions. We assess the platform, team, tech debt, and scalability before you sign.",
+  "url": pageURL,
+};
 ---
 <Base
   title="Technical Due Diligence for E-commerce — M&A & PE | CommerceLead"
@@ -183,4 +193,6 @@ const PRIMARY_CTA = "Request a proposal";
 
 </main>
   <Footer tagline="technical due diligence for e-commerce acquisitions." mono="diligence:run --nda --deal-ready" />
+
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
 </Base>

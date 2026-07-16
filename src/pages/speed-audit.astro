@@ -6,6 +6,17 @@ import ContactForm from "../components/ContactForm.astro";
 import CTA from "../components/CTA.astro";
 const navLinks = [{label:"What you get",href:"#deliverables"},{label:"How it works",href:"#process"},{label:"The math",href:"#math"},{label:"Order",href:"#contact"}];
 const PRIMARY_CTA = "Order for €390";
+const pageURL = new URL(Astro.url.pathname, Astro.site).toString();
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Speed & Core Web Vitals Audit",
+  "serviceType": "E-commerce performance audit",
+  "provider": { "@type": "ProfessionalService", "name": "CommerceLead", "url": Astro.site.toString() },
+  "description": "We measure your store's real-world performance, quantify the revenue you're losing to slow pages, and give you a prioritized fix plan. €390 fixed price.",
+  "url": pageURL,
+  "offers": { "@type": "Offer", "price": "390", "priceCurrency": "EUR", "url": pageURL },
+};
 ---
 <Base
   title="Speed & Core Web Vitals Audit for E-commerce | CommerceLead"
@@ -193,4 +204,6 @@ const PRIMARY_CTA = "Order for €390";
 
 </main>
   <Footer tagline="speed &amp; Core Web Vitals audits for e-commerce." mono="cwv:measure --quantify-revenue" />
+
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
 </Base>

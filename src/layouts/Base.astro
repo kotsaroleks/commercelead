@@ -1,6 +1,16 @@
 ---
 import "../styles/global.css";
+import site from "../data/site.json";
 const { title, description, accent, accentDark, accentSoft, accentShadow } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": site.brand,
+  "url": Astro.site.toString(),
+  "description": "Outsourced CTOs, tech leads and fractional e-commerce specialists for Magento, Shopware and Shopify stores. Fixed-price audits and hourly/retainer staffing.",
+  "areaServed": "Worldwide",
+};
 ---
 <!doctype html>
 <html lang="en">
@@ -9,9 +19,11 @@ const { title, description, accent, accentDark, accentSoft, accentShadow } = Ast
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
 </head>
 <body style={`--accent:${accent};--accent-dark:${accentDark};--accent-soft:${accentSoft};--accent-shadow:${accentShadow};`}>
   <slot />

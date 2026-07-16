@@ -20,6 +20,17 @@ const faqs = [
   { q: "Do you lock us into a specific vendor or platform?", a: "No. We're an independent technical partner. We recommend what fits your store — including the native AI in Adobe Commerce or Shopware 6 — and you own everything we set up." },
   { q: "How does the audit relate to the roadmap and implementation?", a: "The €650 audit is credited in full toward the AI Roadmap if you continue. The roadmap becomes the plan; implementation and the ongoing analyse→improve loop run as a retainer." },
 ];
+const pageURL = new URL(Astro.url.pathname, Astro.site).toString();
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "AI Readiness Audit",
+  "serviceType": "E-commerce AI readiness audit",
+  "provider": { "@type": "ProfessionalService", "name": "CommerceLead", "url": Astro.site.toString() },
+  "description": "An independent, vendor-neutral check of how ready a Magento or Shopware store is for the AI era — assessment across 6 dimensions with a scored report and debrief.",
+  "url": pageURL,
+  "offers": { "@type": "Offer", "price": String(site.aiAudit), "priceCurrency": "EUR", "url": pageURL },
+};
 ---
 <Base
   title="How AI-Ready Is Your E-commerce Store? — Free AI Readiness Score | CommerceLead"
@@ -252,6 +263,7 @@ const faqs = [
 </main>
   <Footer tagline="independent AI readiness audits &amp; roadmaps for e-commerce." mono="ai:assess --on-your-foundation" />
 
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "FAQPage",

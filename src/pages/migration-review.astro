@@ -6,6 +6,16 @@ import ContactForm from "../components/ContactForm.astro";
 import CTA from "../components/CTA.astro";
 const navLinks = [{label:"What you get",href:"#deliverables"},{label:"How it works",href:"#process"},{label:"Who it's for",href:"#who"},{label:"Request",href:"#contact"}];
 const PRIMARY_CTA = "Request an assessment";
+const pageURL = new URL(Astro.url.pathname, Astro.site).toString();
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Migration Review",
+  "serviceType": "E-commerce replatforming assessment",
+  "provider": { "@type": "ProfessionalService", "name": "CommerceLead", "url": Astro.site.toString() },
+  "description": "An independent 3-year financial-technical verdict on replatforming your store. Real numbers, migration risk audit, and a neutral recommendation.",
+  "url": pageURL,
+};
 ---
 <Base
   title="Migration Review — Independent Open-Source vs SaaS Assessment | CommerceLead"
@@ -191,4 +201,6 @@ const PRIMARY_CTA = "Request an assessment";
 
 </main>
   <Footer tagline="independent migration &amp; TCO assessments for e-commerce." mono="tco:assess --neutral --board-ready" />
+
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
 </Base>
