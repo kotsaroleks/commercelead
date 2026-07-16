@@ -1,0 +1,41 @@
+# CommerceLead
+
+> Outsourced CTOs, tech leads, and fractional e-commerce specialists for Magento, Shopware, and Shopify stores. Fixed-price audits and hourly/retainer staffing — senior technical leadership without a full-time hire.
+
+CommerceLead is vendor-neutral: we don't sell hosting, agency retainers, or a platform of our own, so our audits and recommendations aren't biased toward upselling a service.
+
+## Fixed-price audits
+
+- [Tech Audit](https://commerce-lead.com/tech-audit/): Full top-to-bottom review of a Magento, Shopware, or Shopify store's code, performance, and security. €490, written report in 10 days.
+- [Speed Audit](https://commerce-lead.com/speed-audit/): Measures real-world Core Web Vitals and quantifies revenue lost to slow pages, with a prioritized fix plan. €390.
+- [Estimate Review](https://commerce-lead.com/estimate-review/): A senior engineer checks whether your agency's estimate or invoice is fair and what's missing. €290.
+- [Evacuation Plan](https://commerce-lead.com/evacuation-plan/): Independent code backup, restore-tested backups, and full access audit so you can leave your agency safely. €350.
+- [Migration Review](https://commerce-lead.com/migration-review/): Independent 3-year financial and technical verdict on replatforming (open-source vs. SaaS), with no platform to sell.
+- [Due Diligence](https://commerce-lead.com/due-diligence/): Independent technical due diligence for e-commerce M&A and PE deals — platform, team, tech debt, and scalability.
+- [AI Readiness](https://commerce-lead.com/ai-readiness/): Free 2-minute score of how ready a store is for AI agents and answer engines, plus a fixed-scope audit (€650) and roadmap (€2,500).
+
+## Fractional leadership & staffing
+
+- [Outsourced CTO / Tech Lead](https://commerce-lead.com/): Certified Magento and Shopware developers, tech leads, and fractional CTOs, hourly from €45/hr.
+- [Your First CTO](https://commerce-lead.com/first-cto/): Fractional CTO for stores with no in-house IT — strategy, architecture, vendor management.
+- [Fractional Project Manager](https://commerce-lead.com/project-manager/): Owns delivery, scope, timelines, and agency coordination. Retainers from 0.25 FTE.
+- [Fractional Product Manager](https://commerce-lead.com/product-manager/): Owns the roadmap — discovery, prioritization, and growth experiments tied to revenue. Retainers from 0.25 FTE.
+- [Fractional Business Analyst](https://commerce-lead.com/business-analyst/): Turns vague ideas into buildable specs, process maps, and acceptance criteria. Retainers from 0.25 FTE.
+
+## Platform expertise
+
+- [Magento / Adobe Commerce](https://commerce-lead.com/magento/): Certified Magento and Adobe Commerce developers, tech leads, and fractional CTOs.
+- [Shopware](https://commerce-lead.com/shopware/): Certified Shopware 6 developers, tech leads, and fractional CTOs.
+- [Shopify](https://commerce-lead.com/shopify/): Senior Shopify and Shopify Plus developers, tech leads, and fractional CTOs.
+
+## Free tools
+
+- [Site Speed Revenue-Loss Calculator](https://commerce-lead.com/tools/speed-loss): Estimates the revenue an e-commerce store loses to slow load times.
+- [Migration TCO Calculator](https://commerce-lead.com/tools/migration-tco): Compares 3-year total cost of ownership across Magento, Shopware, Shopify Plus, and BigCommerce.
+- [Hostage Check](https://commerce-lead.com/tools/hostage-check): 12-question diagnostic scoring how dependent a store is on its current agency.
+
+## Pricing
+
+Hourly rates (project staffing): Middle+ Developer €45, Senior Developer €60, Tech Lead €75, CTO €90. Full rate card and fixed audit prices are listed on each service page above.
+
+- [Services & pricing feed](https://commerce-lead.com/services.json): Machine-readable JSON of every fixed-price audit, hourly staffing rate, and service URL — pull structured pricing directly instead of parsing HTML tables.

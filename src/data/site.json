@@ -1,8 +1,18 @@
 {
   "brand": "CommerceLead",
   "email": "hello@example.com",
+  "url": "https://commerce-lead.com",
   "aiAudit": 650,
   "aiRoadmap": 2500,
+  "services": [
+    { "slug": "tech-audit", "name": "E-commerce Tech Audit", "price": 490, "currency": "EUR", "description": "A senior engineer reviews your Magento, Shopware or Shopify store top to bottom. Written report in 10 days." },
+    { "slug": "speed-audit", "name": "Speed & Core Web Vitals Audit", "price": 390, "currency": "EUR", "description": "Measures real-world performance, quantifies revenue lost to slow pages, with a prioritized fix plan." },
+    { "slug": "estimate-review", "name": "Agency Estimate Review", "price": 290, "currency": "EUR", "description": "A senior engineer checks whether your agency's estimate or invoice is fair and what's missing." },
+    { "slug": "evacuation-plan", "name": "The Evacuation Plan", "price": 350, "currency": "EUR", "description": "Independent code backup, restore-tested backups, and full access audit so you can leave your agency safely." },
+    { "slug": "migration-review", "name": "Migration Review", "price": null, "currency": "EUR", "description": "Independent 3-year financial and technical verdict on replatforming (open-source vs. SaaS). Custom quote." },
+    { "slug": "due-diligence", "name": "Technical Due Diligence", "price": null, "currency": "EUR", "description": "Independent technical due diligence for e-commerce M&A and PE deals. Custom quote." },
+    { "slug": "ai-readiness", "name": "AI Readiness Audit", "price": null, "currency": "EUR", "description": "Assessment across 6 dimensions of AI readiness, prioritised findings, a scored report and a 60-min debrief." }
+  ],
   "pricing": [
     {
       "role": "Middle+ Developer",
