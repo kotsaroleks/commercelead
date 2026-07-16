@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /thanks
 
-Sitemap: https://commercelead.netlify.app/sitemap-index.xml
+Sitemap: https://commerce-lead.com/sitemap-index.xml

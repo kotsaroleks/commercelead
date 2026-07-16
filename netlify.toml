@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://commercelead.netlify.app/*"
+  to = "https://commerce-lead.com/:splat"
+  status = 301
+  force = true

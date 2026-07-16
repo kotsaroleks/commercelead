@@ -3,7 +3,7 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://commercelead.netlify.app',
+  site: 'https://commerce-lead.com',
   integrations: [
     react(),
     sitemap({
