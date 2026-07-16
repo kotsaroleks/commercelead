@@ -3,13 +3,15 @@ import Base from "../layouts/Base.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ContactForm from "../components/ContactForm.astro";
+import CTA from "../components/CTA.astro";
 const navLinks = [{label:"What you get",href:"#deliverables"},{label:"How it works",href:"#process"},{label:"Who it's for",href:"#who"},{label:"Request",href:"#contact"}];
+const PRIMARY_CTA = "Request an assessment";
 ---
 <Base
   title="Migration Review — Independent Open-Source vs SaaS Assessment | CommerceLead"
   description="An independent 3-year financial-technical verdict on replatforming your store. Real numbers, migration risk audit, and a neutral recommendation — we don't sell platforms."
   accent="#4F46E5" accentDark="#3730A3" accentSoft="#E8E7FB" accentShadow="rgba(79,70,229,.18)">
-  <Header links={navLinks} cta={{ label: "Request an assessment", href: "#contact" }} />
+  <Header links={navLinks} cta={{ label: PRIMARY_CTA, href: "#contact" }} />
   <main>
 
 <!-- HERO -->
@@ -20,8 +22,8 @@ const navLinks = [{label:"What you get",href:"#deliverables"},{label:"How it wor
       <h1>Should you migrate? <em>Get the real numbers first.</em></h1>
       <p class="lede">Everyone tells you to replatform — and everyone selling a platform has a stake in your answer. We don't. We model your true 3-year cost of ownership with your real hosting, plugins and payment fees, audit what won't port, and give you a neutral, defensible verdict.</p>
       <div class="hero-ctas">
-        <a class="btn btn--solid" href="#contact">Request an assessment</a>
-        <a class="btn btn--ghost" href="/tools/migration-tco">Try the free calculator</a>
+        <CTA variant="primary" href="#contact">{PRIMARY_CTA}</CTA>
+        <CTA variant="secondary" href="/tools/migration-tco">Try the free calculator</CTA>
       </div>
       <div class="hero-meta">
         <span>Neutral — we sell no platform</span>

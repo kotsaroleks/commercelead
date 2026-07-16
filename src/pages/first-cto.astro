@@ -4,13 +4,15 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import site from "../data/site.json";
 import ContactForm from "../components/ContactForm.astro";
+import CTA from "../components/CTA.astro";
 const navLinks = [{label:"What's a CTO?",href:"#what"},{label:"Do I need one?",href:"#signs"},{label:"What it costs",href:"#cost"},{label:"FAQ",href:"#faq"}];
+const PRIMARY_CTA = "Book my free call";
 ---
 <Base
   title="Your First CTO — Technical Leadership for Stores Without an IT Department"
   description="You run a successful online store but have no in-house IT. A fractional CTO gives you someone on your side of the table."
   accent="#0F8C6C" accentDark="#0B6B53" accentSoft="#E3F1EC" accentShadow="rgba(15,140,108,.16)">
-  <Header links={navLinks} cta={{ label: "Book a friendly call", href: "#contact" }} />
+  <Header links={navLinks} cta={{ label: PRIMARY_CTA, href: "#contact" }} />
   <main>
 
 <!-- HERO -->
@@ -21,8 +23,8 @@ const navLinks = [{label:"What's a CTO?",href:"#what"},{label:"Do I need one?",h
       <h1>Your store deserves <em>its first CTO</em>.</h1>
       <p class="lede">You built a successful online business. But every technical decision — hosting, agencies, upgrades, budgets — still lands on your desk, in a language you never signed up to learn. A fractional CTO is the technical brain on <strong>your</strong> side of the table, a few days a month.</p>
       <div class="hero-ctas">
-        <a class="btn btn--solid" href="#contact">Book a friendly intro call</a>
-        <a class="btn btn--ghost" href="#what">First — what is a CTO?</a>
+        <CTA variant="primary" href="#contact">{PRIMARY_CTA}</CTA>
+        <CTA variant="tertiary" href="#what">First — what is a CTO? →</CTA>
       </div>
       <div class="hero-meta">
         <span>No jargon, ever</span>

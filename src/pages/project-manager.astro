@@ -3,7 +3,9 @@ import Base from "../layouts/Base.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ContactForm from "../components/ContactForm.astro";
+import CTA from "../components/CTA.astro";
 const navLinks = [{label:"What they own",href:"#services"},{label:"How it works",href:"#process"},{label:"Pricing",href:"#pricing"},{label:"Why us",href:"#credentials"}];
+const PRIMARY_CTA = "Book my intro call";
 const pricing = [
   { role: "Project Coordinator", desc: "Keeps timelines, standups & tickets moving", rate: 40 },
   { role: "Project Manager", desc: "Owns delivery, scope, risk & stakeholders", rate: 55 },
@@ -14,7 +16,7 @@ const pricing = [
   title="Fractional Project Manager for E-commerce — from 0.25 FTE | CommerceLead"
   description="A senior e-commerce project manager who keeps your delivery on track — scope, timelines, agencies and risk. Retainers from 0.25 FTE, no full-time hire."
   accent="#D6336C" accentDark="#A61E4D" accentSoft="#FCE7F0" accentShadow="rgba(214,51,108,.18)">
-  <Header links={navLinks} cta={{ label: "Book an intro call", href: "#contact" }} />
+  <Header links={navLinks} cta={{ label: PRIMARY_CTA, href: "#contact" }} />
   <main>
 
 <!-- HERO -->
@@ -25,8 +27,8 @@ const pricing = [
       <h1>A <em>project manager</em> who actually keeps delivery on track.</h1>
       <p class="lede">A senior e-commerce project manager who owns your roadmap delivery — timelines, scope, agencies, and risk. They turn a chaotic backlog into predictable releases. Retainers from 0.25 FTE, scaling as you grow.</p>
       <div class="hero-ctas">
-        <a class="btn btn--solid" href="#contact">Book a free intro call</a>
-        <a class="btn btn--ghost" href="#services">See what they own</a>
+        <CTA variant="primary" href="#contact">{PRIMARY_CTA}</CTA>
+        <CTA variant="tertiary" href="#services">See what they own →</CTA>
       </div>
       <div class="hero-meta">
         <span>From 0.25 FTE</span>

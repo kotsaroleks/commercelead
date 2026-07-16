@@ -3,13 +3,15 @@ import Base from "../layouts/Base.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ContactForm from "../components/ContactForm.astro";
+import CTA from "../components/CTA.astro";
 const navLinks = [{label:"What we cover",href:"#scope"},{label:"How it works",href:"#process"},{label:"Who hires us",href:"#who"},{label:"Contact",href:"#contact"}];
+const PRIMARY_CTA = "Request a proposal";
 ---
 <Base
   title="Technical Due Diligence for E-commerce — M&A & PE | CommerceLead"
   description="Independent technical due diligence for e-commerce acquisitions. We assess the platform, team, tech debt, and scalability before you sign."
   accent="#1E293B" accentDark="#0F172A" accentSoft="#F1F5F9" accentShadow="rgba(30,41,59,.18)">
-  <Header links={navLinks} cta={{ label: "Request a proposal", href: "#contact" }} />
+  <Header links={navLinks} cta={{ label: PRIMARY_CTA, href: "#contact" }} />
   <main>
 
 <!-- HERO -->
@@ -20,8 +22,8 @@ const navLinks = [{label:"What we cover",href:"#scope"},{label:"How it works",hr
       <h1>Technical due diligence for <em>e-commerce acquisitions.</em></h1>
       <p class="lede">Before you invest in or acquire an e-commerce business, we assess the technology behind the revenue. Platform health, scalability, tech debt, team capability, and hidden risks — all in one independent report your deal team can act on.</p>
       <div class="hero-ctas">
-        <a class="btn btn--solid" href="#contact">Request a proposal</a>
-        <a class="btn btn--ghost" href="#scope">See full scope</a>
+        <CTA variant="primary" href="#contact">{PRIMARY_CTA}</CTA>
+        <CTA variant="tertiary" href="#scope">See full scope →</CTA>
       </div>
       <div class="hero-meta">
         <span>NDA-first engagement</span>
@@ -174,7 +176,7 @@ const navLinks = [{label:"What we cover",href:"#scope"},{label:"How it works",hr
         <h2>Request a proposal — NDA-first, scoped to your timeline.</h2>
         <p>Tell us about the target (platform, approximate size, deal timeline) and we'll respond with a tailored proposal within 48 hours.</p>
       </div>
-      <ContactForm formName="due-diligence-inquiry" buttonLabel="Request proposal" note="NDA-first. We respond within 48 hours." />
+      <ContactForm formName="due-diligence-inquiry" buttonLabel="Request a proposal" note="NDA-first. We respond within 48 hours." />
     </div>
   </div>
 </section>

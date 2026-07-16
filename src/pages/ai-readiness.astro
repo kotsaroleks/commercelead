@@ -3,6 +3,7 @@ import Base from "../layouts/Base.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ContactForm from "../components/ContactForm.astro";
+import CTA from "../components/CTA.astro";
 import AiReadiness from "../components/ai-readiness/AiReadiness.tsx";
 import site from "../data/site.json";
 import "../styles/calculator.css";
@@ -35,8 +36,8 @@ const faqs = [
       <h1>When a shopper asks an AI agent, <em>will it find your store?</em></h1>
       <p class="lede">AI is becoming a demand channel — ChatGPT Shopping, Perplexity, Google AI Overviews, agentic checkout. Most merchants aren't behind because they lack tools, but because they lack the foundation. We give you an honest score, then build AI on <strong>your</strong> foundation — no hype, no lock-in, measurable revenue.</p>
       <div class="hero-ctas">
-        <a class="btn btn--solid" href="#score">Take the AI Readiness Score</a>
-        <a class="btn btn--ghost" href="#contact">Order the audit</a>
+        <CTA variant="primary" href="#score">Take the AI Readiness Score</CTA>
+        <CTA variant="tertiary" href="#contact">Order the audit →</CTA>
       </div>
       <div class="hero-meta">
         <span>Free 2-minute score</span>
@@ -160,21 +161,21 @@ const faqs = [
         <h3>AI Readiness Audit</h3>
         <p class="ai-price">€{site.aiAudit}</p>
         <p>Assessment across 6 dimensions, prioritised findings (impact/effort), a scored report and a 60-min debrief.</p>
-        <a class="btn btn--solid" href="#contact">Order the audit</a>
+        <CTA variant="primary" href="#contact">Order the audit</CTA>
       </div>
       <div class="ai-pack ai-pack--mid">
         <span class="tag">Step 2</span>
         <h3>AI Roadmap</h3>
         <p class="ai-price">€{site.aiRoadmap.toLocaleString("en-US")}</p>
         <p>A 90-day plan: quick wins, vendor/stack selection and estimates. Your €{site.aiAudit} audit is deducted from this.</p>
-        <a class="btn btn--ghost" href="#contact">Talk roadmap</a>
+        <CTA variant="secondary" href="#contact">Talk roadmap</CTA>
       </div>
       <div class="ai-pack">
         <span class="tag">Step 3</span>
         <h3>Implementation &amp; retainer</h3>
         <p class="ai-price">from 0.5 FTE</p>
         <p>We build and run the analyse→improve loop. Same transparent hourly rates as the rest of our work, below.</p>
-        <a class="btn btn--ghost" href="#contact">Plan delivery</a>
+        <CTA variant="secondary" href="#contact">Plan delivery</CTA>
       </div>
     </div>
 

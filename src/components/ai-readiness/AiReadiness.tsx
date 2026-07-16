@@ -196,7 +196,7 @@ export default function AiReadiness() {
             </p>
           </div>
           <div className="hc-cta__actions">
-            <a className="calc-cta__btn" href="#contact">Order the AI Audit →</a>
+            <a className="calc-cta__btn" href="#contact">Order the audit →</a>
             <a className="hc-cta__alt" href="#contact">or book a free 20-min call</a>
           </div>
         </div>

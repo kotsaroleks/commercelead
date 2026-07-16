@@ -4,13 +4,15 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import site from "../data/site.json";
 import ContactForm from "../components/ContactForm.astro";
+import CTA from "../components/CTA.astro";
 const navLinks = [{label:"Services",href:"#services"},{label:"How it works",href:"#process"},{label:"Pricing",href:"#pricing"},{label:"Credentials",href:"#credentials"}];
+const PRIMARY_CTA = "Book my tech audit";
 ---
 <Base
   title="Outsourced CTO & Tech Lead for Magento — Adobe Commerce Experts"
   description="Certified Magento / Adobe Commerce developers, tech leads and fractional CTOs. Senior technical leadership for your store, without the full-time hire."
   accent="#EE672F" accentDark="#C94E1A" accentSoft="#FCE9E0" accentShadow="rgba(238,103,47,.18)">
-  <Header links={navLinks} cta={{ label: "Book a tech audit", href: "#contact" }} />
+  <Header links={navLinks} cta={{ label: PRIMARY_CTA, href: "#contact" }} />
   <main>
 
 <!-- HERO -->
@@ -21,8 +23,8 @@ const navLinks = [{label:"Services",href:"#services"},{label:"How it works",href
       <h1>Your outsourced <em>CTO &amp; Tech Lead</em> for Magento.</h1>
       <p class="lede">Certified Adobe Commerce engineers who take ownership of your platform — architecture, releases, performance, and the team that ships it. Senior leadership on demand, without the full-time hire.</p>
       <div class="hero-ctas">
-        <a class="btn btn--solid" href="#contact">Book a free tech audit</a>
-        <a class="btn btn--ghost" href="#services">See what we own</a>
+        <CTA variant="primary" href="#contact">{PRIMARY_CTA}</CTA>
+        <CTA variant="tertiary" href="#services">See what we own →</CTA>
       </div>
       <div class="hero-meta">
         <span>Adobe certified</span>

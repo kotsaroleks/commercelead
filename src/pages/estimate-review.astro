@@ -3,13 +3,15 @@ import Base from "../layouts/Base.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ContactForm from "../components/ContactForm.astro";
+import CTA from "../components/CTA.astro";
 const navLinks = [{label:"What you get",href:"#deliverables"},{label:"How it works",href:"#process"},{label:"Common findings",href:"#findings"},{label:"Submit",href:"#contact"}];
+const PRIMARY_CTA = "Submit for €290";
 ---
 <Base
   title="Agency Estimate Review — Is Your Quote Fair? | CommerceLead"
   description="Send us your agency's estimate or invoice. A senior e-commerce engineer tells you if it's fair, what's missing, and where to push back. €290 fixed price."
   accent="#E6520F" accentDark="#B8410C" accentSoft="#FEF0E8" accentShadow="rgba(230,82,15,.18)">
-  <Header links={navLinks} cta={{ label: "Submit your estimate", href: "#contact" }} />
+  <Header links={navLinks} cta={{ label: PRIMARY_CTA, href: "#contact" }} />
   <main>
 
 <!-- HERO -->
@@ -20,8 +22,8 @@ const navLinks = [{label:"What you get",href:"#deliverables"},{label:"How it wor
       <h1>Is your agency's estimate <em>actually fair?</em></h1>
       <p class="lede">Send us any agency quote, proposal, or invoice. A senior e-commerce engineer reviews it line by line and tells you what's reasonable, what's inflated, and what's missing entirely. €290 — one price, one honest answer.</p>
       <div class="hero-ctas">
-        <a class="btn btn--solid" href="#contact">Submit for €290</a>
-        <a class="btn btn--ghost" href="#deliverables">See what you get</a>
+        <CTA variant="primary" href="#contact">{PRIMARY_CTA}</CTA>
+        <CTA variant="tertiary" href="#deliverables">See what you get →</CTA>
       </div>
       <div class="hero-meta">
         <span>€290 fixed price</span>

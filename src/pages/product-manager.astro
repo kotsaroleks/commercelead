@@ -3,7 +3,9 @@ import Base from "../layouts/Base.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ContactForm from "../components/ContactForm.astro";
+import CTA from "../components/CTA.astro";
 const navLinks = [{label:"What they own",href:"#services"},{label:"How it works",href:"#process"},{label:"Pricing",href:"#pricing"},{label:"Why us",href:"#credentials"}];
+const PRIMARY_CTA = "Book my intro call";
 const pricing = [
   { role: "Product Manager", desc: "Roadmap, discovery & prioritization", rate: 55 },
   { role: "Senior Product Manager", desc: "Growth, experimentation & data-led decisions", rate: 75 },
@@ -14,7 +16,7 @@ const pricing = [
   title="Fractional Product Manager for E-commerce — from 0.25 FTE | CommerceLead"
   description="A senior e-commerce product manager who owns the roadmap — discovery, prioritization and growth experiments tied to revenue. Retainers from 0.25 FTE."
   accent="#0CA678" accentDark="#087F5B" accentSoft="#E0F7EF" accentShadow="rgba(12,166,120,.18)">
-  <Header links={navLinks} cta={{ label: "Book an intro call", href: "#contact" }} />
+  <Header links={navLinks} cta={{ label: PRIMARY_CTA, href: "#contact" }} />
   <main>
 
 <!-- HERO -->
@@ -25,8 +27,8 @@ const pricing = [
       <h1>A <em>product manager</em> who builds what moves revenue.</h1>
       <p class="lede">A senior e-commerce product manager who owns the "what" and "why" — turning a wishlist of features into a prioritized roadmap tied to conversion, AOV, and retention. They make sure you build the right things, not just more things. Retainers from 0.25 FTE.</p>
       <div class="hero-ctas">
-        <a class="btn btn--solid" href="#contact">Book a free intro call</a>
-        <a class="btn btn--ghost" href="#services">See what they own</a>
+        <CTA variant="primary" href="#contact">{PRIMARY_CTA}</CTA>
+        <CTA variant="tertiary" href="#services">See what they own →</CTA>
       </div>
       <div class="hero-meta">
         <span>From 0.25 FTE</span>

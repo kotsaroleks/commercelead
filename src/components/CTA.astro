@@ -1,0 +1,15 @@
+---
+// Shared CTA button — one component, three visual weights.
+// variant="primary"   → filled, page accent colour (.btn.btn--solid)
+// variant="secondary" → outline, page accent colour (.btn.btn--ghost)
+// variant="tertiary"  → text link, no border/fill (.btn--text)
+//
+// Colour always comes from the page's --accent/--accent-dark custom
+// properties (set once in Base.astro) — never hardcode a colour here.
+const { href, variant = "primary", class: extraClass = "", ...rest } = Astro.props;
+const variantClass =
+  variant === "primary" ? "btn btn--solid" : variant === "secondary" ? "btn btn--ghost" : "btn--text";
+---
+<a class={`${variantClass} ${extraClass}`.trim()} href={href} {...rest}>
+  <slot />
+</a>

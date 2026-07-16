@@ -3,13 +3,15 @@ import Base from "../layouts/Base.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ContactForm from "../components/ContactForm.astro";
+import CTA from "../components/CTA.astro";
 const navLinks = [{label:"What you get",href:"#deliverables"},{label:"How it works",href:"#process"},{label:"The math",href:"#math"},{label:"Order",href:"#contact"}];
+const PRIMARY_CTA = "Order for €390";
 ---
 <Base
   title="Speed & Core Web Vitals Audit for E-commerce | CommerceLead"
   description="We measure your store's real-world performance, quantify the revenue you're losing to slow pages, and give you a prioritized fix plan. €390 fixed price."
   accent="#0891B2" accentDark="#0E7490" accentSoft="#E0F7FA" accentShadow="rgba(8,145,178,.18)">
-  <Header links={navLinks} cta={{ label: "Order speed audit", href: "#contact" }} />
+  <Header links={navLinks} cta={{ label: PRIMARY_CTA, href: "#contact" }} />
   <main>
 
 <!-- HERO -->
@@ -20,8 +22,8 @@ const navLinks = [{label:"What you get",href:"#deliverables"},{label:"How it wor
       <h1>How much revenue is your <em>slow store costing you?</em></h1>
       <p class="lede">We measure your store's real-world performance across every critical page, calculate the conversion impact in euros, and give you a prioritized fix plan sorted by ROI. €390 — fixed price, 7 business days.</p>
       <div class="hero-ctas">
-        <a class="btn btn--solid" href="#contact">Order for €390</a>
-        <a class="btn btn--ghost" href="#math">See the math</a>
+        <CTA variant="primary" href="#contact">{PRIMARY_CTA}</CTA>
+        <CTA variant="tertiary" href="#math">See the math →</CTA>
       </div>
       <div class="hero-meta">
         <span>€390 fixed price</span>

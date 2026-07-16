@@ -3,13 +3,15 @@ import Base from "../layouts/Base.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ContactForm from "../components/ContactForm.astro";
+import CTA from "../components/CTA.astro";
 const navLinks = [{label:"What's included",href:"#included"},{label:"How it works",href:"#process"},{label:"The legal bit",href:"#legal"},{label:"Order",href:"#contact"}];
+const PRIMARY_CTA = "Order for €350";
 ---
 <Base
   title="The Evacuation Plan — Independent Backup & Access Audit | €350 | CommerceLead"
   description="Take back control of your store. Independent code backup, restore-tested backups, full access audit and an emergency go-bag — so you can leave your agency without fear. Fixed €350."
   accent="#DC2626" accentDark="#991B1B" accentSoft="#FBE4E4" accentShadow="rgba(220,38,38,.18)">
-  <Header links={navLinks} cta={{ label: "Order for €350", href: "#contact" }} />
+  <Header links={navLinks} cta={{ label: PRIMARY_CTA, href: "#contact" }} />
   <main>
 
 <!-- HERO -->
@@ -20,8 +22,8 @@ const navLinks = [{label:"What's included",href:"#included"},{label:"How it work
       <h1>Stop being a <em>hostage</em> to your agency.</h1>
       <p class="lede">If your agency relationship soured tomorrow, would you still have your code, a working backup, and control of your domain? The Evacuation Plan puts all of it back in your hands — independently, in days, for a fixed price. We only ever recover what's <strong>yours</strong>.</p>
       <div class="hero-ctas">
-        <a class="btn btn--solid" href="#contact">Order for €350</a>
-        <a class="btn btn--ghost" href="/tools/hostage-check">Check your risk first</a>
+        <CTA variant="primary" href="#contact">{PRIMARY_CTA}</CTA>
+        <CTA variant="secondary" href="/tools/hostage-check">Check your risk first</CTA>
       </div>
       <div class="hero-meta">
         <span>Fixed €350 — no surprises</span>
@@ -110,7 +112,7 @@ const navLinks = [{label:"What's included",href:"#included"},{label:"How it work
         <p>Independent backup, restore test, access audit and your go-bag. Same price whatever platform you're on. Most engagements naturally lead to ongoing oversight — but there's zero obligation.</p>
       </div>
       <div class="cta-side">
-        <a class="btn btn--solid" href="#contact">Order for €350</a>
+        <CTA variant="primary" href="#contact">{PRIMARY_CTA}</CTA>
         <span class="note">Call-first: a short authorisation call, then we start.</span>
       </div>
     </div>

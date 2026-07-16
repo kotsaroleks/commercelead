@@ -3,13 +3,15 @@ import Base from "../layouts/Base.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ContactForm from "../components/ContactForm.astro";
+import CTA from "../components/CTA.astro";
 const navLinks = [{label:"What you get",href:"#deliverables"},{label:"How it works",href:"#process"},{label:"Who it's for",href:"#who"},{label:"Order",href:"#contact"}];
+const PRIMARY_CTA = "Order for €490";
 ---
 <Base
   title="E-commerce Tech Audit — €490 Fixed Price | CommerceLead"
   description="A senior engineer reviews your Magento, Shopware or Shopify store top to bottom. Fixed €490 price, written report in 10 days, zero risk."
   accent="#6C3AED" accentDark="#5228BB" accentSoft="#EDE9FE" accentShadow="rgba(108,58,237,.18)">
-  <Header links={navLinks} cta={{ label: "Order your audit", href: "#contact" }} />
+  <Header links={navLinks} cta={{ label: PRIMARY_CTA, href: "#contact" }} />
   <main>
 
 <!-- HERO -->
@@ -20,8 +22,8 @@ const navLinks = [{label:"What you get",href:"#deliverables"},{label:"How it wor
       <h1>A full tech audit of your store — <em>€490, fixed price.</em></h1>
       <p class="lede">A senior e-commerce engineer reviews your codebase, infrastructure, performance, and security top to bottom. You get a written report with every risk ranked by revenue impact — and a clear roadmap to fix them.</p>
       <div class="hero-ctas">
-        <a class="btn btn--solid" href="#contact">Order for €490</a>
-        <a class="btn btn--ghost" href="#deliverables">See what's included</a>
+        <CTA variant="primary" href="#contact">{PRIMARY_CTA}</CTA>
+        <CTA variant="tertiary" href="#deliverables">See what's included →</CTA>
       </div>
       <div class="hero-meta">
         <span>Fixed price — no surprises</span>

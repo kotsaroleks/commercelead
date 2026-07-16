@@ -288,9 +288,9 @@ const roleCards = [
     .svc-feature h2 em{font-style:normal;color:var(--c)}
     .svc-feature__main p{font-size:1.02rem;color:var(--slate);max-width:44ch}
     .svc-feature__cta{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
-    .svc-feature__btn{display:inline-block;background:var(--c);border:1px solid var(--c);color:#fff;
-      font-family:'IBM Plex Mono',monospace;font-size:.92rem;font-weight:500;padding:15px 26px;}
-    .svc-feature:hover .svc-feature__btn{background:var(--cd);border-color:var(--cd)}
+    .svc-feature__btn{display:inline-block;background:transparent;border:1px solid var(--c);color:var(--cd);
+      font-family:'IBM Plex Mono',monospace;font-size:.92rem;font-weight:500;padding:14px 25px;transition:background .15s,color .15s;}
+    .svc-feature:hover .svc-feature__btn{background:var(--c);color:#fff}
     .svc-feature__meta{font-family:'IBM Plex Mono',monospace;font-size:.76rem;color:var(--slate)}
     @media(max-width:820px){.svc-feature{grid-template-columns:1fr;gap:22px;padding:32px 26px;box-shadow:10px 10px 0 0 var(--cs)}}
     @media(max-width:820px){.cards{grid-template-columns:1fr}.hub-hero{padding:64px 0 48px}.paths{padding:48px 0 64px}.services-section{padding:0 0 64px}}
