@@ -168,14 +168,32 @@ const roleCards = [
 
   <main>
     <section class="hub-hero">
-      <div class="wrap">
-        <p class="eyebrow">Outsourced CTO &amp; Tech Lead for e-commerce</p>
-        <h1>Senior technical leadership for your store — <em>without the full-time hire.</em></h1>
-        <p class="lede">Certified Magento and Shopware engineers, hands-on tech leads, and fractional CTOs who take ownership of your platform. Pick the path that fits where you are today.</p>
-        <div class="hero-meta">
-          <span>Adobe &amp; Shopware certified</span>
-          <span>From 0.5 FTE</span>
-          <span>Audit to ownership in 2 weeks</span>
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Outsourced CTO &amp; Tech Lead for e-commerce</p>
+          <h1>Senior technical leadership for your store — <em>without the full-time hire.</em></h1>
+          <p class="lede">Certified Magento and Shopware engineers, hands-on tech leads, and fractional CTOs who take ownership of your platform. Pick the path that fits where you are today.</p>
+          <div class="hero-meta">
+            <span>Adobe &amp; Shopware certified</span>
+            <span>From 0.5 FTE</span>
+            <span>Audit to ownership in 2 weeks</span>
+          </div>
+        </div>
+
+        <!-- signature: the hub-level store diagnosis terminal -->
+        <div class="terminal" role="img" aria-label="Terminal showing a quick store diagnosis ending with the recommendation to pick a path below">
+          <div class="term-bar"><i></i><i></i><i></i><span class="term-title">you@your-store — commercelead:audit</span></div>
+          <div class="term-body" aria-hidden="true">
+            <span class="ln"><span class="prompt">you@your-store:~$</span> <span class="cmd">commercelead audit --quick</span></span>
+            <span class="ln"><span class="dim">Scanning your e-commerce operation…</span></span>
+            <span class="ln"><span class="ok">[OK]</span>&nbsp;&nbsp; Revenue — growing, real traction</span>
+            <span class="ln"><span class="warn">[WARN]</span> Platform ownership — nobody's, really</span>
+            <span class="ln"><span class="warn">[WARN]</span> Agency invoices — unverified</span>
+            <span class="ln"><span class="err">[FAIL]</span> Fractional CTO — not hired yet</span>
+            <span class="ln"><span class="dim">──────────────────────────────────</span></span>
+            <span class="ln">Diagnosis: <span class="hl">solid business, no one driving the tech.</span></span>
+            <span class="ln">Recommended fix: <span class="hl">pick your path below.</span> <span class="cursor"></span></span>
+          </div>
         </div>
       </div>
     </section>
@@ -308,6 +326,10 @@ const roleCards = [
     .hub-hero .lede{font-size:1.16rem;color:var(--slate);max-width:40em;margin-bottom:30px}
     .hub-hero .hero-meta{font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--slate);display:flex;gap:22px;flex-wrap:wrap}
     .hub-hero .hero-meta span::before{content:"▸ ";color:var(--ink)}
+    /* the homepage's --accent is near-black, unlike the colourful product-page
+       accents this terminal component was designed against — override .hl so
+       the highlighted diagnosis lines stay legible on the dark terminal body */
+    .hub-hero .terminal .hl{color:var(--term-green)}
 
     .paths{padding:70px 0 100px}
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
