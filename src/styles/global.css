@@ -58,6 +58,46 @@ header{
 .btn--solid:hover{background:var(--accent-dark);border-color:var(--accent-dark)}
 .btn--ghost{background:transparent;color:var(--ink)}
 .btn--ghost:hover{background:var(--ink);color:#fff}
+
+/* ---------- mobile nav toggle ---------- */
+.nav-toggle{
+  display:none;position:relative;width:40px;height:40px;flex:0 0 auto;
+  background:none;border:none;cursor:pointer;padding:0;
+}
+.nav-toggle-bars{
+  position:absolute;top:50%;left:50%;width:22px;height:2px;
+  background:var(--ink);transform:translate(-50%,-50%);transition:background .2s ease;
+}
+.nav-toggle-bars::before,.nav-toggle-bars::after{
+  content:"";position:absolute;left:0;width:22px;height:2px;background:var(--ink);
+  transition:transform .2s ease,top .2s ease;
+}
+.nav-toggle-bars::before{top:-7px}
+.nav-toggle-bars::after{top:7px}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars{background:transparent}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars::before{top:0;transform:rotate(45deg)}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars::after{top:0;transform:rotate(-45deg)}
+
+.mobile-nav{
+  position:fixed;inset:68px 0 0 0;z-index:60;
+  background:var(--paper);
+  visibility:hidden;opacity:0;
+  transition:opacity .2s ease,visibility 0s linear .2s;
+  overflow-y:auto;
+}
+.mobile-nav.is-open{
+  visibility:visible;opacity:1;
+  transition:opacity .2s ease,visibility 0s linear 0s;
+}
+.mobile-nav-links{list-style:none;padding:12px 28px 40px}
+.mobile-nav-links li:not(.mobile-nav-cta){border-bottom:1px solid var(--line)}
+.mobile-nav-links li:not(.mobile-nav-cta) a{
+  display:block;padding:18px 4px;text-decoration:none;color:var(--ink);
+  font-family:'Archivo',sans-serif;font-weight:700;font-size:1.25rem;
+}
+.mobile-nav-cta{margin-top:24px}
+.mobile-nav-cta .btn{display:block;text-align:center}
+body.nav-open{overflow:hidden}
 .btn--text{
   display:inline-flex;align-items:center;gap:6px;background:none;border:none;padding:0;
   color:var(--accent-dark);font-family:'IBM Plex Mono',monospace;font-size:.88rem;font-weight:600;
@@ -273,6 +313,8 @@ footer{padding:38px 0;border-top:1px solid var(--line)}
 }
 @media(max-width:640px){
   .nav-links{display:none}
+  .nav-cta-desktop{display:none}
+  .nav-toggle{display:block}
   .pain-grid{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr}
   .hero{padding:56px 0 64px}
