@@ -420,6 +420,21 @@ h2{
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
+/* ===== tool card — 4 equal-weight diagnostic entry points (ToolCard.astro) ===== */
+.tool-card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.tool-card{
+  position:relative;display:flex;flex-direction:column;gap:14px;text-decoration:none;
+  color:inherit;background:var(--white);border:1px solid var(--line);
+  border-top:4px solid var(--tc);padding:32px 30px;
+  transition:transform .2s, box-shadow .2s, border-color .2s;
+}
+.tool-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px -18px var(--tc);border-color:var(--tc)}
+.tool-card__tag{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tcd)}
+.tool-card__q{font-family:'Archivo',sans-serif;font-weight:750;font-size:1.3rem;letter-spacing:-.015em;line-height:1.2;flex:1}
+.tool-card__badge{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--slate);border-top:1px solid var(--line);padding-top:14px}
+.tool-card__go{font-family:'IBM Plex Mono',monospace;font-size:.85rem;font-weight:600;color:var(--tcd)}
+@media(max-width:820px){.tool-card-grid{grid-template-columns:1fr}}
+
 /* ===== free-tool band (speed calculator) ===== */
 .tool-band{background:#14181D;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .tool-band__inner{

@@ -1,0 +1,14 @@
+---
+// One shared card for all 4 free diagnostic tools — used on the homepage
+// "diagnostics" section and on the standalone /start gallery page.
+// Deliberately equal-weight: no primary/secondary styling among the 4 —
+// see docs/tz-diagnostics-hub.md §3 for why this is the one sanctioned
+// exception to the "single primary CTA" rule from the CTA-hierarchy ТЗ.
+const { title, question, effort, href, accentColor, accentColorDark } = Astro.props;
+---
+<a class="tool-card" href={href} style={`--tc:${accentColor};--tcd:${accentColorDark};`}>
+  <span class="tool-card__tag">{title}</span>
+  <h3 class="tool-card__q">{question}</h3>
+  <span class="tool-card__badge">Free &middot; No signup &middot; {effort}</span>
+  <span class="tool-card__go">Try it &rarr;</span>
+</a>

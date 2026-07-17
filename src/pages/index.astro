@@ -2,12 +2,48 @@
 import Base from "../layouts/Base.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import ToolCard from "../components/ToolCard.astro";
 const navLinks = [
   { label: "Magento", href: "/magento" },
   { label: "Shopware", href: "/shopware" },
   { label: "First CTO", href: "/first-cto" },
+  { label: "Free tools", href: "/start" },
   { label: "Roles", href: "#roles" },
   { label: "Services", href: "#services" },
+];
+const diagnosticTools = [
+  {
+    title: "Hostage Check",
+    question: "Are you really in control of your store?",
+    effort: "12 questions · risk score",
+    href: "/tools/hostage-check",
+    accentColor: "#DC2626",
+    accentColorDark: "#991B1B",
+  },
+  {
+    title: "Speed Loss Calculator",
+    question: "How much money is a slow site costing you?",
+    effort: "instant estimate",
+    href: "/tools/speed-loss",
+    accentColor: "#F59E0B",
+    accentColorDark: "#B45309",
+  },
+  {
+    title: "AI Readiness Score",
+    question: "Will an AI agent even find your store?",
+    effort: "11 questions · 2 min",
+    href: "/ai-readiness#score",
+    accentColor: "#C026D3",
+    accentColorDark: "#86198F",
+  },
+  {
+    title: "Migration TCO",
+    question: "Is it actually worth migrating to another platform?",
+    effort: "instant estimate",
+    href: "/tools/migration-tco",
+    accentColor: "#6366F1",
+    accentColorDark: "#4F46E5",
+  },
 ];
 const cards = [
   {
@@ -160,6 +196,22 @@ const roleCards = [
       </div>
     </section>
 
+    <section class="diagnostics-section" id="diagnostics">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Free diagnostics · No signup</p>
+          <h2>Not sure where to start? Pick a free diagnostic.</h2>
+          <p>Four instant tools for the most common headaches — no quiz-router, just pick the one that matches your problem.</p>
+        </div>
+        <div class="tool-card-grid">
+          {diagnosticTools.map((t) => <ToolCard {...t} />)}
+        </div>
+        <p class="diagnostics-outro">
+          <a class="btn--text" href="/start">See all diagnostics →</a>
+        </p>
+      </div>
+    </section>
+
     <section class="services-section" id="roles">
       <div class="wrap">
         <div class="section-head">
@@ -269,6 +321,12 @@ const roleCards = [
     .card p{font-size:.96rem;color:var(--slate);flex:1}
     .card .aud{font-size:.84rem;color:var(--ink);font-weight:600;border-top:1px solid var(--line);padding-top:14px}
     .card .go{font-family:'IBM Plex Mono',monospace;font-size:.85rem;font-weight:600;color:var(--cd)}
+    .diagnostics-section{padding:70px 0 90px;border-top:1px solid var(--line)}
+    .diagnostics-section .section-head{text-align:center;max-width:38em;margin:0 auto 40px}
+    .diagnostics-section .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin-bottom:12px}
+    .diagnostics-section h2{font-family:'Archivo',sans-serif;font-weight:850;font-stretch:90%;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.1;letter-spacing:-.02em;margin-bottom:14px}
+    .diagnostics-section .section-head p{font-size:1.05rem;color:var(--slate)}
+    .diagnostics-outro{text-align:center;margin-top:32px}
     .services-section{padding:0 0 100px;border-top:1px solid var(--line)}
     .services-section .section-head{text-align:center;max-width:38em;margin:70px auto 40px}
     .services-section .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin-bottom:12px}
