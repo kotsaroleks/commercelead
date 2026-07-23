@@ -33,12 +33,22 @@ const { links = [], cta } = Astro.props;
   const nav = document.getElementById("mobile-nav");
 
   if (btn && nav) {
+    const siblings = Array.from(document.body.children).filter(
+      (el) => el !== nav && !(el instanceof HTMLScriptElement)
+    ) as HTMLElement[];
+
     const isOpen = () => btn.getAttribute("aria-expanded") === "true";
+
+    const getFocusable = () =>
+      Array.from(
+        nav.querySelectorAll<HTMLElement>('a[href], button:not([disabled])')
+      );
 
     const openMenu = () => {
       btn.setAttribute("aria-expanded", "true");
       nav.classList.add("is-open");
       document.body.classList.add("nav-open");
+      siblings.forEach((el) => el.setAttribute("inert", ""));
       const firstLink = nav.querySelector("a");
       if (firstLink instanceof HTMLElement) firstLink.focus();
     };
@@ -47,6 +57,7 @@ const { links = [], cta } = Astro.props;
       btn.setAttribute("aria-expanded", "false");
       nav.classList.remove("is-open");
       document.body.classList.remove("nav-open");
+      siblings.forEach((el) => el.removeAttribute("inert"));
       if (returnFocus) btn.focus();
     };
 
@@ -62,7 +73,28 @@ const { links = [], cta } = Astro.props;
     });
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && isOpen()) closeMenu(true);
+      if (!isOpen()) return;
+
+      if (e.key === "Escape") {
+        closeMenu(true);
+        return;
+      }
+
+      if (e.key !== "Tab") return;
+
+      const focusable = getFocusable();
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     });
   }
 </script>
