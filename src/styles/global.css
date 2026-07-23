@@ -199,6 +199,7 @@ h2{
 .fte-opts button:hover{background:var(--paper)}
 .fte-opts button.active{background:var(--ink);color:#fff}
 .fte-hours{font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--accent-dark)}
+.table-scroll{overflow-x:auto}
 .price-table{width:100%;border-collapse:collapse;border:1px solid var(--line)}
 .price-table th,.price-table td{
   text-align:left;padding:18px 22px;border-bottom:1px solid var(--line);
