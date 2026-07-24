@@ -32,6 +32,15 @@ const navLinks = [
         <SpeedLossCalculator client:load />
       </div>
     </section>
+
+    <!-- Hidden static form so Netlify's build-time bot detects and registers it.
+         The real, visible form lives inside SpeedLossCalculator and submits here via fetch. -->
+    <form name="speed-report-lead" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="marketing-consent" />
+      <input type="text" name="bot-field" />
+    </form>
   </main>
   <Footer
     tagline="speed &amp; Core Web Vitals audits for e-commerce."

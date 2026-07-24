@@ -167,6 +167,12 @@
 .calc-share__btn:hover { background: var(--ink); color: #fff; }
 .calc-share__hint { font-size: .8rem; color: var(--slate); }
 
+.calc-gate { margin-top: 14px; border: 1px solid var(--line); background: var(--paper); padding: 20px 22px; max-width: 360px; }
+.calc-gate__form.contact-form { gap: 12px; }
+.calc-gate__ok { font-family: 'IBM Plex Mono', monospace; font-size: .85rem; color: var(--ink); }
+.calc-gate__consent { align-items: flex-start; line-height: 1.4; }
+.calc-gate__consent input { margin-top: 2px; flex-shrink: 0; }
+
 /* CTA */
 .calc-cta {
   border: 1px solid var(--ink); background: var(--white); padding: 36px 34px; display: grid;

@@ -1,15 +1,18 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
+import React, { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import {
   calculate,
   getSpeedRating,
   fmtMoney,
   SPEED_FACTS,
+  SPEED_OPTIMIZATIONS,
   CURRENCIES,
   type Device,
 } from "./model";
 import { SpeedCurveChart } from "./SpeedCurveChart";
 import { RevenueComparisonChart } from "./RevenueComparisonChart";
 import { OptimizationChecklist } from "./OptimizationChecklist";
+import { PdfReportGate } from "../../lib/lead-report/PdfReportGate";
+import type { ReportSnapshot } from "../../lib/lead-report/pdf";
 
 const AUDIT_HREF = "/speed-audit";
 const clamp = (n: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, n));
@@ -30,6 +33,7 @@ export default function SpeedLossCalculator() {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [analysisError, setAnalysisError] = useState<string | null>(null);
   const [analysisSuccess, setAnalysisSuccess] = useState<string | null>(null);
+  const chartsRef = useRef<HTMLDivElement>(null);
 
   // Hydrate state from URL once on mount.
   useEffect(() => {
@@ -140,6 +144,23 @@ export default function SpeedLossCalculator() {
       /* clipboard unavailable */
     }
   };
+
+  const buildSnapshot = useCallback((): ReportSnapshot => {
+    const selectedNames = SPEED_OPTIMIZATIONS.filter((o) => selected.includes(o.id)).map((o) => o.name);
+    return {
+      toolLabel: "Site Speed Revenue-Loss Calculator",
+      headline: `−${f(r.monthlyRevenueLoss)}/month lost to a ${currentLoadTime.toFixed(1)}s load time`,
+      metrics: [
+        { label: "Revenue lost / month", value: `−${f(r.monthlyRevenueLoss)}`, sub: `−${r.conversionImpactPct.toFixed(1)}% conversion impact` },
+        { label: "Projected annual leakage", value: `−${f(r.annualRevenueLoss)}` },
+        { label: "Potential revenue / mo", value: f(r.potentialMonthlySales), sub: `at ${targetLoadTime.toFixed(1)}s · +${r.growthPct.toFixed(0)}% upside` },
+        { label: "Potential orders / mo", value: n0(r.potentialOrdersCount), sub: `up from ${n0(r.currentOrdersCount)} today` },
+      ],
+      bullets: selectedNames,
+      ctaLabel: "See the Speed Audit",
+      ctaHref: `${window.location.origin}${AUDIT_HREF}`,
+    };
+  }, [r, currentLoadTime, targetLoadTime, selected, f, n0]);
 
   // Fetch the store's real LCP from Google PageSpeed Insights (via our Netlify
   // Function proxy so the API key stays server-side). Falls back to manual entry.
@@ -389,7 +410,7 @@ export default function SpeedLossCalculator() {
           </div>
         </div>
 
-        <div className="calc-charts">
+        <div className="calc-charts" ref={chartsRef}>
           <SpeedCurveChart currentLoadTime={currentLoadTime} targetLoadTime={targetLoadTime} device={device} />
           <RevenueComparisonChart
             currentMonthlySales={monthlySales}
@@ -403,6 +424,12 @@ export default function SpeedLossCalculator() {
           <button type="button" className="calc-share__btn" onClick={copyLink}>
             {copied ? "✓ Link copied" : "⎘ Copy shareable link"}
           </button>
+          <PdfReportGate
+            formName="speed-report-lead"
+            buildSnapshot={buildSnapshot}
+            getChartEls={() => (chartsRef.current ? Array.from(chartsRef.current.children) : [])}
+            filename="commercelead-speed-loss-report.pdf"
+          />
           <span className="calc-share__hint">Recreates this exact report for anyone you send it to.</span>
         </div>
 
