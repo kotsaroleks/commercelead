@@ -9,6 +9,7 @@ export type ReportSnapshot = {
   headline: string; // e.g. "−€71.739/month lost to slow load times"
   metrics: ReportMetric[];
   bullets?: string[]; // e.g. selected optimizations
+  bulletsLabel?: string; // heading above `bullets`, defaults to "Selected optimizations"
   ctaLabel: string;
   ctaHref: string;
 };
@@ -96,7 +97,7 @@ export async function generateReportPdf(
     doc.setFont("helvetica", "bold");
     doc.setFontSize(11);
     doc.setTextColor(INK);
-    doc.text("Selected optimizations", margin, y);
+    doc.text(snapshot.bulletsLabel ?? "Selected optimizations", margin, y);
     y += 16;
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);

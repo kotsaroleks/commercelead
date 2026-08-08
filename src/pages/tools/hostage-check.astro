@@ -33,6 +33,15 @@ const navLinks = [
         <HostageCheck client:load />
       </div>
     </section>
+
+    <!-- Hidden static form so Netlify's build-time bot detects and registers it.
+         The real, visible form lives inside HostageCheck and submits here via fetch. -->
+    <form name="hostage-report-lead" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="marketing-consent" />
+      <input type="text" name="bot-field" />
+    </form>
   </main>
   <Footer
     tagline="take back control of what's yours — independent backups &amp; access audits."

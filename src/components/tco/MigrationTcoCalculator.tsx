@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
+import React, { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import {
   PLATFORMS,
   APP_CATALOG,
@@ -12,6 +12,8 @@ import {
 import { CURRENCIES, fmtMoney } from "../calculator/model";
 import { TcoStackedChart } from "./TcoStackedChart";
 import { CrossoverChart } from "./CrossoverChart";
+import { PdfReportGate } from "../../lib/lead-report/PdfReportGate";
+import type { ReportSnapshot } from "../../lib/lead-report/pdf";
 
 const CTA_HREF = "/migration-review";
 const HORIZONS = [1, 3, 5] as const;
@@ -29,6 +31,7 @@ export default function MigrationTcoCalculator() {
   const [retainerInput, setRetainerInput] = useState("3500");
   const [apps, setApps] = useState<string[]>(APP_CATALOG.filter((a) => a.defaultOn).map((a) => a.id));
   const [copied, setCopied] = useState(false);
+  const chartsRef = useRef<HTMLDivElement>(null);
 
   // hydrate from URL once
   useEffect(() => {
@@ -142,6 +145,25 @@ export default function MigrationTcoCalculator() {
     p.set("utm_medium", "share");
     return `${window.location.origin}${window.location.pathname}?${p.toString()}`;
   }, [currentId, validTargets, gmv0, growthPct, horizon, customPlugins, currency, hostingOverride, retainerOverride, apps]);
+
+  const buildSnapshot = useCallback((): ReportSnapshot => {
+    const headline = verdict
+      ? verdict.recommend === "stay"
+        ? `Staying on ${verdict.currentShort} is cheaper by ${f(verdict.deltaTotal)} over ${horizon} years`
+        : `Migrating to ${verdict.bestTargetShort} could save ${f(verdict.deltaTotal)} over ${horizon} years`
+      : `${horizon}-year TCO: ${currentPlatform.short} vs ${primaryTarget?.short ?? "alternatives"}`;
+    return {
+      toolLabel: "Migration TCO Calculator",
+      headline,
+      metrics: allResults.slice(0, 4).map((r) => ({
+        label: r.short,
+        value: f(r.totalTco),
+        sub: `${horizon}-yr total`,
+      })),
+      ctaLabel: "Get an exact migration assessment",
+      ctaHref: `${window.location.origin}${CTA_HREF}`,
+    };
+  }, [allResults, currentPlatform, primaryTarget, verdict, horizon, f]);
 
   const share = async () => {
     const url = buildShareUrl();
@@ -368,7 +390,7 @@ export default function MigrationTcoCalculator() {
               </table>
             </div>
 
-            <div className="calc-charts">
+            <div className="calc-charts" ref={chartsRef}>
               <TcoStackedChart results={allResults} currency={currency} horizon={horizon} />
               {primaryTarget && crossover && (
                 <CrossoverChart current={currentPlatform} target={primaryTarget} ctx={ctx} crossover={crossover} currency={currency} />
@@ -385,6 +407,13 @@ export default function MigrationTcoCalculator() {
               <button type="button" className="calc-share__btn" onClick={share}>
                 {copied ? "✓ Link copied" : "↗ Share this comparison"}
               </button>
+              <PdfReportGate
+                formName="tco-report-lead"
+                buildSnapshot={buildSnapshot}
+                getChartEls={() => (chartsRef.current ? Array.from(chartsRef.current.children) : [])}
+                filename="migration-tco-report.pdf"
+                consentText="I'd like occasional emails with migration tips and offers from CommerceLead. (Optional — you'll get the PDF either way.)"
+              />
               <span className="calc-share__hint">Recreates this exact TCO comparison for anyone you send it to.</span>
             </div>
 

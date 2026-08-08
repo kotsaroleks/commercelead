@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { QUESTIONS, CATEGORIES, evaluate, type Status } from "./model";
+import { PdfReportGate } from "../../lib/lead-report/PdfReportGate";
+import type { ReportSnapshot } from "../../lib/lead-report/pdf";
 
 const SERVICE_HREF = "/evacuation-plan";
 const STATUS_CLASS: Record<Status, string> = { green: "is-green", amber: "is-amber", red: "is-red" };
@@ -77,6 +79,25 @@ export default function HostageCheck() {
     p.set("utm_medium", "share");
     return `${window.location.origin}${window.location.pathname}?${p.toString()}`;
   }, [answers]);
+
+  const buildSnapshot = useCallback((): ReportSnapshot => {
+    return {
+      toolLabel: "Agency Hostage Risk Check",
+      headline: `${result.score}/100 — ${result.bandLabel}`,
+      metrics: [...result.categories]
+        .sort((a, b) => b.pct - a.pct)
+        .slice(0, 4)
+        .map((c) => ({
+        label: c.label,
+        value: c.status,
+        sub: `${c.pct}% risk`,
+      })),
+      bullets: result.topRisks.map((r) => r.asset),
+      bulletsLabel: "Your top risks",
+      ctaLabel: "Get the Evacuation Plan",
+      ctaHref: `${window.location.origin}${SERVICE_HREF}`,
+    };
+  }, [result]);
 
   const share = async () => {
     const url = buildShareUrl();
@@ -198,6 +219,12 @@ export default function HostageCheck() {
           <button type="button" className="calc-share__btn" onClick={share}>
             {copied ? "✓ Link copied" : "↗ Share my result"}
           </button>
+          <PdfReportGate
+            formName="hostage-report-lead"
+            buildSnapshot={buildSnapshot}
+            filename="hostage-risk-report.pdf"
+            consentText="I'd like occasional emails with agency-independence tips and offers from CommerceLead. (Optional — you'll get the PDF either way.)"
+          />
           <button type="button" className="hc-restart" onClick={restart}>↺ Retake</button>
         </div>
 

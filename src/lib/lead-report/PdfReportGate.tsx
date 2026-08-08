@@ -13,6 +13,8 @@ export type PdfReportGateProps = {
   /** Download filename for the generated PDF. */
   filename: string;
   buttonLabel?: string;
+  /** Marketing-consent checkbox copy. Defaults to speed-tool wording. */
+  consentText?: string;
 };
 
 /**
@@ -27,6 +29,7 @@ export function PdfReportGate({
   getChartEls,
   filename,
   buttonLabel = "⬇ Get the PDF report",
+  consentText = "I'd like occasional emails with speed tips and offers from CommerceLead. (Optional — you'll get the PDF either way.)",
 }: PdfReportGateProps) {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
@@ -118,7 +121,7 @@ export function PdfReportGate({
                   checked={marketingConsent}
                   onChange={(e) => setMarketingConsent(e.target.checked)}
                 />
-                I'd like occasional emails with speed tips and offers from CommerceLead. (Optional — you'll get the PDF either way.)
+                {consentText}
               </label>
               {error && <p className="calc-hint calc-hint--err">{error}</p>}
               <button type="submit" className="btn btn--solid" disabled={submitting}>
